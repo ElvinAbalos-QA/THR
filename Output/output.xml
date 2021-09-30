@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.2 on darwin)" generated="20210930 11:08:41.853" rpa="false" schemaversion="2">
+<suite id="s1" name="Android" source="/Users/qatest/PycharmProjects/AndroidProject/Tests/myeasytrip/Android">
+<suite id="s1-s1" name="Forgot Password" source="/Users/qatest/PycharmProjects/AndroidProject/Tests/myeasytrip/Android/forgot_password.robot">
+<kw name="Open Myeasytrip Application" library="resources" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=4SPRMFUGIRBQ4PKR</arg>
+<arg>appPackage=${MYEASYTRIP-APPLICATION-ID}</arg>
+<arg>appActivity=${MYEASYTRIP-APPLICATION-ACTIVITY}</arg>
+<arg>automationName=Uiautomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210930 11:08:43.531" endtime="20210930 11:08:57.311"/>
+</kw>
+<status status="PASS" starttime="20210930 11:08:43.531" endtime="20210930 11:08:57.312"/>
+</kw>
+<test id="s1-s1-t1" name="Forgot password test case">
+<kw name="Launch Application" library="AppiumLibrary" type="SETUP">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:08:57.316" endtime="20210930 11:09:01.817"/>
+</kw>
+<kw name="Forgot Password" library="resources">
+<kw name="Tap The Element" library="resources">
+<arg>${FORGOT PASSWORD TEXT}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:09:01.818" endtime="20210930 11:09:06.878"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:09:06.883" level="INFO">Clicking element '//android.widget.TextView[@text='Forgot Password?']'.</msg>
+<status status="PASS" starttime="20210930 11:09:06.878" endtime="20210930 11:09:11.216"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:01.817" endtime="20210930 11:09:11.216"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${FORGOT PASSWORD FIELD}</arg>
+<arg>${USER_DETAILS_2}[email]</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210930 11:09:11.221" level="INFO">Typing text 'bliimo@mailinator.com' into text field '//android.widget.EditText'</msg>
+<status status="PASS" starttime="20210930 11:09:11.217" endtime="20210930 11:09:15.013"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>//android.widget.TextView[@text='Forgot Password?']</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:09:15.018" level="INFO">Clicking element '//android.widget.TextView[@text='Forgot Password?']'.</msg>
+<status status="PASS" starttime="20210930 11:09:15.014" endtime="20210930 11:09:19.079"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:15.013" endtime="20210930 11:09:19.079"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:15.013" endtime="20210930 11:09:19.079"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>//android.widget.TextView[@text='SEND']</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:09:19.086" level="INFO">Clicking element '//android.widget.TextView[@text='SEND']'.</msg>
+<status status="PASS" starttime="20210930 11:09:19.081" endtime="20210930 11:09:22.865"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:19.080" endtime="20210930 11:09:22.865"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:19.080" endtime="20210930 11:09:22.866"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>//android.widget.TextView[@text='Ok']</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:09:22.871" level="INFO">Clicking element '//android.widget.TextView[@text='Ok']'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210930 11:09:24.284" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210930 11:09:23.452" endtime="20210930 11:09:24.285"/>
+</kw>
+<msg timestamp="20210930 11:09:24.287" level="FAIL">ValueError: Element locator '//android.widget.TextView[@text='Ok']' did not match any elements.</msg>
+<status status="FAIL" starttime="20210930 11:09:22.867" endtime="20210930 11:09:24.287"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:09:25.293" level="INFO">Clicking element '//android.widget.TextView[@text='Ok']'.</msg>
+<status status="PASS" starttime="20210930 11:09:25.288" endtime="20210930 11:09:28.443"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:22.866" endtime="20210930 11:09:28.444"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:22.866" endtime="20210930 11:09:28.444"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>//android.view.ViewGroup//android.widget.ImageView</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:09:28.451" level="INFO">Clicking element '//android.view.ViewGroup//android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20210930 11:09:28.445" endtime="20210930 11:09:32.502"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:28.445" endtime="20210930 11:09:32.502"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:28.444" endtime="20210930 11:09:32.503"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:01.817" endtime="20210930 11:09:32.503"/>
+</kw>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:09:32.503" endtime="20210930 11:09:33.917"/>
+</kw>
+<tag>sanity</tag>
+<status status="PASS" starttime="20210930 11:08:57.312" endtime="20210930 11:09:33.917"/>
+</test>
+<test id="s1-s1-t2" name="Check the email in mailinator">
+<kw name="Launch Application" library="AppiumLibrary" type="SETUP">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:09:33.923" endtime="20210930 11:09:38.005"/>
+</kw>
+<kw name="Open Mailinator" library="resources">
+<kw name="Open Browser" library="Browser">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
+Use `New Page` directly instead of `Open Browser` for production and automated execution.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210930 11:09:38.007" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20210930 11:09:38.007" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210930 11:09:39.305" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<msg timestamp="20210930 11:09:39.306" level="INFO">{"acceptDownloads": false, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false}</msg>
+<msg timestamp="20210930 11:09:39.354" level="INFO">Successfully created context with  options:
+{"acceptDownloads": false, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false}</msg>
+<msg timestamp="20210930 11:09:44.239" level="INFO">Successfully initialized new page object and opened url: https://www.mailinator.com/</msg>
+<status status="PASS" starttime="20210930 11:09:38.006" endtime="20210930 11:09:44.239"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<arg>==</arg>
+<arg>${TITLE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" starttime="20210930 11:09:44.240" endtime="20210930 11:09:44.267"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:38.006" endtime="20210930 11:09:44.268"/>
+</kw>
+<kw name="Input Field" library="resources">
+<arg>//*[@id="addOverlay"]</arg>
+<arg>testadonis</arg>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${field}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210930 11:09:44.269" level="INFO">Fills the text 'testadonis' in the given field.</msg>
+<status status="PASS" starttime="20210930 11:09:44.269" endtime="20210930 11:09:44.329"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:44.268" endtime="20210930 11:09:44.330"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>text=GO</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210930 11:09:44.330" endtime="20210930 11:09:44.745"/>
+</kw>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:09:44.746" endtime="20210930 11:09:46.153"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:33.920" endtime="20210930 11:09:46.153"/>
+</test>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210930 11:09:46.306" endtime="20210930 11:09:47.450"/>
+</kw>
+<doc>A test case for the user is able to forgot password</doc>
+<status status="PASS" starttime="20210930 11:08:41.893" endtime="20210930 11:09:47.450"/>
+</suite>
+<suite id="s1-s2" name="Login" source="/Users/qatest/PycharmProjects/AndroidProject/Tests/myeasytrip/Android/login.robot">
+<kw name="Open Myeasytrip Application" library="resources" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=4SPRMFUGIRBQ4PKR</arg>
+<arg>appPackage=${MYEASYTRIP-APPLICATION-ID}</arg>
+<arg>appActivity=${MYEASYTRIP-APPLICATION-ACTIVITY}</arg>
+<arg>automationName=Uiautomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210930 11:09:47.467" endtime="20210930 11:10:02.269"/>
+</kw>
+<status status="PASS" starttime="20210930 11:09:47.466" endtime="20210930 11:10:02.269"/>
+</kw>
+<test id="s1-s2-t1" name="Login negative empty fields test case">
+<kw name="Launch Application" library="AppiumLibrary" type="SETUP">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:10:02.274" endtime="20210930 11:10:06.477"/>
+</kw>
+<kw name="Submit Login Button" library="resources">
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20210930 11:10:13.335" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="1920"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1920]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.easytripapp" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1920]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.easytripapp" class="android.widget.LinearLayout" text="" resource-id="com.easytripapp:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+            &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                            &lt;android.widget.ScrollView index="0" package="com.easytripapp" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                                &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,204][990,590]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="1" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,710][990,920]" displayed="true"&gt;
+                                  &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[165,769][258,862]" displayed="true" /&gt;
+                                  &lt;android.widget.EditText index="1" package="com.easytripapp" class="android.widget.EditText" text="Email" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[303,740][933,890]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="2" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,980][990,1190]" displayed="true"&gt;
+                                  &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[165,1039][258,1132]" displayed="true" /&gt;
+                                  &lt;android.widget.EditText index="1" package="com.easytripapp" class="android.widget.EditText" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="true" scrollable="false" selected="false" bounds="[303,1012][855,1159]" displayed="true" /&gt;
+                                  &lt;android.view.ViewGroup index="2" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[855,1033][960,1138]" displayed="true"&gt;
+                                    &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[870,1048][945,1123]" displayed="true" /&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="3" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[383,1220][697,1273]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="Forgot Password?" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[383,1220][697,1273]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="4" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[317,1288][734,1421]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[317,1318][389,1391]" displayed="true" /&gt;
+                                  &lt;android.widget.TextView index="1" package="com.easytripapp" class="android.widget.TextView" text="Remember Me" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[419,1328][674,1381]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="5" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,1436][990,1616]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="Login" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[485,1496][596,1557]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="6" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,1646][990,1826]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="Login with Facebook" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[333,1706][747,1767]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="7" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,1856][990,1920]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="Quick Balance" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[398,1916][683,1920]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.widget.ScrollView&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.view.ViewGroup&gt;
+            &lt;/android.widget.FrameLayout&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210930 11:10:14.057" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210930 11:10:13.336" endtime="20210930 11:10:14.057"/>
+</kw>
+<msg timestamp="20210930 11:10:14.058" level="FAIL">Element '//android.widget.TextView[@text='Login']' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20210930 11:10:06.479" endtime="20210930 11:10:14.058"/>
+</kw>
+<msg timestamp="20210930 11:10:14.058" level="FAIL">Keyword 'Wait Until Page Contains Element' failed after retrying for 5 seconds. The last error was: Element '//android.widget.TextView[@text='Login']' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20210930 11:10:06.479" endtime="20210930 11:10:14.058"/>
+</kw>
+<status status="FAIL" starttime="20210930 11:10:06.478" endtime="20210930 11:10:14.058"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<doc>Get element location</doc>
+<status status="NOT RUN" starttime="20210930 11:10:14.059" endtime="20210930 11:10:14.059"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<status status="NOT RUN" starttime="20210930 11:10:14.059" endtime="20210930 11:10:14.059"/>
+</kw>
+<status status="FAIL" starttime="20210930 11:10:06.477" endtime="20210930 11:10:14.059"/>
+</kw>
+<kw name="Handle Login Failed" library="resources">
+<arg>${LOGIN_FAILED_EMPTY}</arg>
+<status status="NOT RUN" starttime="20210930 11:10:14.059" endtime="20210930 11:10:14.060"/>
+</kw>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:10:14.060" endtime="20210930 11:10:15.201"/>
+</kw>
+<doc>This is to be able to check a negative test case for email and password empty fields.</doc>
+<tag>empty</tag>
+<tag>negative</tag>
+<status status="FAIL" starttime="20210930 11:10:02.270" endtime="20210930 11:10:15.202">Keyword 'Wait Until Page Contains Element' failed after retrying for 5 seconds. The last error was: Element '//android.widget.TextView[@text='Login']' did not appear in 5 seconds</status>
+</test>
+<test id="s1-s2-t2" name="Login negative valid email and wrong password test case">
+<kw name="Launch Application" library="AppiumLibrary" type="SETUP">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:10:15.208" endtime="20210930 11:10:19.154"/>
+</kw>
+<kw name="Sign with User" library="resources">
+<arg>${USER_DETAILS}[email]</arg>
+<arg>${USER_DETAILS}[wrong_password]</arg>
+<kw name="Input User Email" library="resources">
+<arg>${EMAIL}</arg>
+<kw name="Verify Login Email Field Displayed" library="resources">
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_EMAIL_FIELD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:10:19.157" endtime="20210930 11:10:25.394"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:19.156" endtime="20210930 11:10:25.395"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:19.156" endtime="20210930 11:10:25.395"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:19.155" endtime="20210930 11:10:25.395"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Input Text</arg>
+<arg>${LOGIN_EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210930 11:10:25.401" level="INFO">Typing text 'eabalos40@yahoo.com' into text field '//android.widget.EditText[@text='Email']'</msg>
+<status status="PASS" starttime="20210930 11:10:25.397" endtime="20210930 11:10:31.277"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:25.396" endtime="20210930 11:10:31.277"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:25.395" endtime="20210930 11:10:31.278"/>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
+a particular key, ex. `Done`. In Android, no parameters are used.</doc>
+<status status="PASS" starttime="20210930 11:10:31.278" endtime="20210930 11:10:31.380"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:19.155" endtime="20210930 11:10:31.380"/>
+</kw>
+<kw name="Input User Password" library="resources">
+<arg>${USERPASSWORD}</arg>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:10:31.382" endtime="20210930 11:10:31.839"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:31.381" endtime="20210930 11:10:31.839"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:31.381" endtime="20210930 11:10:31.840"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Input Text</arg>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${USERPASSWORD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210930 11:10:31.845" level="INFO">Typing text 'wrongpassword' into text field '//android.widget.EditText[@text='']'</msg>
+<status status="PASS" starttime="20210930 11:10:31.841" endtime="20210930 11:10:35.628"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:31.841" endtime="20210930 11:10:35.629"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:31.840" endtime="20210930 11:10:35.629"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:31.380" endtime="20210930 11:10:35.629"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:19.154" endtime="20210930 11:10:35.629"/>
+</kw>
+<kw name="Submit Login Button" library="resources">
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:10:35.631" endtime="20210930 11:10:36.219"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:35.631" endtime="20210930 11:10:36.219"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:35.630" endtime="20210930 11:10:36.219"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<doc>Get element location</doc>
+<msg timestamp="20210930 11:10:39.134" level="INFO">Element '//android.widget.TextView[@text='Login']' location: {'x': 485, 'y': 1496} </msg>
+<status status="PASS" starttime="20210930 11:10:36.219" endtime="20210930 11:10:39.134"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:10:39.139" level="INFO">Clicking element '//android.widget.TextView[@text='Login']'.</msg>
+<status status="PASS" starttime="20210930 11:10:39.135" endtime="20210930 11:10:42.656"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:39.135" endtime="20210930 11:10:42.656"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:39.134" endtime="20210930 11:10:42.656"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:35.630" endtime="20210930 11:10:42.656"/>
+</kw>
+<kw name="Handle Login Failed" library="resources">
+<arg>${LOGIN_FAILED_INVALID_CREDENTIALS}</arg>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_FAILED}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:10:42.659" endtime="20210930 11:10:43.945"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:42.658" endtime="20210930 11:10:43.945"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:42.657" endtime="20210930 11:10:43.945"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${DISPLAY_MESSAGE}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:10:43.947" endtime="20210930 11:10:44.485"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:43.946" endtime="20210930 11:10:44.485"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:43.945" endtime="20210930 11:10:44.486"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>${OK_BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:10:44.491" level="INFO">Clicking element '//android.widget.TextView[@text='Ok']'.</msg>
+<status status="PASS" starttime="20210930 11:10:44.487" endtime="20210930 11:10:50.759"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:44.487" endtime="20210930 11:10:50.759"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:44.486" endtime="20210930 11:10:50.760"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:42.657" endtime="20210930 11:10:50.760"/>
+</kw>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:10:50.760" endtime="20210930 11:10:52.000"/>
+</kw>
+<doc>This is to be able to check a negative test case for a valid email and wrong password fields.</doc>
+<tag>invalid_credentials</tag>
+<tag>negative</tag>
+<status status="PASS" starttime="20210930 11:10:15.205" endtime="20210930 11:10:52.000"/>
+</test>
+<test id="s1-s2-t3" name="Login negative wrong email and valid password test case">
+<kw name="Launch Application" library="AppiumLibrary" type="SETUP">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:10:52.007" endtime="20210930 11:10:57.689"/>
+</kw>
+<kw name="Sign with User" library="resources">
+<arg>${USER_DETAILS}[wrong_email]</arg>
+<arg>${USER_DETAILS}[password]</arg>
+<kw name="Input User Email" library="resources">
+<arg>${EMAIL}</arg>
+<kw name="Verify Login Email Field Displayed" library="resources">
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_EMAIL_FIELD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:10:57.693" endtime="20210930 11:11:03.521"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:57.693" endtime="20210930 11:11:03.521"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:57.692" endtime="20210930 11:11:03.522"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:57.692" endtime="20210930 11:11:03.522"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Input Text</arg>
+<arg>${LOGIN_EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210930 11:11:03.528" level="INFO">Typing text 'adonisyes@mailinator.com' into text field '//android.widget.EditText[@text='Email']'</msg>
+<status status="PASS" starttime="20210930 11:11:03.523" endtime="20210930 11:11:08.135"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:03.523" endtime="20210930 11:11:08.135"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:03.522" endtime="20210930 11:11:08.135"/>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
+a particular key, ex. `Done`. In Android, no parameters are used.</doc>
+<status status="PASS" starttime="20210930 11:11:08.136" endtime="20210930 11:11:08.246"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:57.691" endtime="20210930 11:11:08.247"/>
+</kw>
+<kw name="Input User Password" library="resources">
+<arg>${USERPASSWORD}</arg>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:11:08.248" endtime="20210930 11:11:08.695"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:08.248" endtime="20210930 11:11:08.695"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:08.247" endtime="20210930 11:11:08.696"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Input Text</arg>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${USERPASSWORD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210930 11:11:08.702" level="INFO">Typing text 'Password@123' into text field '//android.widget.EditText[@text='']'</msg>
+<status status="PASS" starttime="20210930 11:11:08.697" endtime="20210930 11:11:12.823"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:08.697" endtime="20210930 11:11:12.823"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:08.696" endtime="20210930 11:11:12.824"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:08.247" endtime="20210930 11:11:12.824"/>
+</kw>
+<status status="PASS" starttime="20210930 11:10:57.690" endtime="20210930 11:11:12.824"/>
+</kw>
+<kw name="Submit Login Button" library="resources">
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:11:12.826" endtime="20210930 11:11:14.226"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:12.826" endtime="20210930 11:11:14.226"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:12.825" endtime="20210930 11:11:14.226"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<doc>Get element location</doc>
+<msg timestamp="20210930 11:11:16.630" level="INFO">Element '//android.widget.TextView[@text='Login']' location: {'x': 485, 'y': 1496} </msg>
+<status status="PASS" starttime="20210930 11:11:14.226" endtime="20210930 11:11:16.630"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:11:16.635" level="INFO">Clicking element '//android.widget.TextView[@text='Login']'.</msg>
+<status status="PASS" starttime="20210930 11:11:16.631" endtime="20210930 11:11:22.249"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:16.631" endtime="20210930 11:11:22.249"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:16.630" endtime="20210930 11:11:22.249"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:12.824" endtime="20210930 11:11:22.249"/>
+</kw>
+<kw name="Handle Login Failed" library="resources">
+<arg>${LOGIN_FAILED_INVALID_CREDENTIALS}</arg>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_FAILED}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:11:22.251" endtime="20210930 11:11:23.396"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:22.250" endtime="20210930 11:11:23.396"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:22.250" endtime="20210930 11:11:23.396"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${DISPLAY_MESSAGE}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:11:23.397" endtime="20210930 11:11:23.961"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:23.397" endtime="20210930 11:11:23.961"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:23.396" endtime="20210930 11:11:23.962"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>${OK_BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:11:23.967" level="INFO">Clicking element '//android.widget.TextView[@text='Ok']'.</msg>
+<status status="PASS" starttime="20210930 11:11:23.963" endtime="20210930 11:11:27.429"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:23.963" endtime="20210930 11:11:27.429"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:23.962" endtime="20210930 11:11:27.429"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:22.249" endtime="20210930 11:11:27.429"/>
+</kw>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:11:27.430" endtime="20210930 11:11:29.332"/>
+</kw>
+<doc>This is to be able to check a negative test case for a wrong email and valid password fields.</doc>
+<tag>invalid_credentials</tag>
+<tag>negative</tag>
+<status status="PASS" starttime="20210930 11:10:52.004" endtime="20210930 11:11:29.332"/>
+</test>
+<test id="s1-s2-t4" name="Login positive test case">
+<kw name="Launch Application" library="AppiumLibrary" type="SETUP">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:11:29.337" endtime="20210930 11:11:34.255"/>
+</kw>
+<kw name="Sign with User" library="resources">
+<arg>${USER_DETAILS}[email]</arg>
+<arg>${USER_DETAILS}[password]</arg>
+<kw name="Input User Email" library="resources">
+<arg>${EMAIL}</arg>
+<kw name="Verify Login Email Field Displayed" library="resources">
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_EMAIL_FIELD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:11:34.259" endtime="20210930 11:11:40.120"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:34.259" endtime="20210930 11:11:40.120"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:34.258" endtime="20210930 11:11:40.120"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:34.257" endtime="20210930 11:11:40.120"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Input Text</arg>
+<arg>${LOGIN_EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210930 11:11:40.126" level="INFO">Typing text 'eabalos40@yahoo.com' into text field '//android.widget.EditText[@text='Email']'</msg>
+<status status="PASS" starttime="20210930 11:11:40.122" endtime="20210930 11:11:44.758"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:40.121" endtime="20210930 11:11:44.758"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:40.120" endtime="20210930 11:11:44.759"/>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
+a particular key, ex. `Done`. In Android, no parameters are used.</doc>
+<status status="PASS" starttime="20210930 11:11:44.759" endtime="20210930 11:11:44.849"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:34.257" endtime="20210930 11:11:44.849"/>
+</kw>
+<kw name="Input User Password" library="resources">
+<arg>${USERPASSWORD}</arg>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:11:44.851" endtime="20210930 11:11:45.336"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:44.851" endtime="20210930 11:11:45.336"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:44.850" endtime="20210930 11:11:45.337"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Input Text</arg>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${USERPASSWORD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210930 11:11:45.342" level="INFO">Typing text 'Password@123' into text field '//android.widget.EditText[@text='']'</msg>
+<status status="PASS" starttime="20210930 11:11:45.338" endtime="20210930 11:11:48.792"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:45.338" endtime="20210930 11:11:48.792"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:45.337" endtime="20210930 11:11:48.792"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:44.849" endtime="20210930 11:11:48.792"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:34.256" endtime="20210930 11:11:48.793"/>
+</kw>
+<kw name="Submit Login Button" library="resources">
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:11:48.795" endtime="20210930 11:11:49.337"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:48.794" endtime="20210930 11:11:49.337"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:48.793" endtime="20210930 11:11:49.337"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<doc>Get element location</doc>
+<msg timestamp="20210930 11:11:52.234" level="INFO">Element '//android.widget.TextView[@text='Login']' location: {'x': 485, 'y': 1496} </msg>
+<status status="PASS" starttime="20210930 11:11:49.338" endtime="20210930 11:11:52.234"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>${LOGIN_SIGNIN_BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:11:52.239" level="INFO">Clicking element '//android.widget.TextView[@text='Login']'.</msg>
+<status status="PASS" starttime="20210930 11:11:52.235" endtime="20210930 11:11:55.843"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:52.235" endtime="20210930 11:11:55.843"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:52.234" endtime="20210930 11:11:55.843"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:48.793" endtime="20210930 11:11:55.843"/>
+</kw>
+<kw name="Logout with User" library="resources">
+<kw name="Click The Logout Button" library="resources">
+<kw name="Click The Hamburger" library="resources">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${HAMBURGER_ICON}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:11:55.845" endtime="20210930 11:11:56.439"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${HAMBURGER_ICON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:11:56.443" level="INFO">Clicking element '//android.view.ViewGroup//android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20210930 11:11:56.439" endtime="20210930 11:12:00.559"/>
+</kw>
+<status status="PASS" starttime="20210930 11:11:55.845" endtime="20210930 11:12:00.560"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGOUT_TAB}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20210930 11:12:07.064" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="1920"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1920]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.easytripapp" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1920]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.easytripapp" class="android.widget.LinearLayout" text="" resource-id="com.easytripapp:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+            &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="1" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="1" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                            &lt;android.view.ViewGroup index="1" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,430]" displayed="true"&gt;
+                                  &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][180,219]" displayed="true"&gt;
+                                    &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[45,84][135,174]" displayed="true" /&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                  &lt;android.widget.TextView index="1" package="com.easytripapp" class="android.widget.TextView" text="Elvin Abalos" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[347,87][688,172]" displayed="true" /&gt;
+                                  &lt;android.view.ViewGroup index="2" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[855,63][1080,195]" displayed="true"&gt;
+                                    &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[902,63][1033,195]" displayed="true" /&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                  &lt;android.widget.HorizontalScrollView index="3" package="com.easytripapp" class="android.widget.HorizontalScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,205][1080,355]" displayed="true"&gt;
+                                    &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,205][1080,355]" displayed="true"&gt;
+                                      &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,205][1080,355]" displayed="true"&gt;
+                                        &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,205][1080,355]" displayed="true"&gt;
+                                          &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,231][1080,330]" displayed="true"&gt;
+                                            &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="Check if your account is registered via " checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[135,231][850,330]" displayed="true" /&gt;
+                                            &lt;android.view.ViewGroup index="1" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[850,231][946,330]" displayed="true"&gt;
+                                              &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="SeRF" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[850,231][946,330]" displayed="true" /&gt;
+                                            &lt;/android.view.ViewGroup&gt;
+                                          &lt;/android.view.ViewGroup&gt;
+                                        &lt;/android.view.ViewGroup&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                  &lt;/android.widget.HorizontalScrollView&gt;
+                                  &lt;android.view.ViewGroup index="4" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[488,363][511,385]" displayed="true" /&gt;
+                                  &lt;android.view.ViewGroup index="5" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[529,363][551,385]" displayed="true" /&gt;
+                                  &lt;android.view.ViewGroup index="6" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[569,363][592,385]" displayed="true" /&gt;
+                                  &lt;android.widget.ImageView index="7" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,402][1080,430]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="1" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,430][1080,1710]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="No Available Vehicles" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[341,936][740,993]" displayed="true" /&gt;
+                                  &lt;android.view.ViewGroup index="1" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[30,1530][1050,1680]" displayed="true"&gt;
+                                    &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="Add Vehicle" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[30,1577][1050,1634]" displayed="true" /&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="2" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1710][1080,1920]" displayed="true"&gt;
+                                  &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1710][1080,1920]" displayed="true"&gt;
+                                    &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1710][1080,1920]" displayed="true" /&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.view.ViewGroup&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.view.ViewGroup&gt;
+            &lt;/android.widget.FrameLayout&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210930 11:12:08.314" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210930 11:12:07.065" endtime="20210930 11:12:08.315"/>
+</kw>
+<msg timestamp="20210930 11:12:08.315" level="FAIL">Element '//android.view.ViewGroup[@index=3]' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20210930 11:12:00.561" endtime="20210930 11:12:08.315"/>
+</kw>
+<msg timestamp="20210930 11:12:08.315" level="FAIL">Keyword 'Wait Until Page Contains Element' failed after retrying for 5 seconds. The last error was: Element '//android.view.ViewGroup[@index=3]' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20210930 11:12:00.561" endtime="20210930 11:12:08.315"/>
+</kw>
+<status status="FAIL" starttime="20210930 11:12:00.560" endtime="20210930 11:12:08.316"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>${LOGOUT_TAB}</arg>
+<status status="NOT RUN" starttime="20210930 11:12:08.316" endtime="20210930 11:12:08.316"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${CONFIRM_BUTTON}</arg>
+<status status="NOT RUN" starttime="20210930 11:12:08.316" endtime="20210930 11:12:08.316"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>${CONFIRM_BUTTON}</arg>
+<status status="NOT RUN" starttime="20210930 11:12:08.316" endtime="20210930 11:12:08.316"/>
+</kw>
+<status status="FAIL" starttime="20210930 11:11:55.844" endtime="20210930 11:12:08.317"/>
+</kw>
+<kw name="Verify Login Email Field Displayed" library="resources">
+<status status="NOT RUN" starttime="20210930 11:12:08.317" endtime="20210930 11:12:08.317"/>
+</kw>
+<status status="FAIL" starttime="20210930 11:11:55.844" endtime="20210930 11:12:08.317"/>
+</kw>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:12:08.317" endtime="20210930 11:12:09.698"/>
+</kw>
+<tag>sanity</tag>
+<status status="FAIL" starttime="20210930 11:11:29.334" endtime="20210930 11:12:09.698">Keyword 'Wait Until Page Contains Element' failed after retrying for 5 seconds. The last error was: Element '//android.view.ViewGroup[@index=3]' did not appear in 5 seconds</status>
+</test>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210930 11:12:09.702" endtime="20210930 11:12:11.073"/>
+</kw>
+<doc>A test case for a user is able to log in and check the validation messages</doc>
+<status status="FAIL" starttime="20210930 11:09:47.455" endtime="20210930 11:12:11.073"/>
+</suite>
+<suite id="s1-s3" name="login with FB" source="/Users/qatest/PycharmProjects/AndroidProject/Tests/myeasytrip/Android/login_with_FB.robot">
+<kw name="Open Myeasytrip Application" library="resources" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=4SPRMFUGIRBQ4PKR</arg>
+<arg>appPackage=${MYEASYTRIP-APPLICATION-ID}</arg>
+<arg>appActivity=${MYEASYTRIP-APPLICATION-ACTIVITY}</arg>
+<arg>automationName=Uiautomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210930 11:12:11.089" endtime="20210930 11:12:24.633"/>
+</kw>
+<status status="PASS" starttime="20210930 11:12:11.089" endtime="20210930 11:12:24.633"/>
+</kw>
+<test id="s1-s3-t1" name="Login with Facebook test case">
+<kw name="Launch Application" library="AppiumLibrary" type="SETUP">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:12:24.636" endtime="20210930 11:12:30.088"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${LOGIN_WITH_FACEBOOK_BUTTON}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20210930 11:12:36.651" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="1920"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1920]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.easytripapp" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1920]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.easytripapp" class="android.widget.LinearLayout" text="" resource-id="com.easytripapp:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+            &lt;android.widget.FrameLayout index="0" package="com.easytripapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                            &lt;android.widget.ScrollView index="0" package="com.easytripapp" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,54][1080,1920]" displayed="true"&gt;
+                                &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,204][990,590]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="1" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,710][990,920]" displayed="true"&gt;
+                                  &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[165,769][258,862]" displayed="true" /&gt;
+                                  &lt;android.widget.EditText index="1" package="com.easytripapp" class="android.widget.EditText" text="Email" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[303,740][933,890]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="2" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,980][990,1190]" displayed="true"&gt;
+                                  &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[165,1039][258,1132]" displayed="true" /&gt;
+                                  &lt;android.widget.EditText index="1" package="com.easytripapp" class="android.widget.EditText" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="true" scrollable="false" selected="false" bounds="[303,1012][855,1159]" displayed="true" /&gt;
+                                  &lt;android.view.ViewGroup index="2" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[855,1033][960,1138]" displayed="true"&gt;
+                                    &lt;android.widget.ImageView index="0" package="com.easytripapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[870,1048][945,1123]" displayed="true" /&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="3" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[383,1220][697,1273]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="Forgot Password?" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[383,1220][697,1273]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="4" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[317,1288][734,1421]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[317,1318][389,1391]" displayed="true" /&gt;
+                                  &lt;android.widget.TextView index="1" package="com.easytripapp" class="android.widget.TextView" text="Remember Me" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[419,1328][674,1381]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="5" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,1436][990,1616]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="Login" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[485,1496][596,1557]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="6" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,1646][990,1826]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="Login with Facebook" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[333,1706][747,1767]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.view.ViewGroup index="7" package="com.easytripapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[90,1856][990,1920]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.easytripapp" class="android.widget.TextView" text="Quick Balance" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[398,1916][683,1920]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.widget.ScrollView&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.view.ViewGroup&gt;
+            &lt;/android.widget.FrameLayout&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210930 11:12:37.924" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210930 11:12:36.651" endtime="20210930 11:12:37.924"/>
+</kw>
+<msg timestamp="20210930 11:12:37.925" level="FAIL">Element '//android.widget.TextView[@text='Login with Facebook']' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20210930 11:12:30.088" endtime="20210930 11:12:37.925"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Click Element</arg>
+<arg>${LOGIN_WITH_FACEBOOK_BUTTON}</arg>
+<status status="NOT RUN" starttime="20210930 11:12:37.925" endtime="20210930 11:12:37.925"/>
+</kw>
+<kw name="Logout with User" library="resources">
+<status status="NOT RUN" starttime="20210930 11:12:37.925" endtime="20210930 11:12:37.926"/>
+</kw>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:12:37.926" endtime="20210930 11:12:39.433"/>
+</kw>
+<tag>sanity</tag>
+<status status="FAIL" starttime="20210930 11:12:24.634" endtime="20210930 11:12:39.433">Element '//android.widget.TextView[@text='Login with Facebook']' did not appear in 5 seconds</status>
+</test>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210930 11:12:39.437" endtime="20210930 11:12:40.676"/>
+</kw>
+<doc>A test case for user is able to login with facebook</doc>
+<status status="FAIL" starttime="20210930 11:12:11.077" endtime="20210930 11:12:40.676"/>
+</suite>
+<suite id="s1-s4" name="Quick Balance" source="/Users/qatest/PycharmProjects/AndroidProject/Tests/myeasytrip/Android/quick_balance.robot">
+<kw name="Open Myeasytrip Application" library="resources" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=4SPRMFUGIRBQ4PKR</arg>
+<arg>appPackage=${MYEASYTRIP-APPLICATION-ID}</arg>
+<arg>appActivity=${MYEASYTRIP-APPLICATION-ACTIVITY}</arg>
+<arg>automationName=Uiautomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210930 11:12:40.691" endtime="20210930 11:12:54.982"/>
+</kw>
+<status status="PASS" starttime="20210930 11:12:40.690" endtime="20210930 11:12:54.983"/>
+</kw>
+<test id="s1-s4-t1" name="User should be able to check the balance">
+<kw name="Launch Application" library="AppiumLibrary" type="SETUP">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:12:54.986" endtime="20210930 11:12:59.932"/>
+</kw>
+<kw name="Tap The Element" library="resources">
+<arg>${QUICK_BALANCE_BUTTON}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:12:59.933" endtime="20210930 11:13:05.891"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:13:05.897" level="INFO">Clicking element '//android.view.ViewGroup[@index=7]'.</msg>
+<status status="PASS" starttime="20210930 11:13:05.892" endtime="20210930 11:13:10.665"/>
+</kw>
+<status status="PASS" starttime="20210930 11:12:59.932" endtime="20210930 11:13:10.665"/>
+</kw>
+<kw name="Input Account number" library="resources">
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${ACCOUNT_NUMBER_FIELD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:13:10.667" endtime="20210930 11:13:12.975"/>
+</kw>
+<status status="PASS" starttime="20210930 11:13:10.667" endtime="20210930 11:13:12.976"/>
+</kw>
+<status status="PASS" starttime="20210930 11:13:10.666" endtime="20210930 11:13:12.976"/>
+</kw>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Input Text</arg>
+<arg>${ACCOUNT_NUMBER_FIELD}</arg>
+<arg>${ACCOUNT_NUMBER}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210930 11:13:12.983" level="INFO">Typing text '520010187228' into text field '//android.view.ViewGroup//android.widget.EditText[@index=0]'</msg>
+<status status="PASS" starttime="20210930 11:13:12.978" endtime="20210930 11:13:17.669"/>
+</kw>
+<status status="PASS" starttime="20210930 11:13:12.977" endtime="20210930 11:13:17.669"/>
+</kw>
+<status status="PASS" starttime="20210930 11:13:12.976" endtime="20210930 11:13:17.669"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${CHECK_BALANCE_BUTTON}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:13:17.669" endtime="20210930 11:13:18.446"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${CHECK_BALANCE_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:13:18.452" level="INFO">Clicking element '//android.widget.TextView[@text='Check Balance']'.</msg>
+<status status="PASS" starttime="20210930 11:13:18.446" endtime="20210930 11:13:22.601"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text='OK']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:13:22.601" endtime="20210930 11:13:25.269"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text='OK']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:13:25.273" level="INFO">Clicking element '//android.widget.TextView[@text='OK']'.</msg>
+<status status="PASS" starttime="20210930 11:13:25.269" endtime="20210930 11:13:28.129"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${CLOSE_BUTTON}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20210930 11:13:28.129" endtime="20210930 11:13:29.357"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${CLOSE_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210930 11:13:29.363" level="INFO">Clicking element '//android.widget.TextView[@text='Close']'.</msg>
+<status status="PASS" starttime="20210930 11:13:29.357" endtime="20210930 11:13:33.340"/>
+</kw>
+<status status="PASS" starttime="20210930 11:13:10.666" endtime="20210930 11:13:33.340"/>
+</kw>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210930 11:13:33.341" endtime="20210930 11:13:35.203"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20210930 11:12:54.983" endtime="20210930 11:13:35.203"/>
+</test>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210930 11:13:35.207" endtime="20210930 11:13:36.447"/>
+</kw>
+<doc>A test case for user should be able to check the balance</doc>
+<status status="PASS" starttime="20210930 11:12:40.679" endtime="20210930 11:13:36.447"/>
+</suite>
+<suite id="s1-s5" name="Sign Up" source="/Users/qatest/PycharmProjects/AndroidProject/Tests/myeasytrip/Android/sign_up.robot">
+<test id="s1-s5-t1" name="Login test case">
+<kw name="Open Myeasytrip Application" library="resources">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=4SPRMFUGIRBQ4PKR</arg>
+<arg>appPackage=${MYEASYTRIP-APPLICATION-ID}</arg>
+<arg>appActivity=${MYEASYTRIP-APPLICATION-ACTIVITY}</arg>
+<arg>automationName=Uiautomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210930 11:13:36.464" endtime="20210930 11:13:50.235"/>
+</kw>
+<status status="PASS" starttime="20210930 11:13:36.464" endtime="20210930 11:13:50.236"/>
+</kw>
+<kw name="Sign Up with User" library="resources">
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210930 11:13:52.237" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210930 11:13:50.236" endtime="20210930 11:13:52.237"/>
+</kw>
+<kw name="Scroll" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Email']</arg>
+<arg>xpath=//android.widget.TextView[@text='Email']</arg>
+<doc>Scrolls from one element to another
+Key attributes for arbitrary elements are `id` and `name`. See
+`introduction` for details about locating elements.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210930 11:13:53.482" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210930 11:13:52.556" endtime="20210930 11:13:53.482"/>
+</kw>
+<msg timestamp="20210930 11:13:53.485" level="FAIL">ValueError: Element locator 'xpath=//android.widget.TextView[@text='Email']' did not match any elements.</msg>
+<status status="FAIL" starttime="20210930 11:13:52.237" endtime="20210930 11:13:53.485"/>
+</kw>
+<status status="FAIL" starttime="20210930 11:13:50.236" endtime="20210930 11:13:53.486"/>
+</kw>
+<status status="FAIL" starttime="20210930 11:13:36.461" endtime="20210930 11:13:53.487">ValueError: Element locator 'xpath=//android.widget.TextView[@text='Email']' did not match any elements.</status>
+</test>
+<doc>A test case for user is able to login
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="FAIL" starttime="20210930 11:13:36.451" endtime="20210930 11:13:53.491"/>
+</suite>
+<status status="FAIL" starttime="20210930 11:08:41.854" endtime="20210930 11:13:53.497"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">empty</stat>
+<stat pass="2" fail="0" skip="0">invalid_credentials</stat>
+<stat pass="2" fail="1" skip="0">negative</stat>
+<stat pass="1" fail="2" skip="0">sanity</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="5" fail="4" skip="0" id="s1" name="Android">Android</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Forgot Password">Android.Forgot Password</stat>
+<stat pass="2" fail="2" skip="0" id="s1-s2" name="Login">Android.Login</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s3" name="login with FB">Android.login with FB</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="Quick Balance">Android.Quick Balance</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s5" name="Sign Up">Android.Sign Up</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210930 11:09:38.007" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+</errors>
+</robot>
