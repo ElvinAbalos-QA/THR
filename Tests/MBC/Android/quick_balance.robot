@@ -15,7 +15,7 @@ User should be able to check the balance
     Input Account Number
 
 #    Click Element
-# Open myeasytrip app
+# Open MBC app
 # Sign With User
     # Input Email
     # Input Password

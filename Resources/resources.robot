@@ -6,29 +6,26 @@ Library     Browser
 *** Variables ***
 
 #*** Test variables ***
-&{USER_DETAILS}               email=eabalos40@yahoo.com     wrong_email=adonisyes@mailinator.com    password=Password@123   wrong_password=wrongpassword
+&{USER_DETAILS}               email=bliimocheck@mailinator.com     wrong_email=adonisyes@mailinator.com    password=Password@123   wrong_password=wrongpassword
 &{USER_DETAILS_2}               email=bliimo@mailinator.com    password=Password@123
 
 
 # *** Login Failed ***
-${LOGIN_FAILED}                 //android.widget.TextView[@text='Login Failed']
-${OK_BUTTON}                    //android.widget.TextView[@text='Ok']
+${LOGIN_FAILED}                 //android.widget.TextView[@text='ERROR']
+${OK_BUTTON}                    //android.widget.TextView[@text='OK']
 ${LOGIN_FAILED_EMPTY}      //android.widget.TextView[@text='Fields should not be empty. Please note that your myeasytrip app username and password is different from myeastrip web. Please try again.']
-${LOGIN_FAILED_INVALID_CREDENTIALS}      //android.widget.TextView[@text='Invalid credentials. Please note that your myeasytrip app username and password is different from myeastrip web. Please try again.']
-
-
+${LOGIN_FAILED_INVALID_CREDENTIALS}      //android.widget.TextView[@text='Log in failed! Invalid email or password.']
 
 #*** APPLICATION Variables ***
-${MYEASYTRIP-APPLICATION-ID}              com.easytripapp
-${MYEASYTRIP-APPLICATION-ACTIVITY}        ${MYEASYTRIP-APPLICATION-ID}.MainActivity
+${MBC-APPLICATION-ID}              com.mbcapp
+${MBC-APPLICATION-ACTIVITY}        ${MBC-APPLICATION-ID}.MainActivity
 
 #*** Login Page ***
 ${LOGIN_EMAIL_FIELD}            //android.widget.EditText[@text='Email']
 ${LOGIN_PASSWORD_FIELD}         //android.widget.EditText[@text='']
-${LOGIN_SIGNIN_BUTTON}          //android.widget.TextView[@text='Login']
+${LOGIN_BUTTON}          //android.widget.TextView[@text='LOG IN']
 #${LOGIN_WITH_FACEBOOK_BUTTON}       //android.view.ViewGroup[@index=6]
 ${LOGIN_WITH_FACEBOOK_BUTTON}       //android.widget.TextView[@text='Login with Facebook']
-
 
 #*** Dashboard Page ***
 ${PROFILE_ICON}                 //android.view.ViewGroup[@index=2]//android.widget.ImageView[@index=0]
@@ -71,10 +68,10 @@ Run Keyword Until Success
     [Arguments]    ${KW}    @{KWARGS}
     Wait Until Keyword Succeeds    5s      1s  ${KW}    @{KWARGS}
 
-Open Myeasytrip Application
-    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=4SPRMFUGIRBQ4PKR    appPackage=${MYEASYTRIP-APPLICATION-ID}      appActivity=${MYEASYTRIP-APPLICATION-ACTIVITY}      automationName=Uiautomator2
+Open MBC Application
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=4SPRMFUGIRBQ4PKR    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      automationName=Uiautomator2
 
-Open Myeasytrip Application IOS
+Open MBC Application IOS
     Open Application    http://localhost:4723/wd/hub    platformName=iOS	platformVersion=14.4	deviceName=iPhone 8    automationName=XCUITest      bundleId=ph.easytrip.mobile.app
 
 Sign with User
@@ -126,9 +123,9 @@ Input User Password
     Run Keyword Until Success       Input Text        ${LOGIN_PASSWORD_FIELD}     ${USERPASSWORD}
 
 Submit Login Button
-    Run Keyword Until Success       Wait Until Page Contains Element     ${LOGIN_SIGNIN_BUTTON}
-    Get Element Location            ${LOGIN_SIGNIN_BUTTON}
-    Run Keyword Until Success       Click Element     ${LOGIN_SIGNIN_BUTTON}
+    Run Keyword Until Success       Wait Until Page Contains Element     ${LOGIN_BUTTON}
+    Get Element Location            ${LOGIN_BUTTON}
+    Run Keyword Until Success       Click Element     ${LOGIN_BUTTON}
 
 Handle Login Failed
     [Arguments]     ${DISPLAY_MESSAGE}

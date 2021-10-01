@@ -35,7 +35,7 @@ Login negative test case
 #    Close Application
 
 
-# Open myeasytrip app
+# Open MBC app
 # Sign With User
     # Input Email
     # Input Password

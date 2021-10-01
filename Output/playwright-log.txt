@@ -1,12 +1,1 @@
-{"level":30,"time":"2021-09-30T03:08:43.408Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"Listening on 55451"}
-{"level":30,"time":"2021-09-30T03:09:39.318Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"currentBrowser: [object Object]"}
-{"level":30,"time":"2021-09-30T03:09:39.345Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"Changed active context"}
-{"level":30,"time":"2021-09-30T03:09:39.355Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"currentBrowser: [object Object]"}
-{"level":30,"time":"2021-09-30T03:09:40.307Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"Video path: undefined"}
-{"level":30,"time":"2021-09-30T03:09:40.307Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"Changed active page"}
-{"level":30,"time":"2021-09-30T03:09:46.162Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"Changed active context"}
-{"level":30,"time":"2021-09-30T03:09:46.165Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"Changing current active page"}
-{"level":30,"time":"2021-09-30T03:09:46.165Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"Changed active page"}
-{"level":30,"time":"2021-09-30T03:09:46.205Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"Changed active context"}
-{"level":30,"time":"2021-09-30T03:09:46.205Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"Changing current active page"}
-{"level":30,"time":"2021-09-30T03:09:46.206Z","pid":3249,"hostname":"QAs-MacBook-Pro","msg":"Changed active page"}
+{"level":30,"time":"2021-10-01T09:04:58.750Z","pid":7594,"hostname":"QAs-MacBook-Pro","msg":"Listening on 61105"}

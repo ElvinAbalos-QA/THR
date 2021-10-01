@@ -15,7 +15,7 @@ Login with Facebook test case
     Run Keyword Until Success    Click Element    ${LOGIN_WITH_FACEBOOK_BUTTON}
     Logout With User
 
-# Open myeasytrip app
+# Open MBC app
 # Sign With User
     # Input Email
     # Input Password

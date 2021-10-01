@@ -12,7 +12,7 @@ Login test case
     Open Myeasytrip Application
     Sign Up with User
 
-# Open myeasytrip app
+# Open MBC app
 # Sign With User
     # Input Email
     # Input Password

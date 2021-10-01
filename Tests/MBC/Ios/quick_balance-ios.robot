@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation     A test case for user is able to login
+Documentation     A test case for user is able to check balance
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
@@ -9,11 +9,11 @@ Resource          ../../../Resources/variables.robot
 
 *** Test Cases ***
 
-Login test case
+Quick Balance test case
     Open Myeasytrip Application
-    Sign Up with User
+    Check Quick Balance
 
-# Open myeasytrip app
+# Open MBC app
 # Sign With User
     # Input Email
     # Input Password
