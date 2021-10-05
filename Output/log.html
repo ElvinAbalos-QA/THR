@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 4.0.3 (Python 3.9.2 on darwin)" name="Generator">
+<meta content="Robot Framework 4.1.1 (Python 3.9.7 on darwin)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -588,10 +588,10 @@ function drawCallback(element, childElement, childrenNames) {
     }
 }
 function expandSuite(suite) {
-    if (suite.status == "PASS")
-        expandElement(suite);
-    else
+    if (suite.status == "FAIL")
         expandFailed(suite);
+    else
+        expandElement(suite);
 }
 function expandElement(item, retryCount) {
     retryCount = typeof retryCount !== 'undefined' ? retryCount : 3;
@@ -1388,7 +1388,10 @@ window.testdata = function () {
     function createBodyItem(parent, element, strings, index) {
         if (element[0] == MESSAGE_TYPE)
             return createMessage(element, strings);
-        return createKeyword(parent, element, strings, index);
+        var messages = util.filter(parent.children(), function (child) {
+            return child.type == 'message';
+        })
+        return createKeyword(parent, element, strings, index - messages.length);
     }
     function createKeyword(parent, element, strings, index) {
         var kw = model.Keyword({
@@ -1796,31 +1799,31 @@ function stopPropagation(event) {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,4,[],[1,0,68953],[],[[5,0,6,[7,8],[1,14005,53983],[[1,9,10,0,11,0,0,0,[1,14009,4355],[]],[0,12,13,0,14,15,0,0,[1,18365,3001],[[8,21366,2,16]]],[0,17,18,0,0,0,0,0,[1,21367,16601],[[0,19,18,0,0,20,0,0,[1,21367,5867],[[0,21,13,0,22,23,0,0,[1,21368,5866],[[0,24,10,0,25,26,0,0,[1,21369,5865],[]]]]]],[0,27,10,0,28,29,0,0,[1,27234,2550],[[8,29784,2,30]]],[0,19,18,0,0,31,0,0,[1,29784,8184],[[0,21,13,0,22,23,0,0,[1,29785,8183],[[0,32,10,0,33,26,0,0,[1,29786,8182],[[8,29790,2,34]]]]]]]]],[0,35,18,0,0,36,0,0,[1,37969,11496],[[0,37,18,0,0,38,0,0,[1,37970,7045],[[0,39,18,0,0,0,0,0,[1,37970,1618],[[0,19,18,0,0,40,0,0,[1,37971,1617],[[0,21,13,0,22,23,0,0,[1,37972,1615],[[0,24,10,0,25,26,0,0,[1,37972,1615],[]]]]]]]],[0,19,18,0,0,41,0,0,[1,39588,5323],[[0,21,13,0,22,23,0,0,[1,39589,5322],[[0,42,10,0,43,26,0,0,[1,39590,5321],[[8,39595,2,44]]]]]]],[0,45,10,0,46,0,0,0,[1,44911,104],[]]]],[0,47,18,0,0,48,0,0,[1,45015,4450],[[0,19,18,0,0,49,0,0,[1,45016,519],[[0,21,13,0,22,23,0,0,[1,45017,518],[[0,24,10,0,25,26,0,0,[1,45017,518],[]]]]]],[0,19,18,0,0,50,0,0,[1,45535,3930],[[0,21,13,0,22,23,0,0,[1,45536,3928],[[0,42,10,0,43,26,0,0,[1,45536,3928],[[8,45540,2,51]]]]]]]]]]],[0,17,18,0,0,0,0,0,[1,49466,7610],[[0,19,18,0,0,20,0,0,[1,49466,696],[[0,21,13,0,22,23,0,0,[1,49467,695],[[0,24,10,0,25,26,0,0,[1,49468,694],[]]]]]],[0,27,10,0,28,29,0,0,[1,50162,2884],[[8,53046,2,30]]],[0,19,18,0,0,31,0,0,[1,53046,4030],[[0,21,13,0,22,23,0,0,[1,53047,4029],[[0,32,10,0,33,26,0,0,[1,53047,4029],[[8,53052,2,34]]]]]]]]],[0,52,18,0,0,53,0,0,[1,57077,8545],[[0,19,18,0,0,54,0,0,[1,57077,581],[[0,21,13,0,22,23,0,0,[1,57078,580],[[0,24,10,0,25,26,0,0,[1,57079,579],[]]]]]],[0,19,18,0,0,55,0,0,[1,57658,959],[[0,21,13,0,22,23,0,0,[1,57659,958],[[0,24,10,0,25,26,0,0,[1,57659,958],[]]]]]],[0,19,18,0,0,56,0,0,[1,58617,7005],[[0,21,13,0,22,23,0,0,[1,58618,7004],[[0,32,10,0,33,26,0,0,[1,58619,7003],[[8,58624,2,57]]]]]]]]],[2,58,10,0,59,0,0,0,[1,65623,2365],[]]]]],[[1,60,18,0,0,0,0,0,[1,1704,12301],[[0,61,10,0,62,63,0,0,[1,1704,12300],[]]]],[2,64,10,0,65,0,0,0,[1,67993,960],[]]],[1,1,0,0]];
+window.output["suite"] = [1,2,3,4,[],[0,0,33589,5],[],[[6,0,7,[8,9],[0,33432,8,10],[]],[11,0,12,[8,9],[0,33446,6,10],[]]],[[1,13,14,0,0,0,0,0,[0,1892,31539],[[0,15,16,0,17,18,0,0,[0,1893,31535],[[0,19,16,0,20,0,0,0,[0,33402,10],[[8,33412,5,21]]],[8,33419,3,23],[8,33426,5,24]]]]],[2,25,16,0,26,0,0,0,[0,33542,44,21],[[0,19,16,0,20,0,0,0,[0,33543,14],[[8,33557,5,21]]],[8,33566,3,23],[8,33586,5,21]]]],[2,0,2,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Login","*/Users/qatest/Desktop/MOBILE/MBC-APP/Tests/MBC/Android/login.robot","*../Tests/MBC/Android/login.robot","*<p>A test case for a user is able to log in and check the validation messages\x3c/p>","*Login negative valid email and wrong password test case","*<p>This is to be able to check a negative test case for a valid email and wrong password fields.\x3c/p>","*invalid_credentials","*negative","*Launch Application","*AppiumLibrary","*<p>Launch application. Application can be launched while Appium session running. This keyword can be used to launch application during test case or between test cases.\x3c/p>","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*3","*Slept 3 seconds","*Submit Login Button","*resources","*Run Keyword Until Success","*Wait Until Page Contains Element, ${LOGIN_BUTTON}","*Wait Until Keyword Succeeds","*<p>Runs the specified keyword and retries if it fails.\x3c/p>","*5s, 1s, ${KW}, @{KWARGS}","*Wait Until Page Contains Element","*<p>Waits until element specified with `locator` appears on current page.\x3c/p>","*@{KWARGS}","*Get Element Location","*<p>Get element location\x3c/p>","*${LOGIN_BUTTON}","*Element '//android.widget.TextView[@text='LOG IN']' location: {'x': 458, 'y': 1300} ","*Click Element, ${LOGIN_BUTTON}","*Click Element","*<p>Click element identified by `locator`.\x3c/p>","*Clicking element '//android.widget.TextView[@text='LOG IN']'.","*Sign with User","*${USER_DETAILS}[email], ${USER_DETAILS}[wrong_password]","*Input User Email","*${EMAIL}","*Verify Login Email Field Displayed","*Wait Until Page Contains Element, ${LOGIN_EMAIL_FIELD}","*Input Text, ${LOGIN_EMAIL_FIELD}, ${EMAIL}","*Input Text","*<p>Types the given `text` into text field identified by `locator`.\x3c/p>","*Typing text 'bliimocheck@mailinator.com' into text field '//android.widget.EditText[@text='Email']'","*Hide Keyboard","*<p>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press a particular key, ex. `Done`. In Android, no parameters are used.\x3c/p>","*Input User Password","*${USERPASSWORD}","*Wait Until Page Contains Element, ${LOGIN_PASSWORD_FIELD}","*Input Text, ${LOGIN_PASSWORD_FIELD}, ${USERPASSWORD}","*Typing text 'wrongpassword' into text field '//android.widget.EditText[@text='']'","*Handle Login Failed","*${LOGIN_FAILED_INVALID_CREDENTIALS}","*Wait Until Page Contains Element, ${LOGIN_FAILED}","*Wait Until Page Contains Element, ${DISPLAY_MESSAGE}","*Click Element, ${OK_BUTTON}","*Clicking element '//android.widget.TextView[@text='OK']'.","*Quit Application","*<p>Quit application. Application can be quit while Appium session is kept alive. This keyword can be used to close application during test case or between test cases.\x3c/p>","*Open MBC Application","*Open Application","eNq1UU1PwzAMvfMrrJ63RlxRFmmCKxoSJ07ISbw2InUiJ93+Pi3d1A3OXPzx/N6z4uhsDpm4AALTGTDnGBzWkBhqgi6ciGGfcxgHKCQnkhaeMaMNMdRABdJx1qzjDezZSwoekD2Ew/sG3iJhIXA9uS/QCL3Qcdf0tebypFQXaj/a1qVBLUbXZGOyasBSSZRPrihidZZpK3dbGZnnfKEuq7coXWkH35j/89YKjVbZPOiKNhLYJJ5k1zw2MyRz8Ebb6abzCbWyE3tCrvArcvsHfKHiJPwWqMXtYik0pEqfo8RV+kFlbe7+CFbevQ3GgDciTmt9O1pE6ueJ5htaB7wi","*<a href=\"http://localhost:4723/wd/hub\">http://localhost:4723/wd/hub\x3c/a>, platformName=Android, deviceName=4SPRMFUGIRBQ4PKR, appPackage=${MBC-APPLICATION-ID}, appActivity=${MBC-APPLICATION-ACTIVITY}, automationName=Uiautomator2","*Close Application","*<p>Closes the current application and also close webdriver session.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Login","*/Users/qa_tester/Desktop/MBC-APP/Tests/MBC/Android/login.robot","*../Tests/MBC/Android/login.robot","*<p>A test case for a user is able to log in and check the validation messages\x3c/p>","eNq9U01v2zAMvedXEL34ZMtbkg0NugJBFmADmmzox3ocaJmJidqSR9FN8+8nO846rPf5YMnW49PjI3nXsRIE0q6FHXJN5WLySMVn4WeS9YulVtm7BWwoBNzTApYOOvfk/MHFKImgNHBJQCJewFvbiVAJhypSQSvexjh2e9CKwPqmQVdm8E14zw7rU9QCVuicVwiKogMyidCsKSy2bQLxVbPFXkcGPziwwhVCJbT7dFGptmFhzJ616ooshpkI5+7PUtS+MA0GJTGlt8GQMwdhjZpS6Zzr13OEK8VzadAqP7Me00FP12ZNeXH9ny66MngNu+ikiu+KmkLlfU/x1rP1YDi9kO16AGBZrOPHW2CyOtkOiXmIFQvmF/5UGnTecCEoR7McBYXyybQ1ahTQpOp9HUykhfQ7zPPpR0gDzN7n+eV0Oss/4PxyNp9CqKiuAZuxeOkjpA5eq2det9kG2S3HlCG9gxRhdCJjp+Q06w2JRd4sv24htf+exhagvZdjdrN82K6+rG8h3UH+8i6PmuKTgHITW893CriL6cHwvwlJBvdyBPXAzgphoKHHxtPeuLON3g0cPYNQKxTitZGxOEIy2nt/Ok4gZoQF1zGVyWSyrIOHMEySEkrZD8d5mLb+7wYGDuBbcr8BmFg7ug==","*Login negative valid email and wrong password test case","*<p>This is to be able to check a negative test case for a valid email and wrong password fields.\x3c/p>","*invalid_credentials","*negative","eNq9U8Fu2zAMvecriF58suUtyYYGXYEgC7ABTVZs7XocaJmJhdqSR9FN8/ejHWct1vt8sGTr8enxkbxFJi8QOycEkaRrYYeupnIxeaDiM7sn4vWzpVZc8AvYUIy4pwUsPXT+0YeD1yhWUBpdSUDMgSFY2zFTCYdKqaDlYDXO+T1IRWBD06AvM/jGbu881qeoBazQ+6BaBFkGZKLQrCkstm0C+qqdxV5HBj9ddAJXCBXT7tNFJdLGhTF7J1VXZBpmFO66v0tRh8I0GIXYlMFGQ94c2IlqSrnzvl/PEb7k4EqDVtyTk2M66OnarCkvrv/TRVcGr2GnTgqHrqgpViH0FG89Ww+G0zPZrgcAlsVaP94Ck9XJdkjMvVYsmt/4S2jQeeMKRj6a5Sgolo+mrVFUQJNKCHU0SgvpLczz6UdII8ze5/nldDrLP+D8cjafQqyorgGbsXjpA6QeXqpnXrbZBp1fjilD+gNShNGJzHnRZsx6Q7TIm+XXLaT231NtAdoHPmY3y/vt6sv6O6Q7yJ/f5apJnwTENdp6oRPAnaYHw/8mJhnc8REkgPOWCSMNPTae9sadbQx+4OgZmFqmqNcqY3GEZLT37nScgGaEhas1lclksqxjgPb1QAkhl/2MnGdqG173MbgIoSX/B6G6QQ4=","*Login negative wrong email and valid password test case","*<p>This is to be able to check a negative test case for a wrong email and valid password fields.\x3c/p>","*Open MBC Application","*resources","*Open Application","*AppiumLibrary","eNq1UU1PwzAMvfMrrJ63RlxRFmmCKxoSJ07ISbw2InUiJ93+Pi3d1A3OXPzx/N6z4uhsDpm4AALTGTDnGBzWkBhqgi6ciGGfcxgHKCQnkhaeMaMNMdRABdJx1qzjDezZSwoekD2Ew/sG3iJhIXA9uS/QCL3Qcdf0tebypFQXaj/a1qVBLUbXZGOyasBSSZRPrihidZZpK3dbGZnnfKEuq7coXWkH35j/89YKjVbZPOiKNhLYJJ5k1zw2MyRz8Ebb6abzCbWyE3tCrvArcvsHfKHiJPwWqMXtYik0pEqfo8RV+kFlbe7+CFbevQ3GgDciTmt9O1pE6ueJ5htaB7wi","*<a href=\"http://localhost:4723/wd/hub\">http://localhost:4723/wd/hub\x3c/a>, platformName=Android, deviceName=4200933406a59453, appPackage=${MBC-APPLICATION-ID}, appActivity=${MBC-APPLICATION-ACTIVITY}, automationName=Uiautomator2","*Capture Page Screenshot","*<p>Takes a screenshot of the current page and embeds it into the log.\x3c/p>","*No application is open","*s1-k1-k1","*Keyword 'Capture Page Screenshot' could not be run on failure: No application is open","eNq9UsFu2zAMve8riF58kuUtyYYGXYEgC7ABTTds7XocaJmJhdqSR9FN8vejHXcF1vt0sGTx8enxkQ9UfmL/RLw5OurEx7CELaWEe1rCKkAfHkM8BEjECjLJVwTEHBmicz0zVXCofUPQcXSa58MepCZwsW0xVDl8Zb/3AZtz1hLWGEIUSIIsIzJTaN6WDrsuA/003uGgI4efPnmBK4Saaffxohbp0tLavZe6L3NNswr3/d+tbGJpW0xCbKvokqVgD+xFNRnuQxj254xQcfSVRSf+ycvJjHr6Lm+ri+v/9NCVxWvYqZPCsS8bSnWMA8Vrzzaj4XQk1w8AwKrc6M9rYLY+2w6ZvdeOJfsbfwmNOm98ycgnu5oEperRdg2KCmiNxNgkq7RgvsGimH0Ak2D+riguZ7N58R4Xl/PFDFJNTQPYTs0zD2ACvHTPvhzzLfqwmkoG8wMMwuRE7oNQkHwwRJu8XX25BeP+jeoI0D7yKb9Z3d+uP2++g9lBcXxbqCZdGYhvdfRiL4A7LQ/G+zZlOdzxCSSCD44JE40zNkUH455tjGHkGBiYOqakzypjeYJssvfuHM5AK8LSN1rKmz9Q2iId","*Close Application","*<p>Closes the current application and also close webdriver session.\x3c/p>","*s1-k2"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:54","fail":0,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:54","fail":0,"label":"invalid_credentials","pass":1,"skip":0},{"elapsed":"00:00:54","fail":0,"label":"negative","pass":1,"skip":0}],[{"elapsed":"00:01:09","fail":0,"id":"s1","label":"Login","name":"Login","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:00","fail":2,"label":"All Tests","pass":0,"skip":0}],[{"elapsed":"00:00:00","fail":2,"label":"invalid_credentials","pass":0,"skip":0},{"elapsed":"00:00:00","fail":2,"label":"negative","pass":0,"skip":0}],[{"elapsed":"00:00:34","fail":2,"id":"s1","label":"Login","name":"Login","pass":0,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["errors"] = [];
+window.output["errors"] = [[8,33419,3,23,22],[8,33566,3,23,27]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1633079097138;
+window.output["baseMillis"] = 1633424837526;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 68975;
+window.output["generated"] = 33645;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
 </script>
 <script type="text/javascript">
-window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
+window.settings = {"defaultLevel":"INFO","minLevel":"WARN","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
 </script>
 <title></title>
 </head>

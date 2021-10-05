@@ -22,7 +22,7 @@ ${MBC-APPLICATION-ACTIVITY}        ${MBC-APPLICATION-ID}.MainActivity
 
 #*** Login Page ***
 ${LOGIN_EMAIL_FIELD}            //android.widget.EditText[@text='Email']
-${LOGIN_PASSWORD_FIELD}         //android.widget.EditText[@text='']
+${LOGIN_PASSWORD_FIELD}         //android.widget.EditText[@text='Password']
 ${LOGIN_BUTTON}          //android.widget.TextView[@text='LOG IN']
 #${LOGIN_WITH_FACEBOOK_BUTTON}       //android.view.ViewGroup[@index=6]
 ${LOGIN_WITH_FACEBOOK_BUTTON}       //android.widget.TextView[@text='Login with Facebook']
@@ -69,7 +69,7 @@ Run Keyword Until Success
     Wait Until Keyword Succeeds    5s      1s  ${KW}    @{KWARGS}
 
 Open MBC Application
-    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=4SPRMFUGIRBQ4PKR    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      automationName=Uiautomator2
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=4200933406a59453    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      automationName=Uiautomator2
 
 Open MBC Application IOS
     Open Application    http://localhost:4723/wd/hub    platformName=iOS	platformVersion=14.4	deviceName=iPhone 8    automationName=XCUITest      bundleId=ph.easytrip.mobile.app

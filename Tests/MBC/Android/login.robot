@@ -17,13 +17,13 @@ Login negative valid email and wrong password test case
     Sign With User      ${USER_DETAILS}[email]     ${USER_DETAILS}[wrong_password]
     Submit Login Button
     Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}
-#
-#Login negative wrong email and valid password test case
-#    [Documentation]     This is to be able to check a negative test case for a wrong email and valid password fields.
-#    [Tags]      negative    invalid_credentials
-#    Sign With User      ${USER_DETAILS}[wrong_email]     ${USER_DETAILS}[password]
-#    Submit Login Button
-#    Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}
+
+Login negative wrong email and valid password test case
+    [Documentation]     This is to be able to check a negative test case for a wrong email and valid password fields.
+    [Tags]      negative    invalid_credentials
+    Sign With User      ${USER_DETAILS}[wrong_email]     ${USER_DETAILS}[password]
+    Submit Login Button
+    Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}
 
 #Login positive test case
 #    [Tags]    sanity
