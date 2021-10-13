@@ -13,13 +13,14 @@ Suite Teardown    Close Application
 
 *** Test Cases ***
 
-Login test case
+Negative Test Case
+    [Documentation]     This is to be able to check a negative test case for email already taken
+    [Tags]      negative    email_already_exist
     Sign Up with User
+    Handle Register    ${USER_DETAILS}[email]
 
-# Open MBC app
-# Sign With User
-    # Input Email
-    # Input Password
-    # Submit button
-    # Verify If Login Successful
-# Logout With User
+Positive Test Case
+    [Documentation]     This is to be able to check a positive test case for email already taken
+    [Tags]      positive    sanity
+    Sign Up with User
+    Handle Register    bliimocheck2@mailinator.com

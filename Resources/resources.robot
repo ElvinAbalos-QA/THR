@@ -118,14 +118,17 @@ Sign Up with User
     Sleep   5
     Wait Until Page Contains Element        xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[4]
     Tap The Element         xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[4]
-    Handle Register
 
 Handle Register
+    [Arguments]    ${EMAIL}
     Wait Until Page Contains Element        //android.widget.TextView[@text='REGISTER']
+    Swipe    352    1133    352    534
+    Tap The Element     //android.widget.TextView[@text='SUBMIT']
+    Swipe    359    280    347    872
     Wait Until Page Contains Element        ${MOBILE_FIELD}
     Input Text      ${FIRST_NAME_FIELD}     ${FIRST_NAME}
     Input Text      ${LAST_NAME_FIELD}     ${LAST_NAME}
-    Input Text      ${EMAIL_FIELD}      ${USER_DETAILS}[email]
+    Input Text      ${EMAIL_FIELD}      ${EMAIL}
     Input Text      ${MOBILE_FIELD}     ${MOBILE_NUMBER}
     Handle Birthday
     # Gender
@@ -141,13 +144,19 @@ Handle Register
     Input Element       //android.widget.EditText[@text='USERNAME']       ROOT
     Input Element       //android.widget.EditText[@text='PASSWORD']       Password@123
     Input Element       //android.widget.EditText[@text='CONFIRM PASSWORD']       Password@123
+    Sleep    3
+    Tap The Element    //android.widget.TextView[@text='Terms of Use]
+    Handle Modals       //android.widget.TextView[@text='Terms of Use]       //android.widget.TextView[@text='OK']
+    Handle Modals       //android.widget.TextView[@text='Privacy Policy]       //android.widget.TextView[@text='OK']
+    Swipe    680    1093    687    820
     Tap The Element     //android.widget.TextView[@text='SUBMIT']
+    Handle Modals       //android.widget.TextView[@text='Email has already been taken']       //android.widget.TextView[@text='OK']
 
     Sleep    5
-    Log To Console    'Hii'
+    Log To Console    'Successfully :)'
 
 Handle Birthday
-        # Birthday field
+    # Birthday field
     Tap The Element    ${BIRTHDAY_FIELD}
     # id=android:id/date_picker_header_year
     Tap The Element    ${YEAR}
