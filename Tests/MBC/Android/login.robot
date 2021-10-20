@@ -12,36 +12,28 @@ Suite Teardown    Close Application
 Login negative valid email and wrong password test case
     [Documentation]     This is to be able to check a negative test case for a valid email and wrong password fields.
     [Tags]      negative    invalid_credentials
-    Go To Login Screen
-    Sign With User      ${USER_DETAILS}[email]     ${USER_DETAILS}[wrong_password]
-    Submit Login Button
-    Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}
+    Go To Login Screen      ${LOGIN_BUTTON}
+    Sign With User      ${USER_DETAILS}[email]     ${LOGIN_EMAIL_FIELD}     ${USER_DETAILS}[wrong_password]     ${LOGIN_PASSWORD_FIELD}
+    Submit Login Button     ${LOGIN_BUTTON}
+    Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}    ${LOGIN_FAILED}     ${OK_BUTTON}
 
 Login negative wrong email and valid password test case
     [Documentation]     This is to be able to check a negative test case for a wrong email and valid password fields.
     [Tags]      negative    invalid_credentials
-    Go To Login Screen
-    Sign With User      ${USER_DETAILS}[wrong_email]     ${USER_DETAILS}[password]
-    Submit Login Button
-    Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}
+    Go To Login Screen      ${LOGIN_BUTTON}
+    Sign With User      ${USER_DETAILS}[wrong_email]     ${LOGIN_EMAIL_FIELD}       ${USER_DETAILS}[password]       ${LOGIN_PASSWORD_FIELD}
+    Submit Login Button     ${LOGIN_BUTTON}
+    Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}     ${LOGIN_FAILED}     ${OK_BUTTON}
 
 Login positive test case
-    [Tags]    sanity
-    Go To Login Screen
-    Sign With User      ${USER_DETAILS}[email]     ${USER_DETAILS}[password]
-    Submit Login Button
+    [Tags]    sanity       positive
+    Go To Login Screen      ${LOGIN_BUTTON}
+    Sign With User      ${USER_DETAILS}[email]     ${LOGIN_EMAIL_FIELD}       ${USER_DETAILS}[password]       ${LOGIN_PASSWORD_FIELD}
+    Submit Login Button     ${LOGIN_BUTTON}
     Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
     ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${VERIFICATION_MODAL}
     Run Keyword If       '${PASSED}' == 'True'      Handle Verification
 #    Wait Until Page Contains Element        ${SKIP_TUTORIAL}
 #    Tap The Element     ${SKIP_TUTORIAL}
-    Game Tutorial
-    Logout with User
-
-# Open MBC app
-# Sign With User
-    # Input Email
-    # Input Password
-    # Submit button
-    # Verify If Login Successful
-# Logout With User
+    Game Tutorial   //android.view.ViewGroup[@index=3]      # FINISH TUTORIAL BUTTON
+    Click The Logout Button     ${LOGOUT_TAB}

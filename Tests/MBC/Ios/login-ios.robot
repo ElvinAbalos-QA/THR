@@ -9,36 +9,41 @@ Suite Teardown    Close Application
 
 *** Test Cases ***
 
+#Login negative valid email and wrong password test case
+#    [Documentation]     This is to be able to check a negative test case for a valid email and wrong password fields.
+#    [Tags]      negative    invalid_credentials
+#    Handle Location and Notification IOS
+#    Go To Login Screen      ${LOGIN_BUTTON_IOS}
+#    Sign With User      ${USER_DETAILS}[email]     ${LOGIN_EMAIL_FIELD_IOS}     ${USER_DETAILS}[wrong_password]     ${LOGIN_PASSWORD_FIELD_IOS}
+#    Submit Login Button     ${LOGIN_BUTTON_IOS}
+#    Handle Hide Keyboard
+##    Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}    ${LOGIN_FAILED}     ${OK_BUTTON}
+#
+#Login negative wrong email and valid password test case
+#    [Documentation]     This is to be able to check a negative test case for a wrong email and valid password fields.
+#    [Tags]      negative    invalid_credentials
+#    Handle Location and Notification IOS
+#    Go To Login Screen      ${LOGIN_BUTTON_IOS}
+#    Sign With User      ${USER_DETAILS}[wrong_email]     ${LOGIN_EMAIL_FIELD_IOS}       ${USER_DETAILS}[password]       ${LOGIN_PASSWORD_FIELD_IOS}
+#    Submit Login Button     ${LOGIN_BUTTON_IOS}
+#    Handle Hide Keyboard
+#    Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}     ${LOGIN_FAILED}     ${OK_BUTTON}
+
 Login positive test case
-    [Tags]    sanity
+    [Tags]    sanity       positive
+    Handle Location and Notification IOS
+    Go To Login Screen      ${LOGIN_BUTTON_IOS}
+    Sign With User      ${USER_DETAILS}[email]     ${LOGIN_EMAIL_FIELD_IOS}       ${USER_DETAILS}[password]       ${LOGIN_PASSWORD_FIELD_IOS}
+    Handle Hide Keyboard
+    Submit Login Button     ${LOGIN_BUTTON_IOS}
+    Tap The Element    /ios=.buttons().withName('USE HERE')
+    Wait Until Page Contains Element    xpath=(//XCUIElementTypeOther[@name="You are currently logged in on another device"])
+    Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE_IOS}       ${USE_HERE_BUTTON_IOS}
     Sleep    3
-    Submit Login Button
-    Sign With User      ${USER_DETAILS}[email]     ${USER_DETAILS}[password]
-    Submit Login Button
-
-#Login negative test case
-#    Open Myeasytrip Application
-#    Sign With User      ${EMPTY_DETAILS}[email]     ${EMPTY_DETAILS}[password]
-#    Submit Login Button
-#    Handle Login Failed
-    # Add more negative test case here
-#    Quit Application
-
-#    Get Element Location       ${PROFILE_ICON}
-#    Wait Activity
-#    Click A Point       x=152, y=1065
-#    Verify Login Is Successful
-#    Logout With User
-
-#    Reloading Partners
-#    Logout
-#    Close Application
-
-
-# Open MBC app
-# Sign With User
-    # Input Email
-    # Input Password
-    # Submit button
-    # Verify If Login Successful
-# Logout With User
+    Log To Console    'Done'
+#    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${VERIFICATION_MODAL}
+#    Run Keyword If       '${PASSED}' == 'True'      Handle Verification
+##    Wait Until Page Contains Element        ${SKIP_TUTORIAL}
+##    Tap The Element     ${SKIP_TUTORIAL}
+#    Game Tutorial   //android.view.ViewGroup[@index=3]      # FINISH TUTORIAL BUTTON
+#    Click The Logout Button     ${LOGOUT_TAB}
