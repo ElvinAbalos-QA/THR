@@ -158,15 +158,21 @@ Handle Register
     Input Element       //android.widget.EditText[@text='PASSWORD']       Password@123
     Input Element       //android.widget.EditText[@text='CONFIRM PASSWORD']       Password@123
     Sleep    3
-    Tap The Element    //android.widget.TextView[@text='Terms of Use]
-    Handle Modals       //android.widget.TextView[@text='Terms of Use]       //android.widget.TextView[@text='OK']
-    Handle Modals       //android.widget.TextView[@text='Privacy Policy]       //android.widget.TextView[@text='OK']
+#    Tap The Element    //android.widget.TextView[@text='Terms of Use]
+#    Handle Modals       //android.widget.TextView[@text='Terms of Use]       //android.widget.TextView[@text='OK']
+#    Handle Modals       //android.widget.TextView[@text='Privacy Policy]       //android.widget.TextView[@text='OK']
     Swipe    680    1093    687    820
     Tap The Element     //android.widget.TextView[@text='SUBMIT']
     Handle Modals       //android.widget.TextView[@text='Email has already been taken']       //android.widget.TextView[@text='OK']
 
     Sleep    5
     Log To Console    'Successfully :)'
+
+Edit TextField
+    [Arguments]    ${FIELD}     ${NAME}
+    Wait Until Page Contains Element    ${FIELD}
+    AppiumLibrary.Clear Text      ${FIELD}
+    AppiumLibrary.Input Text      ${FIELD}     ${NAME}
 
 Handle Birthday
     # Birthday field
