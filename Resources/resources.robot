@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    This is the resources file keywords
-Library     AppiumLibrary
 Library     Browser
+Library     AppiumLibrary
 
 *** Variables ***
 #*** Test variables ***
@@ -9,6 +9,7 @@ Library     Browser
 &{USER_DETAILS_2}               email=bliimo@mailinator.com    password=Password@123
 
 # *** Login Failed ***
+# ANDROID
 ${LOGIN_FAILED}                 //android.widget.TextView[@text='ERROR']
 ${OK_BUTTON}                    //android.widget.TextView[@text='OK']
 ${LOGIN_FAILED_EMPTY}      //android.widget.TextView[@text='Fields should not be empty. Please note that your myeasytrip app username and password is different from myeastrip web. Please try again.']
@@ -20,14 +21,22 @@ ${MBC-APPLICATION-ACTIVITY}        ${MBC-APPLICATION-ID}.MainActivity
 
 #*** Login Page ***
 ${LOGIN_EMAIL_FIELD}            //android.widget.EditText[@text='Email']
+${LOGIN_EMAIL_FIELD_IOS}        xpath=(//XCUIElementTypeOther[@name="Email"])[2]/XCUIElementTypeTextField
 ${LOGIN_PASSWORD_FIELD}         //android.widget.EditText[@text='Password']
-${LOGIN_BUTTON}          //android.widget.TextView[@text='LOG IN']
+${LOGIN_PASSWORD_FIELD_IOS}         //XCUIElementTypeOther[@name="Password"]/XCUIElementTypeSecureTextField
+${LOGIN_BUTTON}                 //android.widget.TextView[@text='LOG IN']
+${LOGIN_BUTTON_IOS}             xpath=(//XCUIElementTypeOther[@name="LOG IN"])[2]
 ${LOGIN_WITH_FACEBOOK_BUTTON}       //android.view.ViewGroup[@index=2]
 
 #*** Logged In Another Device ***
-${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are currently logged in another device']
+${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are currently logged in on another device']
 ${USE_HERE_BUTTON}                      //android.widget.TextView[@text='USE HERE']
+# IOS
+${MODAL_LOGGED_IN_ANOTHER_DEVICE_IOS}       xpath=(//XCUIElementTypeOther[@name="You are currently logged in on another device"])
+${USE_HERE_BUTTON_IOS}      xpath=(//XCUIElementTypeOther[@name="USE HERE"])
 
+
+${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are currently logged in on another device']
 #*** Verification Modal ***
 ${VERIFICATION_MODAL}       //android.widget.TextView[@text='VERIFICATION!']
 ${VERIFIED_BUTTON}          //android.widget.TextView[@text='I have verified my account.']
@@ -80,11 +89,10 @@ Run Keyword Until Success
     Wait Until Keyword Succeeds    5s      1s  ${KW}    @{KWARGS}
 
 Open MBC Application
-    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=Galaxy J5 Prime    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=4200933406a59453     automationName=Uiautomator2
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=Galaxy J5 Prime    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=4200933406a59453     automationName=Uiautomator2      app=/Users/qa_tester/Downloads/MBC PaPremyo 1.0.32(44).apk
 
 Open MBC Application IOS
-    # udid -> 3d9405ebce32f773d38e43236ce17f49523e12c2
-    Open Application    http://localhost:4723/wd/hub    platformName=iOS	platformVersion=14.7.1	deviceName=Test iPhone    automationName=XCUITest      bundleId=com.mbc.mbcpapremyo
+    Open Application    http://localhost:4723/wd/hub    platformName=iOS	platformVersion=15.0.2	    deviceName=Test iPhone    automationName=XCUITest      udid=3d9405ebce32f773d38e43236ce17f49523e12c2    bundleId=com.mbc.mbcpapremyo
 
 Handle Modals
     [Arguments]     ${MODAL_NAME}       ${BUTTON}
@@ -94,24 +102,29 @@ Handle Modals
 Handle Verification
     log to console      'This account is not verified yet!!!'
 
+Handle Hide Keyboard
+    Wait Until Page Contains Element    xpath=(//XCUIElementTypeOther[@name="LOG IN  Vertical scroll bar, 1 page Horizontal scroll bar, 1 page LOG IN Forgot your password? QUICK ACCESS WITH  BACK TO MAIN SCREEN"])[2]/XCUIElementTypeOther[1]/XCUIElementTypeImage
+    Click Element    xpath=(//XCUIElementTypeOther[@name="LOG IN  Vertical scroll bar, 1 page Horizontal scroll bar, 1 page LOG IN Forgot your password? QUICK ACCESS WITH  BACK TO MAIN SCREEN"])[2]/XCUIElementTypeOther[1]/XCUIElementTypeImage
+
 Handle Sign Up Via Facebook
     log to console      'Handle Sign Up Via Facebook'
     Input Text           //android.widget.EditText[@text='Mobile No.']       0912345678901
     Tap The Element      //android.view.ViewGroup[@index=9]
 
 Sign with User
-    [Arguments]     ${EMAIL}     ${USERPASSWORD}
-    Input User Email        ${EMAIL}
-    Input User Password     ${USERPASSWORD}
+    [Arguments]     ${EMAIL}    ${EMAIL_FIELD}      ${USERPASSWORD}     ${PASSWORD_FIELD}
+    Input User Email        ${EMAIL}        ${EMAIL_FIELD}
+    Input User Password     ${USERPASSWORD}     ${PASSWORD_FIELD}
 
 Game Tutorial
+    [Arguments]    ${BUTTON}
     FOR     ${i}    IN RANGE        6
         Sleep   3
         Swipe    628    646    59    649
         log to console    ${i}
     END
-    Wait Until Page Contains Element        //android.view.ViewGroup[@index=3]      # FINISH TUTORIAL BUTTON
-    Tap The Element     //android.view.ViewGroup[@index=3]
+    Wait Until Page Contains Element        ${BUTTON}
+    Tap The Element     ${BUTTON}
     Sleep   5
 
 Sign Up with User
@@ -205,38 +218,52 @@ Forgot Password
     Tap The Element                        ${FORGOT PASSWORD TEXT}
     Wait Until Page Contains Element       ${FORGOT PASSWORD FIELD}
     Input Text                             ${FORGOT PASSWORD FIELD}               ${USER_DETAILS}[email]
-    Run Keyword Until Success              Click Element                          //android.widget.TextView[@text='Confirm']
+    Run Keyword Until Success              Click Element                          //android.widget.TextView[@text='CONFIRM']
     Wait Until Page Contains Element       //android.widget.TextView[@text='SUCCESS']
     Run Keyword Until Success              Click Element                          //android.widget.TextView[@text='OK']
+
+#Check code
     #Check code and Resend Code
 
 Go To Login Screen
+    [Arguments]    ${BUTTON}
     Sleep   5
-    Submit Login Button
+    Submit Login Button     ${BUTTON}
+
+Go To Login Screen IOS
+    Sleep   5
+    Submit Login Button IOS
 
 Forgot Password IOS
     Tap The Element                             ${FORGOT PASSWORD TEXT - IOS}
 
 Input User Email
-    [Arguments]     ${EMAIL}
-    Verify Login Email Field Displayed
-    Run Keyword Until Success       Input Text        ${LOGIN_EMAIL_FIELD}        ${EMAIL}
-    Hide Keyboard
-#    Sleep    5
+    [Arguments]    ${EMAIL}     ${FIELD}
+    Run Keyword Until Success           Wait Until Page Contains Element              ${FIELD}
+    Run Keyword Until Success       Input Text        ${FIELD}        ${EMAIL}
 
 Input User Password
-    [Arguments]     ${USERPASSWORD}
-#    Sleep    5
-    Run Keyword Until Success       Wait Until Page Contains Element        ${LOGIN_PASSWORD_FIELD}
-    Run Keyword Until Success       Input Text        ${LOGIN_PASSWORD_FIELD}     ${USERPASSWORD}
+    [Arguments]     ${PASSWORD}     ${FIELD}
+    Run Keyword Until Success       Wait Until Page Contains Element        ${FIELD}
+    Run Keyword Until Success       Input Password        ${FIELD}     ${PASSWORD}
+
+Handle Location and Notification IOS
+    Handle Modals    //XCUIElementTypeAlert[@name="Allow “MBC PaPremyo” to use your location?"]     //XCUIElementTypeButton[@name="Allow Once"]
+    Handle Modals    //XCUIElementTypeAlert[@name="“MBC PaPremyo” Would Like to Send You Notifications"]    //XCUIElementTypeButton[@name="Allow"]
 
 Submit Login Button
-    Run Keyword Until Success       Wait Until Page Contains Element     ${LOGIN_BUTTON}
-    Get Element Location            ${LOGIN_BUTTON}
-    Run Keyword Until Success       Click Element     ${LOGIN_BUTTON}
+    [Arguments]    ${BUTTON}
+    Sleep    3
+    Run Keyword Until Success       appiumlibrary.Wait Until Page Contains Element     ${BUTTON}
+    Run Keyword Until Success       appiumlibrary.Click Element     ${BUTTON}
+
+Submit Login Button IOS
+    Run Keyword Until Success       appiumlibrary.Wait Until Page Contains Element     ${LOGIN_BUTTON_IOS}
+    Get Element Location            ${LOGIN_BUTTON_IOS}
+    Run Keyword Until Success       appiumlibrary.Click Element     ${LOGIN_BUTTON_IOS}
 
 Handle Login Failed
-    [Arguments]     ${DISPLAY_MESSAGE}
+    [Arguments]     ${DISPLAY_MESSAGE}      ${LOGIN_FAILED}     ${OK_BUTTON}
     Run Keyword Until Success       Wait Until Page Contains Element    ${LOGIN_FAILED}
     Run Keyword Until Success       Wait Until Page Contains Element    ${DISPLAY_MESSAGE}
     Run Keyword Until Success       Click Element                       ${OK_BUTTON}
@@ -244,24 +271,20 @@ Handle Login Failed
 Verify Login Is Successful
     Run Keyword Until Success       Wait Until Page Contains Element              ${HAMBURGER_ICON}
 
-Logout with User
-    Click The Logout Button
-
 Click The Logout Button
+    [Arguments]    ${BUTTON}
     Swipe    5    173    176    178         # to view the sidenav
     Swipe    205    1122    207    553      # swipe to view the logout
-    Run Keyword Until Success           Wait Until Page Contains Element              ${LOGOUT_TAB}
-    Run Keyword Until Success           Click Element                                 ${LOGOUT_TAB}
-    Wait Until Page Contains Element        //android.widget.TextView[@text='Radyo, Palaro at Papremyo!']
-
-Verify Login Email Field Displayed
-    Run Keyword Until Success           Wait Until Page Contains Element              ${LOGIN_EMAIL_FIELD}
+    Sleep    3
+    Wait Until Page Contains Element              ${BUTTON}
+    Click Element                                 ${BUTTON}
+#    Wait Until Page Contains Element        //android.widget.TextView[@text='Radyo, Palaro at Papremyo!']
 
 # ====================================================================================
 
 # ***  Browser Library  ***
 Open Mailinator
-    Open Browser    ${URL}      ${BROWSER}
+    Browser.Open Browser    ${URL}      ${BROWSER}
     Get Title       ==       ${TITLE}
 
 Input Field
