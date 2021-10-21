@@ -31,6 +31,7 @@ ${LOGIN_WITH_FACEBOOK_BUTTON}       //android.view.ViewGroup[@index=2]
 #*** Logged In Another Device ***
 ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are currently logged in on another device']
 ${USE_HERE_BUTTON}                      //android.widget.TextView[@text='USE HERE']
+
 # IOS
 ${MODAL_LOGGED_IN_ANOTHER_DEVICE_IOS}       xpath=(//XCUIElementTypeOther[@name="You are currently logged in on another device"])
 ${USE_HERE_BUTTON_IOS}      xpath=(//XCUIElementTypeOther[@name="USE HERE"])
@@ -69,6 +70,7 @@ ${PROFILE_ICON}                 //android.view.ViewGroup[@index=2]//android.widg
 
 #*** Sidenav ***
 ${HAMBURGER_ICON}               //android.view.ViewGroup//android.widget.ImageView
+${MY_PAPREMYO}                  //android.widget.TextView[@text='My Papremyo']
 
 #*** Reloading Partners Page
 ${RELOADING_PARTNERS}           //android.widget.TextView[@text='Reloading Partners']
