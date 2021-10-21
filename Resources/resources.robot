@@ -35,6 +35,8 @@ ${USE_HERE_BUTTON}                      //android.widget.TextView[@text='USE HER
 ${MODAL_LOGGED_IN_ANOTHER_DEVICE_IOS}       xpath=(//XCUIElementTypeOther[@name="You are currently logged in on another device"])
 ${USE_HERE_BUTTON_IOS}      xpath=(//XCUIElementTypeOther[@name="USE HERE"])
 
+#*** RADIO STATIONS ***
+${LOVE_RADIO}       //android.widget.TextView[@text='LOVE RADIO']
 
 ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are currently logged in on another device']
 #*** Verification Modal ***
@@ -173,6 +175,22 @@ Edit TextField
     Wait Until Page Contains Element    ${FIELD}
     AppiumLibrary.Clear Text      ${FIELD}
     AppiumLibrary.Input Text      ${FIELD}     ${NAME}
+
+View Radio Station
+    [Arguments]    ${RADIO_STATION}
+    Wait Until Page Contains Element    ${RADIO_STATION}
+    Tap The Element    ${RADIO_STATION}
+    Sleep    10
+
+Handle Radio Station
+    # Mute and Unmute Function
+    FOR     ${i}    IN RANGE        2
+        Wait Until Page Contains Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView
+        Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView
+        Sleep    10
+        log to console    ${i}
+    END
+
 
 Handle Birthday
     # Birthday field

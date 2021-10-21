@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.1 (Python 3.9.7 on darwin)" generated="20211020 17:15:27.165" rpa="false" schemaversion="2">
-<suite id="s1" name="Edit Profile" source="/Users/qa_tester/Desktop/MBC-APP/Tests/MBC/Android/edit_profile.robot">
+<robot generator="Robot 4.1.1 (Python 3.9.7 on darwin)" generated="20211021 09:24:19.406" rpa="false" schemaversion="2">
+<suite id="s1" name="Radio Station" source="/Users/qa_tester/Desktop/MBC-APP/Tests/MBC/Android/radio_station.robot">
 <kw name="Open MBC Application" library="resources" type="SETUP">
 <kw name="Open Application" library="AppiumLibrary">
 <arg>http://localhost:4723/wd/hub</arg>
@@ -17,31 +17,31 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20211020 17:15:28.768" endtime="20211020 17:15:40.440"/>
+<status status="PASS" starttime="20211021 09:24:20.800" endtime="20211021 09:24:34.039"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:28.767" endtime="20211020 17:15:40.440"/>
+<status status="PASS" starttime="20211021 09:24:20.800" endtime="20211021 09:24:34.040"/>
 </kw>
-<test id="s1-t1" name="Edit Profile test case">
+<test id="s1-t1" name="Radio Station test case">
 <kw name="Launch Application" library="AppiumLibrary" type="SETUP">
 <doc>Launch application. Application can be launched while Appium session running.
 This keyword can be used to launch application during test case or between test cases.</doc>
-<status status="PASS" starttime="20211020 17:15:40.443" endtime="20211020 17:15:43.981"/>
+<status status="PASS" starttime="20211021 09:24:34.043" endtime="20211021 09:24:38.546"/>
 </kw>
 <kw name="Go To Login Screen" library="resources">
 <arg>${LOGIN_BUTTON}</arg>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20211020 17:15:48.985" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20211020 17:15:43.982" endtime="20211020 17:15:48.985"/>
+<msg timestamp="20211021 09:24:43.548" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211021 09:24:38.548" endtime="20211021 09:24:43.549"/>
 </kw>
 <kw name="Submit Login Button" library="resources">
 <arg>${BUTTON}</arg>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20211020 17:15:51.987" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20211020 17:15:48.986" endtime="20211020 17:15:51.988"/>
+<msg timestamp="20211021 09:24:46.551" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211021 09:24:43.550" endtime="20211021 09:24:46.551"/>
 </kw>
 <kw name="Run Keyword Until Success" library="resources">
 <arg>appiumlibrary.Wait Until Page Contains Element</arg>
@@ -55,11 +55,11 @@ This keyword can be used to launch application during test case or between test 
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>@{KWARGS}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:15:51.990" endtime="20211020 17:15:53.342"/>
+<status status="PASS" starttime="20211021 09:24:46.553" endtime="20211021 09:24:47.531"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:51.989" endtime="20211020 17:15:53.342"/>
+<status status="PASS" starttime="20211021 09:24:46.552" endtime="20211021 09:24:47.531"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:51.988" endtime="20211020 17:15:53.342"/>
+<status status="PASS" starttime="20211021 09:24:46.551" endtime="20211021 09:24:47.531"/>
 </kw>
 <kw name="Run Keyword Until Success" library="resources">
 <arg>appiumlibrary.Click Element</arg>
@@ -73,16 +73,16 @@ This keyword can be used to launch application during test case or between test 
 <kw name="Click Element" library="AppiumLibrary">
 <arg>@{KWARGS}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211020 17:15:53.348" level="INFO">Clicking element '//android.widget.TextView[@text='LOG IN']'.</msg>
-<status status="PASS" starttime="20211020 17:15:53.344" endtime="20211020 17:15:53.706"/>
+<msg timestamp="20211021 09:24:47.537" level="INFO">Clicking element '//android.widget.TextView[@text='LOG IN']'.</msg>
+<status status="PASS" starttime="20211021 09:24:47.532" endtime="20211021 09:24:48.040"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:53.343" endtime="20211020 17:15:53.706"/>
+<status status="PASS" starttime="20211021 09:24:47.532" endtime="20211021 09:24:48.040"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:53.342" endtime="20211020 17:15:53.706"/>
+<status status="PASS" starttime="20211021 09:24:47.531" endtime="20211021 09:24:48.040"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:48.985" endtime="20211020 17:15:53.706"/>
+<status status="PASS" starttime="20211021 09:24:43.549" endtime="20211021 09:24:48.040"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:43.981" endtime="20211020 17:15:53.707"/>
+<status status="PASS" starttime="20211021 09:24:38.547" endtime="20211021 09:24:48.041"/>
 </kw>
 <kw name="Sign with User" library="resources">
 <arg>${USER_DETAILS}[email]</arg>
@@ -104,11 +104,11 @@ This keyword can be used to launch application during test case or between test 
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>@{KWARGS}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:15:53.709" endtime="20211020 17:15:55.338"/>
+<status status="PASS" starttime="20211021 09:24:48.044" endtime="20211021 09:24:49.693"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:53.709" endtime="20211020 17:15:55.338"/>
+<status status="PASS" starttime="20211021 09:24:48.043" endtime="20211021 09:24:49.693"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:53.708" endtime="20211020 17:15:55.338"/>
+<status status="PASS" starttime="20211021 09:24:48.043" endtime="20211021 09:24:49.694"/>
 </kw>
 <kw name="Run Keyword Until Success" library="resources">
 <arg>Input Text</arg>
@@ -123,14 +123,14 @@ This keyword can be used to launch application during test case or between test 
 <kw name="Input Text" library="AppiumLibrary">
 <arg>@{KWARGS}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20211020 17:15:55.344" level="INFO">Typing text 'bliimocheck@mailinator.com' into text field '//android.widget.EditText[@text='Email']'</msg>
-<status status="PASS" starttime="20211020 17:15:55.340" endtime="20211020 17:15:55.813"/>
+<msg timestamp="20211021 09:24:49.700" level="INFO">Typing text 'bliimocheck@mailinator.com' into text field '//android.widget.EditText[@text='Email']'</msg>
+<status status="PASS" starttime="20211021 09:24:49.695" endtime="20211021 09:24:50.685"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:55.339" endtime="20211020 17:15:55.813"/>
+<status status="PASS" starttime="20211021 09:24:49.695" endtime="20211021 09:24:50.686"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:55.339" endtime="20211020 17:15:55.813"/>
+<status status="PASS" starttime="20211021 09:24:49.694" endtime="20211021 09:24:50.686"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:53.708" endtime="20211020 17:15:55.813"/>
+<status status="PASS" starttime="20211021 09:24:48.042" endtime="20211021 09:24:50.687"/>
 </kw>
 <kw name="Input User Password" library="resources">
 <arg>${USERPASSWORD}</arg>
@@ -147,11 +147,11 @@ This keyword can be used to launch application during test case or between test 
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>@{KWARGS}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:15:55.815" endtime="20211020 17:15:56.673"/>
+<status status="PASS" starttime="20211021 09:24:50.688" endtime="20211021 09:24:51.425"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:55.815" endtime="20211020 17:15:56.673"/>
+<status status="PASS" starttime="20211021 09:24:50.688" endtime="20211021 09:24:51.425"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:55.814" endtime="20211020 17:15:56.673"/>
+<status status="PASS" starttime="20211021 09:24:50.687" endtime="20211021 09:24:51.426"/>
 </kw>
 <kw name="Run Keyword Until Success" library="resources">
 <arg>Input Password</arg>
@@ -166,24 +166,24 @@ This keyword can be used to launch application during test case or between test 
 <kw name="Input Password" library="AppiumLibrary">
 <arg>@{KWARGS}</arg>
 <doc>Types the given password into text field identified by `locator`.</doc>
-<msg timestamp="20211020 17:15:56.679" level="INFO">Typing password into text field '//android.widget.EditText[@text='Password']'</msg>
-<status status="PASS" starttime="20211020 17:15:56.675" endtime="20211020 17:15:57.532"/>
+<msg timestamp="20211021 09:24:51.432" level="INFO">Typing password into text field '//android.widget.EditText[@text='Password']'</msg>
+<status status="PASS" starttime="20211021 09:24:51.427" endtime="20211021 09:24:52.233"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:56.674" endtime="20211020 17:15:57.532"/>
+<status status="PASS" starttime="20211021 09:24:51.427" endtime="20211021 09:24:52.233"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:56.674" endtime="20211020 17:15:57.532"/>
+<status status="PASS" starttime="20211021 09:24:51.426" endtime="20211021 09:24:52.233"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:55.814" endtime="20211020 17:15:57.532"/>
+<status status="PASS" starttime="20211021 09:24:50.687" endtime="20211021 09:24:52.233"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:53.707" endtime="20211020 17:15:57.533"/>
+<status status="PASS" starttime="20211021 09:24:48.041" endtime="20211021 09:24:52.234"/>
 </kw>
 <kw name="Submit Login Button" library="resources">
 <arg>${LOGIN_BUTTON}</arg>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20211020 17:16:00.534" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20211020 17:15:57.534" endtime="20211020 17:16:00.535"/>
+<msg timestamp="20211021 09:24:55.235" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211021 09:24:52.234" endtime="20211021 09:24:55.235"/>
 </kw>
 <kw name="Run Keyword Until Success" library="resources">
 <arg>appiumlibrary.Wait Until Page Contains Element</arg>
@@ -197,11 +197,11 @@ This keyword can be used to launch application during test case or between test 
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>@{KWARGS}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:16:00.536" endtime="20211020 17:16:00.828"/>
+<status status="PASS" starttime="20211021 09:24:55.237" endtime="20211021 09:24:55.453"/>
 </kw>
-<status status="PASS" starttime="20211020 17:16:00.536" endtime="20211020 17:16:00.828"/>
+<status status="PASS" starttime="20211021 09:24:55.237" endtime="20211021 09:24:55.453"/>
 </kw>
-<status status="PASS" starttime="20211020 17:16:00.535" endtime="20211020 17:16:00.828"/>
+<status status="PASS" starttime="20211021 09:24:55.236" endtime="20211021 09:24:55.454"/>
 </kw>
 <kw name="Run Keyword Until Success" library="resources">
 <arg>appiumlibrary.Click Element</arg>
@@ -215,14 +215,14 @@ This keyword can be used to launch application during test case or between test 
 <kw name="Click Element" library="AppiumLibrary">
 <arg>@{KWARGS}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211020 17:16:00.834" level="INFO">Clicking element '//android.widget.TextView[@text='LOG IN']'.</msg>
-<status status="PASS" starttime="20211020 17:16:00.829" endtime="20211020 17:16:01.464"/>
+<msg timestamp="20211021 09:24:55.459" level="INFO">Clicking element '//android.widget.TextView[@text='LOG IN']'.</msg>
+<status status="PASS" starttime="20211021 09:24:55.455" endtime="20211021 09:24:55.715"/>
 </kw>
-<status status="PASS" starttime="20211020 17:16:00.829" endtime="20211020 17:16:01.464"/>
+<status status="PASS" starttime="20211021 09:24:55.455" endtime="20211021 09:24:55.715"/>
 </kw>
-<status status="PASS" starttime="20211020 17:16:00.828" endtime="20211020 17:16:01.464"/>
+<status status="PASS" starttime="20211021 09:24:55.454" endtime="20211021 09:24:55.716"/>
 </kw>
-<status status="PASS" starttime="20211020 17:15:57.533" endtime="20211020 17:16:01.464"/>
+<status status="PASS" starttime="20211021 09:24:52.234" endtime="20211021 09:24:55.716"/>
 </kw>
 <kw name="Handle Modals" library="resources">
 <arg>${MODAL_LOGGED_IN_ANOTHER_DEVICE}</arg>
@@ -235,10 +235,10 @@ This keyword can be used to launch application during test case or between test 
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>${MODAL_NAME}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:16:01.466" endtime="20211020 17:16:03.347"/>
+<status status="PASS" starttime="20211021 09:24:55.717" endtime="20211021 09:24:57.389"/>
 </kw>
-<msg timestamp="20211020 17:16:03.347" level="INFO">${PASSED} = True</msg>
-<status status="PASS" starttime="20211020 17:16:01.465" endtime="20211020 17:16:03.347"/>
+<msg timestamp="20211021 09:24:57.389" level="INFO">${PASSED} = True</msg>
+<status status="PASS" starttime="20211021 09:24:55.717" endtime="20211021 09:24:57.389"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${PASSED}</arg>
@@ -250,19 +250,19 @@ This keyword can be used to launch application during test case or between test 
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:16:03.349" endtime="20211020 17:16:03.440"/>
+<status status="PASS" starttime="20211021 09:24:57.390" endtime="20211021 09:24:57.481"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${locator}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211020 17:16:03.445" level="INFO">Clicking element '//android.widget.TextView[@text='USE HERE']'.</msg>
-<status status="PASS" starttime="20211020 17:16:03.441" endtime="20211020 17:16:03.578"/>
+<msg timestamp="20211021 09:24:57.486" level="INFO">Clicking element '//android.widget.TextView[@text='USE HERE']'.</msg>
+<status status="PASS" starttime="20211021 09:24:57.481" endtime="20211021 09:24:57.611"/>
 </kw>
-<status status="PASS" starttime="20211020 17:16:03.348" endtime="20211020 17:16:03.578"/>
+<status status="PASS" starttime="20211021 09:24:57.390" endtime="20211021 09:24:57.611"/>
 </kw>
-<status status="PASS" starttime="20211020 17:16:03.348" endtime="20211020 17:16:03.578"/>
+<status status="PASS" starttime="20211021 09:24:57.390" endtime="20211021 09:24:57.612"/>
 </kw>
-<status status="PASS" starttime="20211020 17:16:01.465" endtime="20211020 17:16:03.578"/>
+<status status="PASS" starttime="20211021 09:24:55.716" endtime="20211021 09:24:57.612"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${PASSED}</var>
@@ -274,46 +274,46 @@ This keyword can be used to launch application during test case or between test 
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <kw name="Capture Page Screenshot" library="AppiumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20211020 17:16:10.505" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20211020 17:16:08.997" endtime="20211020 17:16:10.505"/>
+<msg timestamp="20211021 09:25:05.164" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211021 09:25:03.489" endtime="20211021 09:25:05.165"/>
 </kw>
-<msg timestamp="20211020 17:16:10.506" level="FAIL">Element '//android.widget.TextView[@text='VERIFICATION!']' did not appear in 5 seconds</msg>
-<status status="FAIL" starttime="20211020 17:16:03.579" endtime="20211020 17:16:10.507"/>
+<msg timestamp="20211021 09:25:05.166" level="FAIL">Element '//android.widget.TextView[@text='VERIFICATION!']' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20211021 09:24:57.612" endtime="20211021 09:25:05.166"/>
 </kw>
-<msg timestamp="20211020 17:16:10.507" level="INFO">${PASSED} = False</msg>
-<status status="PASS" starttime="20211020 17:16:03.579" endtime="20211020 17:16:10.507"/>
+<msg timestamp="20211021 09:25:05.166" level="INFO">${PASSED} = False</msg>
+<status status="PASS" starttime="20211021 09:24:57.612" endtime="20211021 09:25:05.166"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>'${PASSED}' == 'True'</arg>
 <arg>Handle Verification</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20211020 17:16:10.507" endtime="20211020 17:16:10.507"/>
+<status status="PASS" starttime="20211021 09:25:05.166" endtime="20211021 09:25:05.167"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>${SKIP_TUTORIAL}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:16:10.508" endtime="20211020 17:16:10.606"/>
+<status status="PASS" starttime="20211021 09:25:05.167" endtime="20211021 09:25:05.315"/>
 </kw>
 <kw name="Tap The Element" library="resources">
 <arg>${SKIP_TUTORIAL}</arg>
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:16:10.608" endtime="20211020 17:16:11.055"/>
+<status status="PASS" starttime="20211021 09:25:05.317" endtime="20211021 09:25:05.430"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${locator}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211020 17:16:11.060" level="INFO">Clicking element '//android.widget.TextView[@text='Skip Tutorial']'.</msg>
-<status status="PASS" starttime="20211020 17:16:11.056" endtime="20211020 17:16:11.293"/>
+<msg timestamp="20211021 09:25:05.435" level="INFO">Clicking element '//android.widget.TextView[@text='Skip Tutorial']'.</msg>
+<status status="PASS" starttime="20211021 09:25:05.430" endtime="20211021 09:25:05.585"/>
 </kw>
-<status status="PASS" starttime="20211020 17:16:10.606" endtime="20211020 17:16:11.293"/>
+<status status="PASS" starttime="20211021 09:25:05.316" endtime="20211021 09:25:05.586"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20211020 17:16:16.296" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20211020 17:16:11.294" endtime="20211020 17:16:16.296"/>
+<msg timestamp="20211021 09:25:10.587" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211021 09:25:05.586" endtime="20211021 09:25:10.587"/>
 </kw>
 <kw name="Swipe" library="AppiumLibrary">
 <arg>5</arg>
@@ -321,118 +321,124 @@ This keyword can be used to launch application during test case or between test 
 <arg>176</arg>
 <arg>178</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211020 17:16:16.297" endtime="20211020 17:16:17.606"/>
+<status status="PASS" starttime="20211021 09:25:10.588" endtime="20211021 09:25:12.180"/>
+</kw>
+<kw name="View Radio Station" library="resources">
+<arg>${LOVE_RADIO}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${RADIO_STATION}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211021 09:25:12.181" endtime="20211021 09:25:13.287"/>
 </kw>
 <kw name="Tap The Element" library="resources">
-<arg>//android.widget.TextView[@text='Edit Profile']</arg>
+<arg>${RADIO_STATION}</arg>
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:16:17.608" endtime="20211020 17:16:18.486"/>
+<status status="PASS" starttime="20211021 09:25:13.288" endtime="20211021 09:25:13.542"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${locator}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211020 17:16:18.491" level="INFO">Clicking element '//android.widget.TextView[@text='Edit Profile']'.</msg>
-<status status="PASS" starttime="20211020 17:16:18.486" endtime="20211020 17:16:18.785"/>
+<msg timestamp="20211021 09:25:13.547" level="INFO">Clicking element '//android.widget.TextView[@text='LOVE RADIO']'.</msg>
+<status status="PASS" starttime="20211021 09:25:13.542" endtime="20211021 09:25:13.824"/>
 </kw>
-<status status="PASS" starttime="20211020 17:16:17.607" endtime="20211020 17:16:18.786"/>
+<status status="PASS" starttime="20211021 09:25:13.287" endtime="20211021 09:25:13.824"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
+<arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20211020 17:16:23.788" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20211020 17:16:18.786" endtime="20211020 17:16:23.788"/>
+<msg timestamp="20211021 09:25:23.827" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20211021 09:25:13.824" endtime="20211021 09:25:23.827"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>'Edit Profile'</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20211020 17:16:23.788" endtime="20211020 17:16:23.789"/>
+<status status="PASS" starttime="20211021 09:25:12.180" endtime="20211021 09:25:23.827"/>
 </kw>
-<kw name="Edit TextField" library="resources">
-<arg>//android.widget.EditText[@index=2]</arg>
-<arg>UpdateName</arg>
+<kw name="Handle Radio Station" library="resources">
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>2</value>
+<iter>
+<var name="${i}">0</var>
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${FIELD}</arg>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:16:23.790" endtime="20211020 17:16:24.042"/>
-</kw>
-<kw name="Clear Text" library="AppiumLibrary">
-<arg>${FIELD}</arg>
-<doc>Clears the text field identified by `locator`.</doc>
-<msg timestamp="20211020 17:16:24.047" level="INFO">Clear text field '//android.widget.EditText[@index=2]'</msg>
-<status status="PASS" starttime="20211020 17:16:24.042" endtime="20211020 17:16:24.319"/>
-</kw>
-<kw name="Input Text" library="AppiumLibrary">
-<arg>${FIELD}</arg>
-<arg>${NAME}</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20211020 17:16:24.323" level="INFO">Typing text 'UpdateName' into text field '//android.widget.EditText[@index=2]'</msg>
-<status status="PASS" starttime="20211020 17:16:24.319" endtime="20211020 17:16:25.747"/>
-</kw>
-<status status="PASS" starttime="20211020 17:16:23.789" endtime="20211020 17:16:25.748"/>
-</kw>
-<kw name="Edit TextField" library="resources">
-<arg>//android.widget.EditText[@index=3]</arg>
-<arg>check</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${FIELD}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:16:25.748" endtime="20211020 17:16:26.668"/>
-</kw>
-<kw name="Clear Text" library="AppiumLibrary">
-<arg>${FIELD}</arg>
-<doc>Clears the text field identified by `locator`.</doc>
-<msg timestamp="20211020 17:16:26.673" level="INFO">Clear text field '//android.widget.EditText[@index=3]'</msg>
-<status status="PASS" starttime="20211020 17:16:26.668" endtime="20211020 17:16:26.992"/>
-</kw>
-<kw name="Input Text" library="AppiumLibrary">
-<arg>${FIELD}</arg>
-<arg>${NAME}</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20211020 17:16:26.997" level="INFO">Typing text 'check' into text field '//android.widget.EditText[@index=3]'</msg>
-<status status="PASS" starttime="20211020 17:16:26.992" endtime="20211020 17:16:28.434"/>
-</kw>
-<status status="PASS" starttime="20211020 17:16:25.748" endtime="20211020 17:16:28.434"/>
-</kw>
-<kw name="Swipe" library="AppiumLibrary">
-<arg>335</arg>
-<arg>1174</arg>
-<arg>356</arg>
-<arg>670</arg>
-<doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211020 17:16:28.435" endtime="20211020 17:16:29.828"/>
-</kw>
-<kw name="Tap The Element" library="resources">
-<arg>//android.widget.TextView[@text='SUBMIT']</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${locator}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211020 17:16:29.829" endtime="20211020 17:16:30.106"/>
+<status status="PASS" starttime="20211021 09:25:23.829" endtime="20211021 09:25:23.995"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
-<arg>${locator}</arg>
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211020 17:16:30.111" level="INFO">Clicking element '//android.widget.TextView[@text='SUBMIT']'.</msg>
-<status status="PASS" starttime="20211020 17:16:30.107" endtime="20211020 17:16:30.365"/>
+<msg timestamp="20211021 09:25:23.999" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20211021 09:25:23.995" endtime="20211021 09:25:24.871"/>
 </kw>
-<status status="PASS" starttime="20211020 17:16:29.829" endtime="20211020 17:16:30.365"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211021 09:25:34.873" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20211021 09:25:24.871" endtime="20211021 09:25:34.873"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211021 09:25:34.873" endtime="20211021 09:25:34.874"/>
+</kw>
+<status status="PASS" starttime="20211021 09:25:23.829" endtime="20211021 09:25:34.874"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211021 09:25:34.874" endtime="20211021 09:25:35.114"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211021 09:25:35.119" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20211021 09:25:35.114" endtime="20211021 09:25:35.378"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211021 09:25:45.380" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20211021 09:25:35.378" endtime="20211021 09:25:45.380"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211021 09:25:45.380" endtime="20211021 09:25:45.381"/>
+</kw>
+<status status="PASS" starttime="20211021 09:25:34.874" endtime="20211021 09:25:45.381"/>
+</iter>
+<status status="PASS" starttime="20211021 09:25:23.828" endtime="20211021 09:25:45.381"/>
+</for>
+<status status="PASS" starttime="20211021 09:25:23.828" endtime="20211021 09:25:45.381"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211021 09:25:55.382" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20211021 09:25:45.382" endtime="20211021 09:25:55.383"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>'Radio Station'</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211021 09:25:55.383" endtime="20211021 09:25:55.383"/>
 </kw>
 <kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
 <doc>Quit application. Application can be quit while Appium session is kept alive.
 This keyword can be used to close application during test case or between test cases.</doc>
-<status status="PASS" starttime="20211020 17:16:30.366" endtime="20211020 17:16:30.545"/>
+<status status="PASS" starttime="20211021 09:25:55.384" endtime="20211021 09:25:55.574"/>
 </kw>
 <tag>positive</tag>
 <tag>sanity</tag>
-<status status="PASS" starttime="20211020 17:15:40.440" endtime="20211020 17:16:30.546"/>
+<status status="PASS" starttime="20211021 09:24:34.040" endtime="20211021 09:25:55.574"/>
 </test>
 <kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" starttime="20211020 17:16:30.549" endtime="20211020 17:16:30.778"/>
+<status status="PASS" starttime="20211021 09:25:55.578" endtime="20211021 09:25:55.854"/>
 </kw>
-<doc>A test case for a user is able to edit him/her profile</doc>
-<status status="PASS" starttime="20211020 17:15:27.169" endtime="20211020 17:16:30.779"/>
+<doc>A test case for a user is able to view radio station and use the functionality (mute and unmute, play and pause ...)</doc>
+<status status="PASS" starttime="20211021 09:24:19.408" endtime="20211021 09:25:55.854"/>
 </suite>
 <statistics>
 <total>
@@ -443,7 +449,7 @@ This keyword can be used to close application during test case or between test c
 <stat pass="1" fail="0" skip="0">sanity</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Edit Profile">Edit Profile</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Radio Station">Radio Station</stat>
 </suite>
 </statistics>
 <errors>

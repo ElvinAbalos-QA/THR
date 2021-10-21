@@ -27,10 +27,3 @@ Check the email in mailinator
     Sleep    5
     Log To Console    'Successfully :)'
     Log To Console    ${text}
-
-
-#Check the email in mailinator
-#     Open Mailinator
-#     Input Field     //*[@id="addOverlay"]       bliimocheck
-#     Click    text=GO
-#     Sleep      5
