@@ -1,5 +1,4 @@
 *** Settings ***
-
 Documentation     A test case for a user is able to view radio station and use the functionality (mute and unmute, play and pause ...)
 Resource          ../../../Resources/resources.robot
 Suite Setup     Open MBC Application
@@ -20,9 +19,13 @@ Radio Station test case
     Tap The Element     ${SKIP_TUTORIAL}
     Sleep    5
     Swipe    5    173    176    178         # to view the sidenav
-    View Radio Station    ${LOVE_RADIO}
-    Handle Radio Station
-    Sleep    10
-    Log To Console    'Radio Station'
 
-
+    FOR    ${robot}    IN   @{RADIO_STATIONS}   # loop radio stations
+        Sleep    5
+        Log    ${robot}
+        View Radio Station    ${robot}
+        Handle Radio Station    ${MUTE_ICON}
+        Handle Radio Station    ${PLAY_ICON}
+        Handle Share Icon
+        Swipe    5    173    176    178         # to view the sidenav
+    END

@@ -36,12 +36,17 @@ ${MODAL_LOGGED_IN_ANOTHER_DEVICE_IOS}       xpath=(//XCUIElementTypeOther[@name=
 ${USE_HERE_BUTTON_IOS}      xpath=(//XCUIElementTypeOther[@name="USE HERE"])
 
 #*** RADIO STATIONS ***
-${LOVE_RADIO}       //android.widget.TextView[@text='LOVE RADIO']
+#&{RADIO_STATIONS}               LOVE_RADIO=//android.widget.TextView[@text='LOVE RADIO']     YES_THE_BEST=//android.widget.TextView[@text='YES! THE BEST']
+@{RADIO_STATIONS}=               //android.widget.TextView[@text='LOVE RADIO']     //android.widget.TextView[@text='YES! THE BEST']     //android.widget.TextView[@text='EASY ROCK']    //android.widget.TextView[@text='RADYO NATIN']     //android.widget.TextView[@text='DZRH']      //android.widget.TextView[@text='AKSYON RADYO']
 
-${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are currently logged in on another device']
+${MUTE_ICON}        xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView
+${PLAY_ICON}        xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.TextView
+${SHARE_ICON}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup/android.widget.ImageView
+
 #*** Verification Modal ***
 ${VERIFICATION_MODAL}       //android.widget.TextView[@text='VERIFICATION!']
 ${VERIFIED_BUTTON}          //android.widget.TextView[@text='I have verified my account.']
+${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are currently logged in on another device']
 
 #*** Game Tutorial ***
 ${SKIP_TUTORIAL}        //android.widget.TextView[@text='Skip Tutorial']
@@ -91,7 +96,7 @@ Run Keyword Until Success
     Wait Until Keyword Succeeds    5s      1s  ${KW}    @{KWARGS}
 
 Open MBC Application
-    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=Galaxy J5 Prime    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=4200933406a59453     automationName=Uiautomator2      app=/Users/qa_tester/Downloads/MBC PaPremyo 1.0.32(44).apk
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=Galaxy J5 Prime    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=4200933406a59453     automationName=Uiautomator2      # app=/Users/qa_tester/Downloads/MBC PaPremyo 1.0.32(44).apk
 
 Open MBC Application IOS
     Open Application    http://localhost:4723/wd/hub    platformName=iOS	platformVersion=15.0.2	    deviceName=Test iPhone    automationName=XCUITest      udid=3d9405ebce32f773d38e43236ce17f49523e12c2    bundleId=com.mbc.mbcpapremyo
@@ -178,19 +183,24 @@ Edit TextField
 
 View Radio Station
     [Arguments]    ${RADIO_STATION}
+    Sleep    10
     Wait Until Page Contains Element    ${RADIO_STATION}
     Tap The Element    ${RADIO_STATION}
     Sleep    10
 
 Handle Radio Station
     # Mute and Unmute Function
+    [Arguments]    ${ICON}
     FOR     ${i}    IN RANGE        2
-        Wait Until Page Contains Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView
-        Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView
+        Wait Until Page Contains Element    ${ICON}
+        Click Element    ${ICON}
         Sleep    10
-        log to console    ${i}
+        Log To Console      ${i}
     END
-
+Handle Share Icon
+    Tap The Element    ${SHARE_ICON}
+    Tap The Element    ${OK_BUTTON}
+    Sleep    5
 
 Handle Birthday
     # Birthday field
