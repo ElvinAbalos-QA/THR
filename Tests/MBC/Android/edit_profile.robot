@@ -26,7 +26,7 @@ Edit Profile test case
     Sleep    5
     Log To Console    'Edit Profile'
     # Edit First Name
-    Edit TextField      //android.widget.EditText[@index=2]     UpdateName
+    Edit TextField      //android.widget.EditText[@index=2]     Test
     # Edit Last Name
     Edit TextField     //android.widget.EditText[@index=3]     check
     Swipe    335    1174    356    670

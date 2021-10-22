@@ -34,7 +34,7 @@ ${USE_HERE_BUTTON}                      //android.widget.TextView[@text='USE HER
 
 # IOS
 ${MODAL_LOGGED_IN_ANOTHER_DEVICE_IOS}       xpath=(//XCUIElementTypeOther[@name="You are currently logged in on another device"])
-${USE_HERE_BUTTON_IOS}      xpath=(//XCUIElementTypeOther[@name="USE HERE"])
+${USE_HERE_BUTTON_IOS}      xpath=(//XCUIElementTypeButton[@name="USE HERE"])
 
 #*** RADIO STATIONS ***
 #&{RADIO_STATIONS}               LOVE_RADIO=//android.widget.TextView[@text='LOVE RADIO']     YES_THE_BEST=//android.widget.TextView[@text='YES! THE BEST']
@@ -46,11 +46,14 @@ ${SHARE_ICON}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.L
 
 #*** Verification Modal ***
 ${VERIFICATION_MODAL}       //android.widget.TextView[@text='VERIFICATION!']
+${VERIFICATION_MODAL_IOS}       xpath=(//XCUIElementTypeOther[@name="VERIFICATION!"])
 ${VERIFIED_BUTTON}          //android.widget.TextView[@text='I have verified my account.']
 ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are currently logged in on another device']
 
 #*** Game Tutorial ***
 ${SKIP_TUTORIAL}        //android.widget.TextView[@text='Skip Tutorial']
+${SKIP_TUTORIAL_IOS}    xpath=(//XCUIElementTypeOther[@name="Skip Tutorial"])
+${FINISH_TUTORIAL_BUTTON}       xpath=(//XCUIElementTypeOther[@name=" Don't show this again"])[4]/XCUIElementTypeOther[3]
 
 #*** Registration - EMAIL ***
 ${EMAIL_FIELD}        //android.widget.EditText[@text='Email Address']
@@ -71,6 +74,11 @@ ${PROFILE_ICON}                 //android.view.ViewGroup[@index=2]//android.widg
 #*** Sidenav ***
 ${HAMBURGER_ICON}               //android.view.ViewGroup//android.widget.ImageView
 ${MY_PAPREMYO}                  //android.widget.TextView[@text='My Papremyo']
+${TERMS_OF_USE}                 //android.widget.TextView[@text='Terms of Use']
+${TERMS_OF_USE_IOS}             xpath=(//XCUIElementTypeOther[@name="Terms of Use"])
+${PRIVACY_POLICY}               //android.widget.TextView[@text='Privacy Policy']
+${PRIVACY_POLICY_IOS}           xpath=(//XCUIElementTypeOther[@name="Privacy Policy"])
+
 
 #*** Reloading Partners Page
 ${RELOADING_PARTNERS}           //android.widget.TextView[@text='Reloading Partners']
@@ -78,6 +86,7 @@ ${RELOADING_PARTNERS}           //android.widget.TextView[@text='Reloading Partn
 #*** Logout ***
 ${NOTIF_TAB}                   //android.widget.TextView[@text='Notification']
 ${LOGOUT_TAB}                  xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView[2]/android.view.ViewGroup
+${LOGOUT_TAB_IOS}              //XCUIElementTypeOther[@name="Logout"]
 
 #*** Forgot Password ***
 ${FORGOT PASSWORD TEXT}         //android.widget.TextView[@text='Forgot your password?']
@@ -167,9 +176,7 @@ Handle Register
     Input Element       //android.widget.EditText[@text='PASSWORD']       Password@123
     Input Element       //android.widget.EditText[@text='CONFIRM PASSWORD']       Password@123
     Sleep    3
-#    Tap The Element    //android.widget.TextView[@text='Terms of Use]
-#    Handle Modals       //android.widget.TextView[@text='Terms of Use]       //android.widget.TextView[@text='OK']
-#    Handle Modals       //android.widget.TextView[@text='Privacy Policy]       //android.widget.TextView[@text='OK']
+#
     Swipe    680    1093    687    820
     Tap The Element     //android.widget.TextView[@text='SUBMIT']
     Handle Modals       //android.widget.TextView[@text='Email has already been taken']       //android.widget.TextView[@text='OK']
@@ -185,10 +192,10 @@ Edit TextField
 
 View Radio Station
     [Arguments]    ${RADIO_STATION}
-    Sleep    10
+    Sleep    5
     Wait Until Page Contains Element    ${RADIO_STATION}
     Tap The Element    ${RADIO_STATION}
-    Sleep    10
+    Sleep    5
 
 Handle Radio Station
     # Mute and Unmute Function

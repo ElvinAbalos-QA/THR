@@ -27,7 +27,7 @@ Login negative wrong email and valid password test case
     Sign With User      ${USER_DETAILS}[wrong_email]     ${LOGIN_EMAIL_FIELD_IOS}       ${USER_DETAILS}[password]       ${LOGIN_PASSWORD_FIELD_IOS}
     Submit Login Button     ${LOGIN_BUTTON_IOS}
     Handle Hide Keyboard
-    Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}     ${LOGIN_FAILED}     ${OK_BUTTON}
+#    Handle Login Failed     ${LOGIN_FAILED_INVALID_CREDENTIALS}     ${LOGIN_FAILED}     ${OK_BUTTON}
 
 Login positive test case
     [Tags]    sanity       positive
@@ -36,14 +36,12 @@ Login positive test case
     Sign With User      ${USER_DETAILS}[email]     ${LOGIN_EMAIL_FIELD_IOS}       ${USER_DETAILS}[password]       ${LOGIN_PASSWORD_FIELD_IOS}
     Handle Hide Keyboard
     Submit Login Button     ${LOGIN_BUTTON_IOS}
-    Tap The Element    /ios=.buttons().withName('USE HERE')
-    Wait Until Page Contains Element    xpath=(//XCUIElementTypeOther[@name="You are currently logged in on another device"])
     Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE_IOS}       ${USE_HERE_BUTTON_IOS}
     Sleep    3
     Log To Console    'Done'
-#    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${VERIFICATION_MODAL}
-#    Run Keyword If       '${PASSED}' == 'True'      Handle Verification
-##    Wait Until Page Contains Element        ${SKIP_TUTORIAL}
-##    Tap The Element     ${SKIP_TUTORIAL}
-#    Game Tutorial   //android.view.ViewGroup[@index=3]      # FINISH TUTORIAL BUTTON
-#    Click The Logout Button     ${LOGOUT_TAB}
+    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${VERIFICATION_MODAL}
+    Run Keyword If       '${PASSED}' == 'True'      Handle Verification
+#    Wait Until Page Contains Element        ${SKIP_TUTORIAL}
+#    Tap The Element     ${SKIP_TUTORIAL}
+    Game Tutorial   ${FINISH_TUTORIAL_BUTTON}      # FINISH TUTORIAL BUTTON
+    Click The Logout Button     ${LOGOUT_TAB_IOS}
