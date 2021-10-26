@@ -53,7 +53,7 @@ ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are
 #*** Game Tutorial ***
 ${SKIP_TUTORIAL}        //android.widget.TextView[@text='Skip Tutorial']
 ${SKIP_TUTORIAL_IOS}    xpath=(//XCUIElementTypeOther[@name="Skip Tutorial"])
-${FINISH_TUTORIAL_BUTTON}       xpath=(//XCUIElementTypeOther[@name=" Don't show this again"])[4]/XCUIElementTypeOther[3]
+${FINISH_TUTORIAL_BUTTON_IOS}       xpath=(//XCUIElementTypeOther[@name=" Don't show this again"])[4]/XCUIElementTypeOther[3]
 
 #*** Registration - EMAIL ***
 ${EMAIL_FIELD}        //android.widget.EditText[@text='Email Address']
@@ -94,7 +94,7 @@ ${FORGOT PASSWORD TEXT - IOS}   //XCUIElementTypeOther[@name="Forgot Password?"]
 ${FORGOT PASSWORD FIELD}        //android.widget.EditText[@text='Please enter your email']
 
 #*** WEB VARIABLES ***
-${URL}          https://www.mailinator.com/
+@{URL}          https://www.mailinator.com/     http://mbc-api-staging.bliimo.com
 ${BROWSER}      chromium
 ${TITLE}        Mailinator
 
@@ -110,7 +110,7 @@ Open MBC Application
     Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=Galaxy J5 Prime    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=4200933406a59453     automationName=Uiautomator2      # app=/Users/qa_tester/Downloads/MBC PaPremyo 1.0.32(44).apk
 
 Open MBC Application IOS
-    Open Application    http://localhost:4723/wd/hub    platformName=iOS	platformVersion=15.0.2	    deviceName=Test iPhone    automationName=XCUITest      udid=3d9405ebce32f773d38e43236ce17f49523e12c2    bundleId=com.mbc.mbcpapremyo
+    Open Application    http://localhost:4723/wd/hub    platformName=iOS	platformVersion=15.0.2	    deviceName=Test iPhone    automationName=XCUITest      udid=3d9405ebce32f773d38e43236ce17f49523e12c2    bundleId=com.mbc.mbcpapremyo    #app=/Users/qa_tester/Desktop/mbcapp2/mbcapp.ipa
 
 Handle Modals
     [Arguments]     ${MODAL_NAME}       ${BUTTON}
@@ -332,4 +332,10 @@ Open Mailinator
 
 Input Field
     [Arguments]    ${field}     ${value}
-    Fill Text    xpath=${field}    ${value}
+    Wait For Elements State    ${field}
+    Fill Text    ${field}    ${value}
+
+Select Element From List
+    [Arguments]    ${arrow}     ${list}
+    Click    ${arrow}
+    Click    ${list}

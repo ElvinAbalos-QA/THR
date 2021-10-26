@@ -39,9 +39,9 @@ Login positive test case
     Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE_IOS}       ${USE_HERE_BUTTON_IOS}
     Sleep    3
     Log To Console    'Done'
-    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${VERIFICATION_MODAL}
+    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${VERIFICATION_MODAL_IOS}
     Run Keyword If       '${PASSED}' == 'True'      Handle Verification
 #    Wait Until Page Contains Element        ${SKIP_TUTORIAL}
 #    Tap The Element     ${SKIP_TUTORIAL}
-    Game Tutorial   ${FINISH_TUTORIAL_BUTTON}      # FINISH TUTORIAL BUTTON
+    Game Tutorial   ${FINISH_TUTORIAL_BUTTON_IOS}      # FINISH TUTORIAL BUTTON
     Click The Logout Button     ${LOGOUT_TAB_IOS}
