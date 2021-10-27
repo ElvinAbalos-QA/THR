@@ -28,6 +28,6 @@ Notification test case
     Handle Modals       //android.widget.TextView[@text='Notification turn off.']       //android.widget.Button[@text='OK']
     Tap The Element    ${TOGGLE}
     Handle Modals       //android.widget.TextView[@text='Notification turn on.']       //android.widget.Button[@text='OK']
-#    Click The Logout Button     ${LOGOUT_TAB}
+    Swipe    5    173    176    178         # to view the sidenav
     Sleep    5
     Log To Console    'Notification'
