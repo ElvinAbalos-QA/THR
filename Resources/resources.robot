@@ -80,7 +80,6 @@ ${TERMS_OF_USE_IOS}             xpath=(//XCUIElementTypeOther[@name="Terms of Us
 ${PRIVACY_POLICY}               //android.widget.TextView[@text='Privacy Policy']
 ${PRIVACY_POLICY_IOS}           xpath=(//XCUIElementTypeOther[@name="Privacy Policy"])
 
-
 #*** Reloading Partners Page
 ${RELOADING_PARTNERS}           //android.widget.TextView[@text='Reloading Partners']
 
@@ -126,7 +125,7 @@ Handle Hide Keyboard
     Click Element    xpath=(//XCUIElementTypeOther[@name="LOG IN  Vertical scroll bar, 1 page Horizontal scroll bar, 1 page LOG IN Forgot your password? QUICK ACCESS WITH  BACK TO MAIN SCREEN"])[2]/XCUIElementTypeOther[1]/XCUIElementTypeImage
 
 Handle Sign Up Via Facebook
-    log to console      'Handle Sign Up Via Facebook'
+    Log To Console      'Handle Sign Up Via Facebook'
     Input Text           //android.widget.EditText[@text='Mobile No.']       0912345678901
     Tap The Element      //android.view.ViewGroup[@index=9]
 
@@ -209,7 +208,7 @@ Handle Radio Station
     END
 Handle Share Icon
     Tap The Element    ${SHARE_ICON}
-    Tap The Element    ${OK_BUTTON}
+    Tap The Element    //android.widget.TextView[@text='Copy to clipboard']
     Sleep    5
 
 Handle Birthday
@@ -294,6 +293,9 @@ Input User Password
 Handle Location and Notification IOS
     Handle Modals    //XCUIElementTypeAlert[@name="Allow “MBC PaPremyo” to use your location?"]     //XCUIElementTypeButton[@name="Allow Once"]
     Handle Modals    //XCUIElementTypeAlert[@name="“MBC PaPremyo” Would Like to Send You Notifications"]    //XCUIElementTypeButton[@name="Allow"]
+
+Handle Location and Notification Android
+    Handle Modals       //android.widget.TextView[@text='Allow MBC Papremyo to access this device's location?']     //android.widget.TextView[@text='ALLOW ONLY WHILE USING THE APP']
 
 Submit Login Button
     [Arguments]    ${BUTTON}

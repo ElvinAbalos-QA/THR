@@ -12,6 +12,7 @@ Suite Teardown    Close Application
 Login negative valid email and wrong password test case
     [Documentation]     This is to be able to check a negative test case for a valid email and wrong password fields.
     [Tags]      negative    invalid_credentials
+    Handle Location and Notification Android
     Go To Login Screen      ${LOGIN_BUTTON}
     Sign With User      ${USER_DETAILS}[email]     ${LOGIN_EMAIL_FIELD}     ${USER_DETAILS}[wrong_password]     ${LOGIN_PASSWORD_FIELD}
     Submit Login Button     ${LOGIN_BUTTON}
@@ -20,6 +21,7 @@ Login negative valid email and wrong password test case
 Login negative wrong email and valid password test case
     [Documentation]     This is to be able to check a negative test case for a wrong email and valid password fields.
     [Tags]      negative    invalid_credentials
+    Handle Location and Notification Android
     Go To Login Screen      ${LOGIN_BUTTON}
     Sign With User      ${USER_DETAILS}[wrong_email]     ${LOGIN_EMAIL_FIELD}       ${USER_DETAILS}[password]       ${LOGIN_PASSWORD_FIELD}
     Submit Login Button     ${LOGIN_BUTTON}
@@ -27,6 +29,7 @@ Login negative wrong email and valid password test case
 
 Login positive test case
     [Tags]    sanity       positive
+    Handle Location and Notification Android
     Go To Login Screen      ${LOGIN_BUTTON}
     Sign With User      ${USER_DETAILS}[email]     ${LOGIN_EMAIL_FIELD}       ${USER_DETAILS}[password]       ${LOGIN_PASSWORD_FIELD}
     Submit Login Button     ${LOGIN_BUTTON}
