@@ -1,324 +1,720 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.1 (Python 3.9.7 on darwin)" generated="20211026 16:48:25.064" rpa="false" schemaversion="2">
-<suite id="s1" name="Game" source="/Users/qa_tester/Desktop/MBC-APP/Tests/MBC/Android/game.robot">
-<test id="s1-t1" name="Admin create a game">
-<kw name="Open Browser" library="Browser">
-<arg>${URL}[1]</arg>
-<arg>${BROWSER}</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
-Use `New Page` directly instead of `Open Browser` for production and automated execution.
-See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
-<msg timestamp="20211026 16:48:26.751" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20211026 16:48:26.752" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "/Users/qa_tester/Desktop/MBC-APP/Output/browser/traces/8d9809ac-efea-45b4-8c46-154e16ab2965"}</msg>
-<msg timestamp="20211026 16:48:27.353" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"/Users/qa_tester/Desktop/MBC-APP/Output/browser/traces/8d9809ac-efea-45b4-8c46-154e16ab2965"}</msg>
-<msg timestamp="20211026 16:48:27.355" level="INFO">{"acceptDownloads": false, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false}</msg>
-<msg timestamp="20211026 16:48:27.403" level="INFO">Successfully created context. </msg>
-<msg timestamp="20211026 16:48:27.403" level="INFO">{'acceptDownloads': False, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False}</msg>
-<msg timestamp="20211026 16:48:32.437" level="INFO">Successfully initialized new page object and opened url: http://mbc-api-staging.bliimo.com</msg>
-<status status="PASS" starttime="20211026 16:48:26.750" endtime="20211026 16:48:32.438"/>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on darwin)" generated="20211027 09:57:10.595" rpa="false" schemaversion="2">
+<suite id="s1" name="Notification" source="/Users/qa_tester/Desktop/MBC-APP/Tests/MBC/Android/notification.robot">
+<kw name="Open MBC Application" library="resources" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Galaxy J5 Prime</arg>
+<arg>appPackage=${MBC-APPLICATION-ID}</arg>
+<arg>appActivity=${MBC-APPLICATION-ACTIVITY}</arg>
+<arg>udid=4200933406a59453</arg>
+<arg>automationName=Uiautomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20211027 09:57:12.172" endtime="20211027 09:57:28.139"/>
 </kw>
-<kw name="Input Field" library="resources">
-<arg>\#admin_user_email</arg>
-<arg>elvin@mailinator.com</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${field}</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20211026 16:48:32.498" level="INFO">Wait for Element with selector: #admin_user_email</msg>
-<status status="PASS" starttime="20211026 16:48:32.440" endtime="20211026 16:48:32.498"/>
+<status status="PASS" starttime="20211027 09:57:12.172" endtime="20211027 09:57:28.139"/>
 </kw>
-<kw name="Fill Text" library="Browser">
-<arg>${field}</arg>
-<arg>${value}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20211026 16:48:32.499" level="INFO">Fills the text 'elvin@mailinator.com' in the given field.</msg>
-<status status="PASS" starttime="20211026 16:48:32.498" endtime="20211026 16:48:32.527"/>
+<test id="s1-t1" name="Notification test case">
+<kw name="Launch Application" library="AppiumLibrary" type="SETUP">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20211027 09:57:28.143" endtime="20211027 09:57:31.629"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:32.438" endtime="20211026 16:48:32.527"/>
+<kw name="Go To Login Screen" library="resources">
+<arg>${LOGIN_BUTTON}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 09:57:36.630" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211027 09:57:31.630" endtime="20211027 09:57:36.630"/>
 </kw>
-<kw name="Input Field" library="resources">
-<arg>\#admin_user_password</arg>
-<arg>password</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${field}</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20211026 16:48:32.550" level="INFO">Wait for Element with selector: #admin_user_password</msg>
-<status status="PASS" starttime="20211026 16:48:32.528" endtime="20211026 16:48:32.550"/>
+<kw name="Submit Login Button" library="resources">
+<arg>${BUTTON}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 09:57:39.632" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211027 09:57:36.631" endtime="20211027 09:57:39.632"/>
 </kw>
-<kw name="Fill Text" library="Browser">
-<arg>${field}</arg>
-<arg>${value}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20211026 16:48:32.551" level="INFO">Fills the text 'password' in the given field.</msg>
-<status status="PASS" starttime="20211026 16:48:32.551" endtime="20211026 16:48:32.595"/>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>appiumlibrary.Wait Until Page Contains Element</arg>
+<arg>${BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:57:39.634" endtime="20211027 09:57:40.991"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:32.527" endtime="20211026 16:48:32.596"/>
+<status status="PASS" starttime="20211027 09:57:39.633" endtime="20211027 09:57:40.991"/>
 </kw>
-<kw name="Click" library="Browser">
-<arg>\#admin_user_submit_action &gt; input:nth-child(1)</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:32.596" endtime="20211026 16:48:33.657"/>
+<status status="PASS" starttime="20211027 09:57:39.632" endtime="20211027 09:57:40.992"/>
 </kw>
-<kw name="Click" library="Browser">
-<arg>\#games &gt; a:nth-child(1)</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:33.657" endtime="20211026 16:48:33.814"/>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>appiumlibrary.Click Element</arg>
+<arg>${BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211027 09:57:40.998" level="INFO">Clicking element '//android.widget.TextView[@text='LOG IN']'.</msg>
+<status status="PASS" starttime="20211027 09:57:40.993" endtime="20211027 09:57:41.325"/>
 </kw>
-<kw name="Click" library="Browser">
-<arg>\#roulettes &gt; a:nth-child(1)</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:33.814" endtime="20211026 16:48:34.878"/>
+<status status="PASS" starttime="20211027 09:57:40.992" endtime="20211027 09:57:41.325"/>
 </kw>
-<kw name="Click" library="Browser">
-<arg>text=New Roulette</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:34.878" endtime="20211026 16:48:37.439"/>
+<status status="PASS" starttime="20211027 09:57:40.992" endtime="20211027 09:57:41.325"/>
 </kw>
-<kw name="Click" library="Browser">
-<arg>\#roulette_radio_station_input &gt; span:nth-child(3) &gt; span:nth-child(1) &gt; span:nth-child(1)</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:37.440" endtime="20211026 16:48:37.917"/>
+<status status="PASS" starttime="20211027 09:57:36.631" endtime="20211027 09:57:41.325"/>
 </kw>
-<kw name="Click" library="Browser">
-<arg>\#select2-roulette_radio_station_id-results &gt; li:nth-child(5)</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:37.917" endtime="20211026 16:48:38.025"/>
+<status status="PASS" starttime="20211027 09:57:31.629" endtime="20211027 09:57:41.325"/>
 </kw>
-<kw name="Select Element From List" library="resources">
-<arg>xpath=/html/body/div/div[4]/div/div/form/div/div/div[1]/li[3]/span/span[1]/span/span[2]</arg>
-<arg>\#select2-roulette_dj_id-results &gt; li:nth-child(5)</arg>
-<kw name="Click" library="Browser">
-<arg>${arrow}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:38.026" endtime="20211026 16:48:38.120"/>
+<kw name="Sign with User" library="resources">
+<arg>${USER_DETAILS}[email]</arg>
+<arg>${LOGIN_EMAIL_FIELD}</arg>
+<arg>${USER_DETAILS}[password]</arg>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<kw name="Input User Email" library="resources">
+<arg>${EMAIL}</arg>
+<arg>${EMAIL_FIELD}</arg>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${FIELD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:57:41.328" endtime="20211027 09:57:42.992"/>
 </kw>
-<kw name="Click" library="Browser">
-<arg>${list}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:38.120" endtime="20211026 16:48:38.200"/>
+<status status="PASS" starttime="20211027 09:57:41.328" endtime="20211027 09:57:42.992"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:38.026" endtime="20211026 16:48:38.201"/>
+<status status="PASS" starttime="20211027 09:57:41.327" endtime="20211027 09:57:42.993"/>
 </kw>
-<kw name="Select Element From List" library="resources">
-<arg>xpath=/html/body/div/div[4]/div/div/form/div/div/div[1]/li[4]/span/span[1]/span/span[2]</arg>
-<arg>\#select2-roulette_sponsor_id-results &gt; li:nth-child(6)</arg>
-<kw name="Click" library="Browser">
-<arg>${arrow}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:38.201" endtime="20211026 16:48:38.288"/>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Input Text</arg>
+<arg>${FIELD}</arg>
+<arg>${EMAIL}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20211027 09:57:43.000" level="INFO">Typing text 'bliimocheck@mailinator.com' into text field '//android.widget.EditText[@text='Email']'</msg>
+<status status="PASS" starttime="20211027 09:57:42.994" endtime="20211027 09:57:43.878"/>
 </kw>
-<kw name="Click" library="Browser">
-<arg>${list}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:38.288" endtime="20211026 16:48:38.366"/>
+<status status="PASS" starttime="20211027 09:57:42.994" endtime="20211027 09:57:43.878"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:38.201" endtime="20211026 16:48:38.366"/>
+<status status="PASS" starttime="20211027 09:57:42.993" endtime="20211027 09:57:43.879"/>
 </kw>
-<kw name="Input Field" library="resources">
-<arg>\#roulette_name</arg>
-<arg>Testing 101</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${field}</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20211026 16:48:38.399" level="INFO">Wait for Element with selector: #roulette_name</msg>
-<status status="PASS" starttime="20211026 16:48:38.367" endtime="20211026 16:48:38.399"/>
+<status status="PASS" starttime="20211027 09:57:41.326" endtime="20211027 09:57:43.879"/>
 </kw>
-<kw name="Fill Text" library="Browser">
-<arg>${field}</arg>
-<arg>${value}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20211026 16:48:38.400" level="INFO">Fills the text 'Testing 101' in the given field.</msg>
-<status status="PASS" starttime="20211026 16:48:38.399" endtime="20211026 16:48:38.433"/>
+<kw name="Input User Password" library="resources">
+<arg>${USERPASSWORD}</arg>
+<arg>${PASSWORD_FIELD}</arg>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Wait Until Page Contains Element</arg>
+<arg>${FIELD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:57:43.881" endtime="20211027 09:57:44.642"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:38.367" endtime="20211026 16:48:38.433"/>
+<status status="PASS" starttime="20211027 09:57:43.880" endtime="20211027 09:57:44.642"/>
 </kw>
-<kw name="Input Field" library="resources">
-<arg>\#roulette_number_of_winner</arg>
-<arg>1</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${field}</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20211026 16:48:38.477" level="INFO">Wait for Element with selector: #roulette_number_of_winner</msg>
-<status status="PASS" starttime="20211026 16:48:38.434" endtime="20211026 16:48:38.477"/>
+<status status="PASS" starttime="20211027 09:57:43.880" endtime="20211027 09:57:44.642"/>
 </kw>
-<kw name="Fill Text" library="Browser">
-<arg>${field}</arg>
-<arg>${value}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20211026 16:48:38.478" level="INFO">Fills the text '1' in the given field.</msg>
-<status status="PASS" starttime="20211026 16:48:38.477" endtime="20211026 16:48:38.524"/>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>Input Password</arg>
+<arg>${FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Password" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Types the given password into text field identified by `locator`.</doc>
+<msg timestamp="20211027 09:57:44.648" level="INFO">Typing password into text field '//android.widget.EditText[@text='Password']'</msg>
+<status status="PASS" starttime="20211027 09:57:44.643" endtime="20211027 09:57:45.485"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:38.433" endtime="20211026 16:48:38.525"/>
+<status status="PASS" starttime="20211027 09:57:44.643" endtime="20211027 09:57:45.486"/>
 </kw>
-<kw name="Input Field" library="resources">
-<arg>\#roulette_price</arg>
-<arg>10000</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${field}</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20211026 16:48:38.566" level="INFO">Wait for Element with selector: #roulette_price</msg>
-<status status="PASS" starttime="20211026 16:48:38.527" endtime="20211026 16:48:38.566"/>
+<status status="PASS" starttime="20211027 09:57:44.642" endtime="20211027 09:57:45.486"/>
 </kw>
-<kw name="Fill Text" library="Browser">
-<arg>${field}</arg>
-<arg>${value}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20211026 16:48:38.567" level="INFO">Fills the text '10000' in the given field.</msg>
-<status status="PASS" starttime="20211026 16:48:38.567" endtime="20211026 16:48:38.615"/>
+<status status="PASS" starttime="20211027 09:57:43.879" endtime="20211027 09:57:45.486"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:38.526" endtime="20211026 16:48:38.615"/>
+<status status="PASS" starttime="20211027 09:57:41.326" endtime="20211027 09:57:45.486"/>
 </kw>
-<kw name="Type Text" library="Browser">
-<arg>xpath=//*[@id="roulette_schedule"]</arg>
-<arg>1026002021050000pm</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20211026 16:48:38.616" level="INFO">Types the text '1026002021050000pm' in the given field.</msg>
-<status status="PASS" starttime="20211026 16:48:38.616" endtime="20211026 16:48:38.794"/>
+<kw name="Submit Login Button" library="resources">
+<arg>${LOGIN_BUTTON}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 09:57:48.488" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211027 09:57:45.487" endtime="20211027 09:57:48.489"/>
 </kw>
-<kw name="Input Field" library="resources">
-<arg>\#roulette_redemption_details</arg>
-<arg>Rdemption details here ....</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${field}</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20211026 16:48:38.835" level="INFO">Wait for Element with selector: #roulette_redemption_details</msg>
-<status status="PASS" starttime="20211026 16:48:38.795" endtime="20211026 16:48:38.835"/>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>appiumlibrary.Wait Until Page Contains Element</arg>
+<arg>${BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:57:48.491" endtime="20211027 09:57:48.757"/>
 </kw>
-<kw name="Fill Text" library="Browser">
-<arg>${field}</arg>
-<arg>${value}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20211026 16:48:38.836" level="INFO">Fills the text 'Rdemption details here ....' in the given field.</msg>
-<status status="PASS" starttime="20211026 16:48:38.835" endtime="20211026 16:48:38.871"/>
+<status status="PASS" starttime="20211027 09:57:48.490" endtime="20211027 09:57:48.757"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:38.794" endtime="20211026 16:48:38.871"/>
+<status status="PASS" starttime="20211027 09:57:48.489" endtime="20211027 09:57:48.758"/>
 </kw>
-<kw name="Input Field" library="resources">
-<arg>\#roulette_dti_permit</arg>
-<arg>dti_permit12345</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${field}</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20211026 16:48:38.917" level="INFO">Wait for Element with selector: #roulette_dti_permit</msg>
-<status status="PASS" starttime="20211026 16:48:38.872" endtime="20211026 16:48:38.917"/>
+<kw name="Run Keyword Until Success" library="resources">
+<arg>appiumlibrary.Click Element</arg>
+<arg>${BUTTON}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5s</arg>
+<arg>1s</arg>
+<arg>${KW}</arg>
+<arg>@{KWARGS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>@{KWARGS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211027 09:57:48.764" level="INFO">Clicking element '//android.widget.TextView[@text='LOG IN']'.</msg>
+<status status="PASS" starttime="20211027 09:57:48.759" endtime="20211027 09:57:49.020"/>
 </kw>
-<kw name="Fill Text" library="Browser">
-<arg>${field}</arg>
-<arg>${value}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20211026 16:48:38.917" level="INFO">Fills the text 'dti_permit12345' in the given field.</msg>
-<status status="PASS" starttime="20211026 16:48:38.917" endtime="20211026 16:48:38.962"/>
+<status status="PASS" starttime="20211027 09:57:48.758" endtime="20211027 09:57:49.021"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:38.872" endtime="20211026 16:48:38.962"/>
+<status status="PASS" starttime="20211027 09:57:48.758" endtime="20211027 09:57:49.021"/>
 </kw>
-<kw name="Input Field" library="resources">
-<arg>\#roulette_winner_prompt</arg>
-<arg>Panalo ka!</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${field}</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20211026 16:48:38.997" level="INFO">Wait for Element with selector: #roulette_winner_prompt</msg>
-<status status="PASS" starttime="20211026 16:48:38.963" endtime="20211026 16:48:38.997"/>
+<status status="PASS" starttime="20211027 09:57:45.487" endtime="20211027 09:57:49.021"/>
 </kw>
-<kw name="Fill Text" library="Browser">
-<arg>${field}</arg>
-<arg>${value}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20211026 16:48:38.998" level="INFO">Fills the text 'Panalo ka!' in the given field.</msg>
-<status status="PASS" starttime="20211026 16:48:38.997" endtime="20211026 16:48:39.047"/>
+<kw name="Handle Modals" library="resources">
+<arg>${MODAL_LOGGED_IN_ANOTHER_DEVICE}</arg>
+<arg>${USE_HERE_BUTTON}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${PASSED}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${MODAL_NAME}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${MODAL_NAME}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:57:49.022" endtime="20211027 09:57:50.617"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:38.962" endtime="20211026 16:48:39.047"/>
+<msg timestamp="20211027 09:57:50.617" level="INFO">${PASSED} = True</msg>
+<status status="PASS" starttime="20211027 09:57:49.022" endtime="20211027 09:57:50.617"/>
 </kw>
-<kw name="Click" library="Browser">
-<arg>text=Create Roulette</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:39.048" endtime="20211026 16:48:40.006"/>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${PASSED}</arg>
+<arg>Tap The Element</arg>
+<arg>${BUTTON}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Tap The Element" library="resources">
+<arg>${BUTTON}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:57:50.618" endtime="20211027 09:57:50.708"/>
 </kw>
-<kw name="Click" library="Browser">
-<arg>text=Let player join</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20211026 16:48:40.007" endtime="20211026 16:48:40.726"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211027 09:57:50.714" level="INFO">Clicking element '//android.widget.TextView[@text='USE HERE']'.</msg>
+<status status="PASS" starttime="20211027 09:57:50.708" endtime="20211027 09:57:50.861"/>
+</kw>
+<status status="PASS" starttime="20211027 09:57:50.618" endtime="20211027 09:57:50.861"/>
+</kw>
+<status status="PASS" starttime="20211027 09:57:50.617" endtime="20211027 09:57:50.861"/>
+</kw>
+<status status="PASS" starttime="20211027 09:57:49.021" endtime="20211027 09:57:50.861"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${PASSED}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${VERIFICATION_MODAL}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${VERIFICATION_MODAL}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20211027 09:57:57.994" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 09:57:56.457" endtime="20211027 09:57:57.995"/>
+</kw>
+<msg timestamp="20211027 09:57:57.996" level="FAIL">Element '//android.widget.TextView[@text='VERIFICATION!']' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20211027 09:57:50.862" endtime="20211027 09:57:57.996"/>
+</kw>
+<msg timestamp="20211027 09:57:57.996" level="INFO">${PASSED} = False</msg>
+<status status="PASS" starttime="20211027 09:57:50.862" endtime="20211027 09:57:57.996"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${PASSED}' == 'True'</arg>
+<arg>Handle Verification</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211027 09:57:57.996" endtime="20211027 09:57:57.997"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${SKIP_TUTORIAL}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:57:57.997" endtime="20211027 09:57:58.111"/>
+</kw>
+<kw name="Tap The Element" library="resources">
+<arg>${SKIP_TUTORIAL}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:57:58.112" endtime="20211027 09:57:58.204"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211027 09:57:58.210" level="INFO">Clicking element '//android.widget.TextView[@text='Skip Tutorial']'.</msg>
+<status status="PASS" starttime="20211027 09:57:58.205" endtime="20211027 09:57:58.998"/>
+</kw>
+<status status="PASS" starttime="20211027 09:57:58.111" endtime="20211027 09:57:58.999"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 09:58:04.002" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211027 09:57:58.999" endtime="20211027 09:58:04.002"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>5</arg>
+<arg>173</arg>
+<arg>176</arg>
+<arg>178</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20211027 09:58:04.003" endtime="20211027 09:58:05.330"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>205</arg>
+<arg>1122</arg>
+<arg>207</arg>
+<arg>553</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20211027 09:58:05.330" endtime="20211027 09:58:06.589"/>
+</kw>
+<kw name="Tap The Element" library="resources">
+<arg>//android.widget.TextView[@text='Notification']</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:58:06.590" endtime="20211027 09:58:06.856"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211027 09:58:06.861" level="INFO">Clicking element '//android.widget.TextView[@text='Notification']'.</msg>
+<status status="PASS" starttime="20211027 09:58:06.856" endtime="20211027 09:58:07.126"/>
+</kw>
+<status status="PASS" starttime="20211027 09:58:06.589" endtime="20211027 09:58:07.127"/>
+</kw>
+<kw name="Tap The Element" library="resources">
+<arg>${TOGGLE}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:58:07.127" endtime="20211027 09:58:08.997"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211027 09:58:09.002" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.Switch'.</msg>
+<status status="PASS" starttime="20211027 09:58:08.998" endtime="20211027 09:58:09.228"/>
+</kw>
+<status status="PASS" starttime="20211027 09:58:07.127" endtime="20211027 09:58:09.229"/>
+</kw>
+<kw name="Handle Modals" library="resources">
+<arg>//android.widget.TextView[@text='Notification turn off.']</arg>
+<arg>//android.widget.Button[@text='OK']</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${PASSED}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${MODAL_NAME}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${MODAL_NAME}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:58:09.230" endtime="20211027 09:58:10.073"/>
+</kw>
+<msg timestamp="20211027 09:58:10.074" level="INFO">${PASSED} = True</msg>
+<status status="PASS" starttime="20211027 09:58:09.230" endtime="20211027 09:58:10.074"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${PASSED}</arg>
+<arg>Tap The Element</arg>
+<arg>${BUTTON}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Tap The Element" library="resources">
+<arg>${BUTTON}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:58:10.075" endtime="20211027 09:58:10.147"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211027 09:58:10.153" level="INFO">Clicking element '//android.widget.Button[@text='OK']'.</msg>
+<status status="PASS" starttime="20211027 09:58:10.147" endtime="20211027 09:58:10.247"/>
+</kw>
+<status status="PASS" starttime="20211027 09:58:10.075" endtime="20211027 09:58:10.247"/>
+</kw>
+<status status="PASS" starttime="20211027 09:58:10.074" endtime="20211027 09:58:10.247"/>
+</kw>
+<status status="PASS" starttime="20211027 09:58:09.229" endtime="20211027 09:58:10.248"/>
+</kw>
+<kw name="Tap The Element" library="resources">
+<arg>${TOGGLE}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:58:10.248" endtime="20211027 09:58:10.411"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211027 09:58:10.417" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.Switch'.</msg>
+<status status="PASS" starttime="20211027 09:58:10.412" endtime="20211027 09:58:11.030"/>
+</kw>
+<status status="PASS" starttime="20211027 09:58:10.248" endtime="20211027 09:58:11.031"/>
+</kw>
+<kw name="Handle Modals" library="resources">
+<arg>//android.widget.TextView[@text='Notification turn on.']</arg>
+<arg>//android.widget.Button[@text='OK']</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${PASSED}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${MODAL_NAME}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${MODAL_NAME}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:58:11.032" endtime="20211027 09:58:11.758"/>
+</kw>
+<msg timestamp="20211027 09:58:11.759" level="INFO">${PASSED} = True</msg>
+<status status="PASS" starttime="20211027 09:58:11.032" endtime="20211027 09:58:11.759"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${PASSED}</arg>
+<arg>Tap The Element</arg>
+<arg>${BUTTON}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Tap The Element" library="resources">
+<arg>${BUTTON}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211027 09:58:11.760" endtime="20211027 09:58:11.823"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211027 09:58:11.829" level="INFO">Clicking element '//android.widget.Button[@text='OK']'.</msg>
+<status status="PASS" starttime="20211027 09:58:11.823" endtime="20211027 09:58:11.921"/>
+</kw>
+<status status="PASS" starttime="20211027 09:58:11.759" endtime="20211027 09:58:11.921"/>
+</kw>
+<status status="PASS" starttime="20211027 09:58:11.759" endtime="20211027 09:58:11.921"/>
+</kw>
+<status status="PASS" starttime="20211027 09:58:11.031" endtime="20211027 09:58:11.921"/>
+</kw>
+<kw name="Click The Logout Button" library="resources">
+<arg>${LOGOUT_TAB}</arg>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>5</arg>
+<arg>173</arg>
+<arg>176</arg>
+<arg>178</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20211027 09:58:11.922" endtime="20211027 09:58:13.182"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>205</arg>
+<arg>1122</arg>
+<arg>207</arg>
+<arg>553</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20211027 09:58:13.182" endtime="20211027 09:58:14.438"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 09:58:19.440" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211027 09:58:14.438" endtime="20211027 09:58:19.440"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${BUTTON}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20211027 09:58:25.149" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="720" height="1280"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.mbcapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][720,1280]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.mbcapp" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][720,1280]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.mbcapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.mbcapp" class="android.widget.LinearLayout" text="" resource-id="com.mbcapp:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.mbcapp" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+            &lt;android.widget.FrameLayout index="0" package="com.mbcapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="2" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                            &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                              &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,68][720,526]" displayed="true" /&gt;
+                              &lt;android.widget.ImageView index="1" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,446]" displayed="true" /&gt;
+                              &lt;android.widget.ImageView index="2" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true" /&gt;
+                              &lt;android.view.ViewGroup index="3" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,408][720,774]" displayed="true"&gt;
+                                &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[26,408][694,774]" displayed="true" /&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                              &lt;android.view.ViewGroup index="4" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,774][720,818]" displayed="true"&gt;
+                                &lt;android.widget.TextView index="0" package="com.mbcapp" class="android.widget.TextView" text="Radyo, Palaro at Papremyo!" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[154,774][567,818]" displayed="true" /&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                              &lt;android.view.ViewGroup index="5" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,858][720,1280]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[177,858][543,1280]" displayed="true"&gt;
+                                  &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[216,858][504,938]" displayed="true"&gt;
+                                    &lt;android.widget.TextView index="0" package="com.mbcapp" class="android.widget.TextView" text="LOG IN" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[309,876][412,920]" displayed="true" /&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                  &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="OR REGISTER" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[273,978][448,1017]" displayed="true" /&gt;
+                                  &lt;android.view.ViewGroup index="2" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[193,1057][283,1147]" displayed="true"&gt;
+                                    &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[193,1057][283,1147]" displayed="true"&gt;
+                                      &lt;android.view.View index="0" package="com.mbcapp" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[193,1057][283,1147]" displayed="true" /&gt;
+                                      &lt;android.widget.ImageView index="1" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[203,1067][273,1137]" displayed="true" /&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                  &lt;android.view.ViewGroup index="3" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[315,1057][405,1147]" displayed="true"&gt;
+                                    &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[315,1057][405,1147]" displayed="true"&gt;
+                                      &lt;android.view.View index="0" package="com.mbcapp" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[315,1057][405,1147]" displayed="true" /&gt;
+                                      &lt;android.widget.ImageView index="1" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[325,1067][395,1137]" displayed="true" /&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                  &lt;android.view.ViewGroup index="4" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[437,1057][527,1147]" displayed="true"&gt;
+                                    &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[437,1057][527,1147]" displayed="true"&gt;
+                                      &lt;android.view.View index="0" package="com.mbcapp" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[437,1057][527,1147]" displayed="true" /&gt;
+                                      &lt;android.widget.ImageView index="1" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[449,1069][515,1135]" displayed="true" /&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                              &lt;android.widget.ImageView index="6" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true" /&gt;
+                            &lt;/android.view.ViewGroup&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                    &lt;android.view.ViewGroup index="3" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                            &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][560,1280]" displayed="true"&gt;
+                                &lt;android.widget.ScrollView index="0" package="com.mbcapp" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,48][560,1280]" displayed="true"&gt;
+                                  &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][560,1280]" displayed="true"&gt;
+                                    &lt;android.view.ViewGroup index="2" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][560,700]" displayed="true"&gt;
+                                      &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,86][560,156]" displayed="true"&gt;
+                                        &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,86][110,156]" displayed="true" /&gt;
+                                        &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="LOVE RADIO" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[130,103][277,139]" displayed="true" /&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                      &lt;android.view.ViewGroup index="1" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,186][560,256]" displayed="true"&gt;
+                                        &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,186][110,256]" displayed="true" /&gt;
+                                        &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="YES! THE BEST" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[130,203][309,239]" displayed="true" /&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                      &lt;android.view.ViewGroup index="2" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,286][560,356]" displayed="true"&gt;
+                                        &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,286][110,356]" displayed="true" /&gt;
+                                        &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="EASY ROCK" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[130,303][270,339]" displayed="true" /&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                      &lt;android.view.ViewGroup index="3" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,386][560,456]" displayed="true"&gt;
+                                        &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,386][110,456]" displayed="true" /&gt;
+                                        &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="RADYO NATIN" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[130,403][298,439]" displayed="true" /&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                      &lt;android.view.ViewGroup index="4" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,486][560,556]" displayed="true"&gt;
+                                        &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,486][110,556]" displayed="true" /&gt;
+                                        &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="AKSYON RADYO" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[130,503][324,539]" displayed="true" /&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                      &lt;android.view.ViewGroup index="5" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,586][560,656]" displayed="true"&gt;
+                                        &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,586][110,656]" displayed="true" /&gt;
+                                        &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="DZRH" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[130,603][198,639]" displayed="true" /&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                    &lt;android.view.ViewGroup index="3" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,770][560,840]" displayed="true"&gt;
+                                      &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,770][110,840]" displayed="true" /&gt;
+                                      &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="My Papremyo" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[130,787][292,823]" displayed="true" /&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                    &lt;android.view.ViewGroup index="4" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,870][560,940]" displayed="true"&gt;
+                                      &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,870][110,940]" displayed="true" /&gt;
+                                      &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="Terms of Use" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[130,887][284,923]" displayed="true" /&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                    &lt;android.view.ViewGroup index="5" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,970][560,1040]" displayed="true"&gt;
+                                      &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,970][110,1040]" displayed="true" /&gt;
+                                      &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="Privacy Policy" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[130,987][296,1023]" displayed="true" /&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                    &lt;android.view.ViewGroup index="6" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,1070][560,1140]" displayed="true"&gt;
+                                      &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[40,1070][110,1140]" displayed="true" /&gt;
+                                      &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="Notification" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[130,1087][269,1123]" displayed="true" /&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                &lt;/android.widget.ScrollView&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                              &lt;android.view.ViewGroup index="1" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="2" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,1280]" displayed="true"&gt;
+                                  &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,48][720,158]" displayed="true"&gt;
+                                    &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[36,68][96,122]" displayed="true"&gt;
+                                      &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[36,68][96,122]" displayed="true"&gt;
+                                        &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[36,83][96,122]" displayed="true" /&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                    &lt;android.view.ViewGroup index="1" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[624,68][684,122]" displayed="true"&gt;
+                                      &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[624,68][684,122]" displayed="true"&gt;
+                                        &lt;android.widget.ImageView index="0" package="com.mbcapp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[624,73][684,122]" displayed="true" /&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                  &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="Notifications" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,174][720,223]" displayed="true" /&gt;
+                                  &lt;android.widget.Switch index="2" package="com.mbcapp" class="android.widget.Switch" text="ON" checkable="true" checked="true" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[606,171][700,225]" displayed="true" /&gt;
+                                  &lt;android.view.ViewGroup index="3" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,238][720,1280]" displayed="true"&gt;
+                                    &lt;android.widget.ScrollView index="0" package="com.mbcapp" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,238][720,1280]" displayed="true"&gt;
+                                      &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,238][720,874]" displayed="true"&gt;
+                                        &lt;android.view.ViewGroup index="0" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,238][720,344]" displayed="true"&gt;
+                                          &lt;android.widget.TextView index="0" package="com.mbcapp" class="android.widget.TextView" text="test notification " checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,254][488,290]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="Testing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,290][488,326]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="2" package="com.mbcapp" class="android.widget.TextView" text="2 months ago" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[488,254][688,326]" displayed="true" /&gt;
+                                        &lt;/android.view.ViewGroup&gt;
+                                        &lt;android.view.ViewGroup index="1" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,344][720,450]" displayed="true"&gt;
+                                          &lt;android.widget.TextView index="0" package="com.mbcapp" class="android.widget.TextView" text="title" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,360][488,396]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="description" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,396][488,432]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="2" package="com.mbcapp" class="android.widget.TextView" text="2 months ago" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[488,360][688,432]" displayed="true" /&gt;
+                                        &lt;/android.view.ViewGroup&gt;
+                                        &lt;android.view.ViewGroup index="2" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,450][720,556]" displayed="true"&gt;
+                                          &lt;android.widget.TextView index="0" package="com.mbcapp" class="android.widget.TextView" text="Test notification" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,466][488,502]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="Testing notification" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,502][488,538]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="2" package="com.mbcapp" class="android.widget.TextView" text="2 months ago" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[488,466][688,538]" displayed="true" /&gt;
+                                        &lt;/android.view.ViewGroup&gt;
+                                        &lt;android.view.ViewGroup index="3" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,556][720,662]" displayed="true"&gt;
+                                          &lt;android.widget.TextView index="0" package="com.mbcapp" class="android.widget.TextView" text="Test notification" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,572][488,608]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="testing1" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,608][488,644]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="2" package="com.mbcapp" class="android.widget.TextView" text="2 months ago" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[488,572][688,644]" displayed="true" /&gt;
+                                        &lt;/android.view.ViewGroup&gt;
+                                        &lt;android.view.ViewGroup index="4" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,662][720,768]" displayed="true"&gt;
+                                          &lt;android.widget.TextView index="0" package="com.mbcapp" class="android.widget.TextView" text="Test notification" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,678][488,714]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="Test notification 2" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,714][488,750]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="2" package="com.mbcapp" class="android.widget.TextView" text="2 months ago" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[488,678][688,750]" displayed="true" /&gt;
+                                        &lt;/android.view.ViewGroup&gt;
+                                        &lt;android.view.ViewGroup index="5" package="com.mbcapp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,768][720,874]" displayed="true"&gt;
+                                          &lt;android.widget.TextView index="0" package="com.mbcapp" class="android.widget.TextView" text="Test notification" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,784][488,820]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="1" package="com.mbcapp" class="android.widget.TextView" text="testing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[32,820][488,856]" displayed="true" /&gt;
+                                          &lt;android.widget.TextView index="2" package="com.mbcapp" class="android.widget.TextView" text="2 months ago" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[488,784][688,856]" displayed="true" /&gt;
+                                        &lt;/android.view.ViewGroup&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                    &lt;/android.widget.ScrollView&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.view.ViewGroup&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.view.ViewGroup&gt;
+            &lt;/android.widget.FrameLayout&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20211027 09:58:25.665" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 09:58:25.150" endtime="20211027 09:58:25.665"/>
+</kw>
+<msg timestamp="20211027 09:58:25.666" level="FAIL">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView[2]/android.view.ViewGroup' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20211027 09:58:19.440" endtime="20211027 09:58:25.666"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20211027 09:58:25.666" endtime="20211027 09:58:25.666"/>
+</kw>
+<status status="FAIL" starttime="20211027 09:58:11.922" endtime="20211027 09:58:25.668"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20211027 09:58:25.669" endtime="20211027 09:58:25.669"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>'Hello, Elvin :)'</arg>
+<arg>'Notification'</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20211026 16:48:40.726" endtime="20211026 16:48:40.727"/>
+<status status="NOT RUN" starttime="20211027 09:58:25.669" endtime="20211027 09:58:25.669"/>
 </kw>
-<status status="PASS" starttime="20211026 16:48:26.747" endtime="20211026 16:48:40.727"/>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20211027 09:58:25.670" endtime="20211027 09:58:25.815"/>
+</kw>
+<tag>positive</tag>
+<tag>sanity</tag>
+<status status="FAIL" starttime="20211027 09:57:28.139" endtime="20211027 09:58:25.815">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView[2]/android.view.ViewGroup' did not appear in 5 seconds</status>
 </test>
-<doc>A test case for a user is able to create and join the game</doc>
-<status status="PASS" starttime="20211026 16:48:25.067" endtime="20211026 16:48:40.897"/>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20211027 09:58:25.820" endtime="20211027 09:58:26.034"/>
+</kw>
+<doc>A test case for a user is able to view notification</doc>
+<status status="FAIL" starttime="20211027 09:57:10.598" endtime="20211027 09:58:26.034"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1" skip="0">positive</stat>
+<stat pass="0" fail="1" skip="0">sanity</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Game">Game</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Notification">Notification</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20211026 16:48:26.751" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
 </errors>
 </robot>

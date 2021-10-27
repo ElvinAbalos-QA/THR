@@ -36,10 +36,11 @@ ${USE_HERE_BUTTON}                      //android.widget.TextView[@text='USE HER
 ${MODAL_LOGGED_IN_ANOTHER_DEVICE_IOS}       xpath=(//XCUIElementTypeOther[@name="You are currently logged in on another device"])
 ${USE_HERE_BUTTON_IOS}      xpath=(//XCUIElementTypeButton[@name="USE HERE"])
 
-#*** RADIO STATIONS ***
-#&{RADIO_STATIONS}               LOVE_RADIO=//android.widget.TextView[@text='LOVE RADIO']     YES_THE_BEST=//android.widget.TextView[@text='YES! THE BEST']
-@{RADIO_STATIONS}=               //android.widget.TextView[@text='LOVE RADIO']     //android.widget.TextView[@text='YES! THE BEST']     //android.widget.TextView[@text='EASY ROCK']    //android.widget.TextView[@text='RADYO NATIN']     //android.widget.TextView[@text='DZRH']      //android.widget.TextView[@text='AKSYON RADYO']
+#*** NOTIFICATIONS ***
+${TOGGLE}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.Switch
 
+#*** RADIO STATIONS ***
+@{RADIO_STATIONS}=               //android.widget.TextView[@text='LOVE RADIO']     //android.widget.TextView[@text='YES! THE BEST']     //android.widget.TextView[@text='EASY ROCK']    //android.widget.TextView[@text='RADYO NATIN']     //android.widget.TextView[@text='DZRH']      //android.widget.TextView[@text='AKSYON RADYO']
 ${MUTE_ICON}        xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView
 ${PLAY_ICON}        xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.TextView
 ${SHARE_ICON}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup/android.widget.ImageView
@@ -318,7 +319,7 @@ Click The Logout Button
     [Arguments]    ${BUTTON}
     Swipe    5    173    176    178         # to view the sidenav
     Swipe    205    1122    207    553      # swipe to view the logout
-    Sleep    3
+    Sleep    5
     Wait Until Page Contains Element              ${BUTTON}
     Click Element                                 ${BUTTON}
 #    Wait Until Page Contains Element        //android.widget.TextView[@text='Radyo, Palaro at Papremyo!']
