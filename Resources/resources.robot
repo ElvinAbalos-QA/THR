@@ -61,7 +61,7 @@ ${EMAIL_FIELD}        //android.widget.EditText[@text='Email Address']
 ${FIRST_NAME_FIELD}        //android.widget.EditText[@text='First Name']
 ${LAST_NAME_FIELD}        //android.widget.EditText[@text='Last Name']
 ${MOBILE_FIELD}     //android.widget.EditText[@text='Mobile No.']
-${BIRTHDAY_FIELD}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]
+${BIRTHDAY_FIELD}       //android.widget.TextView[@text='Birthday']
 ${YEAR}     id=android:id/date_picker_header_year
 ${SELECT_YEAR}     xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.ScrollView/android.widget.ViewAnimator/android.widget.ListView/android.widget.TextView[3]
 ${NORTH_LUZON}      //android.widget.TextView[@text='North Luzon']
@@ -126,8 +126,14 @@ Handle Hide Keyboard
 
 Handle Sign Up Via Facebook
     Log To Console      'Handle Sign Up Via Facebook'
-    Input Text           //android.widget.EditText[@text='Mobile No.']       0912345678901
-    Tap The Element      //android.view.ViewGroup[@index=9]
+    Input Text           //android.widget.EditText[@text='Mobile No.']       09123456789
+    Handle Birthday
+    Select Gender
+    Select Region
+    Select Province
+    Select City
+    Input Element       //android.widget.EditText[@text='USERNAME']       User101
+    Tap The Element    //android.widget.TextView[@text='SUBMIT']
 
 Sign with User
     [Arguments]     ${EMAIL}    ${EMAIL_FIELD}      ${USERPASSWORD}     ${PASSWORD_FIELD}
@@ -150,6 +156,10 @@ Sign Up with User
     Wait Until Page Contains Element        xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[4]
     Tap The Element         xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[4]
 
+Select Gender
+    Tap The Element    //android.widget.TextView[@text='Select Gender']
+    Tap The Element    //android.widget.TextView[@text='Male']
+
 Handle Register
     [Arguments]    ${EMAIL}
     Wait Until Page Contains Element        //android.widget.TextView[@text='REGISTER']
@@ -162,16 +172,10 @@ Handle Register
     Input Text      ${EMAIL_FIELD}      ${EMAIL}
     Input Text      ${MOBILE_FIELD}     ${MOBILE_NUMBER}
     Handle Birthday
-    # Gender
-    Tap The Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup
-    Tap The Element    //android.widget.TextView[@text='Male']
-    # Region
+    Select Gender
     Select Region
-    # Select Province
     Select Province
-    # Select City
     Select City
-    # USERNAME
     Input Element       //android.widget.EditText[@text='USERNAME']       ROOT
     Input Element       //android.widget.EditText[@text='PASSWORD']       Password@123
     Input Element       //android.widget.EditText[@text='CONFIRM PASSWORD']       Password@123
@@ -276,6 +280,25 @@ Go To Login Screen
 Go To Login Screen IOS
     Sleep   5
     Submit Login Button IOS
+
+Facebook Sign Up
+    Sleep    5
+    Wait Until Page Contains Element        //android.widget.TextView[@text='OR REGISTER']
+    Wait Until Page Contains Element    ${LOGIN_WITH_FACEBOOK_BUTTON}
+    Run Keyword Until Success    Click Element    ${LOGIN_WITH_FACEBOOK_BUTTON}
+    Sleep       10
+    Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
+    Sleep    5
+    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        //android.widget.TextView[@text='SIGN UP VIA FACEBOOK']
+    Run Keyword If       '${PASSED}' == 'True'      Handle Sign Up Via Facebook
+    # Login Facebook
+    Tap The Skip Tutorial
+    Sleep    20
+    Log To Console    'Login with facebook'
+
+Tap The Skip Tutorial
+    Wait Until Page Contains Element        ${SKIP_TUTORIAL}
+    Tap The Element     ${SKIP_TUTORIAL}
 
 Forgot Password IOS
     Tap The Element                             ${FORGOT PASSWORD TEXT - IOS}
