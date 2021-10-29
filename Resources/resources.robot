@@ -61,7 +61,7 @@ ${EMAIL_FIELD}        //android.widget.EditText[@text='Email Address']
 ${FIRST_NAME_FIELD}        //android.widget.EditText[@text='First Name']
 ${LAST_NAME_FIELD}        //android.widget.EditText[@text='Last Name']
 ${MOBILE_FIELD}     //android.widget.EditText[@text='Mobile No.']
-${BIRTHDAY_FIELD}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup
+${BIRTHDAY_FIELD}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]
 ${YEAR}     id=android:id/date_picker_header_year
 ${SELECT_YEAR}     xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.ScrollView/android.widget.ViewAnimator/android.widget.ListView/android.widget.TextView[3]
 ${NORTH_LUZON}      //android.widget.TextView[@text='North Luzon']
@@ -176,11 +176,9 @@ Handle Register
     Input Element       //android.widget.EditText[@text='PASSWORD']       Password@123
     Input Element       //android.widget.EditText[@text='CONFIRM PASSWORD']       Password@123
     Sleep    3
-#
     Swipe    680    1093    687    820
     Tap The Element     //android.widget.TextView[@text='SUBMIT']
     Handle Modals       //android.widget.TextView[@text='Email has already been taken']       //android.widget.TextView[@text='OK']
-
     Sleep    5
     Log To Console    'Successfully :)'
 
@@ -206,26 +204,28 @@ Handle Radio Station
         Sleep    10
         Log To Console      ${i}
     END
+
 Handle Share Icon
     Tap The Element    ${SHARE_ICON}
     Tap The Element    //android.widget.TextView[@text='Copy to clipboard']
     Sleep    5
 
+Handle Year
+    Swipe    535    439    528    772   # 2000
+    Swipe    537    482    535    684
+
+Handle Day
+    Swipe    383    487    385    646   # 27
+
+Handle Month
+    Swipe    164    516    164    687   # July
+
 Handle Birthday
-    # Birthday field
     Tap The Element    ${BIRTHDAY_FIELD}
-    # id=android:id/date_picker_header_year
-    Tap The Element    ${YEAR}
-    Swipe    407    511    402    841
-    # select 1995
-    Tap The Element    ${SELECT_YEAR}
-    # August
-    Tap The Element    //android.widget.ImageButton[@content-desc="Previous month"]
-    Tap The Element    //android.widget.ImageButton[@content-desc="Previous month"]
-    # Tap 27
-    Tap The Element    //android.view.View[@text=27]
-    # id=android:id/button1
-    Tap The Element    id=android:id/button1
+    Handle Year
+    Handle Day
+    Handle Month
+    Tap The Element     ${OK_BUTTON}
 
 Select Region
     Tap The Element    //android.widget.TextView[@text='Select Region']
