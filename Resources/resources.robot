@@ -27,6 +27,7 @@ ${LOGIN_PASSWORD_FIELD_IOS}         //XCUIElementTypeOther[@name="Password"]/XCU
 ${LOGIN_BUTTON}                 //android.widget.TextView[@text='LOG IN']
 ${LOGIN_BUTTON_IOS}             xpath=(//XCUIElementTypeOther[@name="LOG IN"])[2]
 ${LOGIN_WITH_FACEBOOK_BUTTON}       //android.view.ViewGroup[@index=2]
+${LOGIN_WITH_GMAIL_BUTTON}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.View
 
 #*** Logged In Another Device ***
 ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are currently logged in on another device']
@@ -124,15 +125,15 @@ Handle Hide Keyboard
     Wait Until Page Contains Element    xpath=(//XCUIElementTypeOther[@name="LOG IN  Vertical scroll bar, 1 page Horizontal scroll bar, 1 page LOG IN Forgot your password? QUICK ACCESS WITH  BACK TO MAIN SCREEN"])[2]/XCUIElementTypeOther[1]/XCUIElementTypeImage
     Click Element    xpath=(//XCUIElementTypeOther[@name="LOG IN  Vertical scroll bar, 1 page Horizontal scroll bar, 1 page LOG IN Forgot your password? QUICK ACCESS WITH  BACK TO MAIN SCREEN"])[2]/XCUIElementTypeOther[1]/XCUIElementTypeImage
 
-Handle Sign Up Via Facebook
-    Log To Console      'Handle Sign Up Via Facebook'
+Handle Sign Up Via Social Media's
+    [Arguments]    ${username}
     Input Text           //android.widget.EditText[@text='Mobile No.']       09123456789
     Handle Birthday
     Select Gender
     Select Region
     Select Province
     Select City
-    Input Element       //android.widget.EditText[@text='USERNAME']       User101
+    Input Element       //android.widget.EditText[@text='USERNAME']       ${username}
     Tap The Element    //android.widget.TextView[@text='SUBMIT']
 
 Sign with User
@@ -290,11 +291,33 @@ Facebook Sign Up
     Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
     Sleep    5
     ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        //android.widget.TextView[@text='SIGN UP VIA FACEBOOK']
-    Run Keyword If       '${PASSED}' == 'True'      Handle Sign Up Via Facebook
+    Run Keyword If       '${PASSED}' == 'True'      Handle Sign Up Via Social Media's   User101
     # Login Facebook
     Tap The Skip Tutorial
-    Sleep    20
-    Log To Console    'Login with facebook'
+    Sleep    10
+    Log To Console    'Sign up with Facebook'
+
+Gmail Sign Up
+    Sleep    5
+    Wait Until Page Contains Element        //android.widget.TextView[@text='OR REGISTER']
+    Wait Until Page Contains Element    ${LOGIN_WITH_GMAIL_BUTTON}
+    Run Keyword Until Success    Click Element    ${LOGIN_WITH_GMAIL_BUTTON}
+    FOR     ${i}    IN RANGE        2
+        Sleep    5
+        Swipe    383    851    375    492
+        Swipe    383    851    375    492
+        Tap The Element    //android.widget.TextView[@text='bliimombc2@gmail.com']
+        Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
+        log to console    ${i}
+    END
+    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${SKIP_TUTORIAL}
+    Run Keyword If       '${PASSED}' == 'True'      Tap The Skip Tutorial
+    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        //android.widget.TextView[@text='SIGN UP VIA GOOGLE']
+    Run Keyword If       '${PASSED}' == 'True'      Handle Sign Up Via Social Media's   User102
+    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${SKIP_TUTORIAL}
+    Run Keyword If       '${PASSED}' == 'True'      Tap The Skip Tutorial
+    Sleep    10
+    Log To Console    'Sign Up with Google'
 
 Tap The Skip Tutorial
     Wait Until Page Contains Element        ${SKIP_TUTORIAL}
