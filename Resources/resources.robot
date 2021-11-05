@@ -56,6 +56,9 @@ ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are
 ${SKIP_TUTORIAL}        //android.widget.TextView[@text='Skip Tutorial']
 ${SKIP_TUTORIAL_IOS}    xpath=(//XCUIElementTypeOther[@name="Skip Tutorial"])
 ${FINISH_TUTORIAL_BUTTON_IOS}       xpath=(//XCUIElementTypeOther[@name=" Don't show this again"])[4]/XCUIElementTypeOther[3]
+${GAME_TITLE}       Testing Staging 112
+${GAME_NAME}        //android.widget.TextView[@text='${GAME_TITLE}']
+${ROULETTE_SCHED}       1105002021050000pm
 
 #*** Registration - EMAIL ***
 ${EMAIL_FIELD}        //android.widget.EditText[@text='Email Address']
@@ -108,7 +111,7 @@ Run Keyword Until Success
     Wait Until Keyword Succeeds    5s      1s  ${KW}    @{KWARGS}
 
 Open MBC Application
-    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=Galaxy J5 Prime    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=4200933406a59453     automationName=Uiautomator2      # app=/Users/qa_tester/Downloads/MBC PaPremyo 1.0.32(44).apk
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=Galaxy J5 Prime    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=192.168.8.104:5555     automationName=Uiautomator2      # app=/Users/qa_tester/Downloads/MBC PaPremyo 1.0.32(44).apk
 
 Open MBC Application IOS
     Open Application    http://localhost:4723/wd/hub    platformName=iOS	platformVersion=15.0.2	    deviceName=Test iPhone    automationName=XCUITest      udid=3d9405ebce32f773d38e43236ce17f49523e12c2    bundleId=com.mbc.mbcpapremyo    #app=/Users/qa_tester/Desktop/mbcapp2/mbcapp.ipa
@@ -120,6 +123,15 @@ Handle Modals
 
 Handle Verification
     log to console      'This account is not verified yet!!!'
+
+Handle View and Join Game
+    Log To Console    'Handle View and Join Game'
+    Tap The Element     ${GAME_NAME}
+    Wait Until Page Contains Element    //android.widget.TextView[@text='WAIT KA LANG!']
+    Sleep    20
+    Wait Until Page Contains Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.webkit.WebView/android.webkit.WebView/android.view.View
+    Scroll Down    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.webkit.WebView/android.webkit.WebView/android.view.View
+    Sleep    5
 
 Handle Hide Keyboard
     Wait Until Page Contains Element    xpath=(//XCUIElementTypeOther[@name="LOG IN  Vertical scroll bar, 1 page Horizontal scroll bar, 1 page LOG IN Forgot your password? QUICK ACCESS WITH  BACK TO MAIN SCREEN"])[2]/XCUIElementTypeOther[1]/XCUIElementTypeImage
