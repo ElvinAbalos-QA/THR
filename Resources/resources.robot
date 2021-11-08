@@ -27,6 +27,7 @@ ${LOGIN_PASSWORD_FIELD_IOS}         //XCUIElementTypeOther[@name="Password"]/XCU
 ${LOGIN_BUTTON}                 //android.widget.TextView[@text='LOG IN']
 ${LOGIN_BUTTON_IOS}             xpath=(//XCUIElementTypeOther[@name="LOG IN"])[2]
 ${LOGIN_WITH_FACEBOOK_BUTTON}       //android.view.ViewGroup[@index=2]
+${LOGIN_WITH_FACEBOOK_BUTTON_IOS}       xpath=(//XCUIElementTypeOther[@name=""])[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther
 ${LOGIN_WITH_GMAIL_BUTTON}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.View
 
 #*** Logged In Another Device ***
@@ -119,7 +120,7 @@ Open MBC Application IOS
 Handle Modals
     [Arguments]     ${MODAL_NAME}       ${BUTTON}
     ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element       ${MODAL_NAME}
-    Run Keyword If       ${PASSED}      Tap The Element     ${BUTTON}
+    Run Keyword If       ${PASSED} == True      Tap The Element     ${BUTTON}
 
 Handle Verification
     log to console      'This account is not verified yet!!!'
@@ -294,15 +295,17 @@ Go To Login Screen IOS
     Sleep   5
     Submit Login Button IOS
 
+Go to Facebook
+    [Arguments]    ${FACEBOOK_TEXT}      ${BUTTON}
+    Sleep    5
+    Wait Until Page Contains Element    ${FACEBOOK_TEXT}
+    Wait Until Page Contains Element    ${BUTTON}
+    Tap The Element    ${BUTTON}
+
 Facebook Sign Up
+    [Arguments]     ${FB_SIGN_UP}
     Sleep    5
-    Wait Until Page Contains Element        //android.widget.TextView[@text='OR REGISTER']
-    Wait Until Page Contains Element    ${LOGIN_WITH_FACEBOOK_BUTTON}
-    Run Keyword Until Success    Click Element    ${LOGIN_WITH_FACEBOOK_BUTTON}
-    Sleep       10
-    Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
-    Sleep    5
-    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        //android.widget.TextView[@text='SIGN UP VIA FACEBOOK']
+    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${FB_SIGN_UP}
     Run Keyword If       '${PASSED}' == 'True'      Handle Sign Up Via Social Media's   User101
     # Login Facebook
     Tap The Skip Tutorial

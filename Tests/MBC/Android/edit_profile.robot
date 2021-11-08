@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation     A test case for a user is able to edit him/her profile
+Documentation     A test case for a user is able to edit user profile
 Resource          ../../../Resources/resources.robot
 Suite Setup     Open MBC Application
 Test Setup      Launch Application

@@ -9,4 +9,6 @@ Suite Teardown    Close Application
 *** Test Cases ***
 Login with Facebook test case
     [Tags]    sanity
-    Facebook Sign Up
+    Go To Facebook    //android.widget.TextView[@text='OR REGISTER']    ${LOGIN_WITH_FACEBOOK_BUTTON}
+    Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
+    Facebook Sign Up    //android.widget.TextView[@text='SIGN UP VIA FACEBOOK']
