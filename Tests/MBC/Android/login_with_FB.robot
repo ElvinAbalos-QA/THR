@@ -12,3 +12,6 @@ Login with Facebook test case
     Go To Facebook    //android.widget.TextView[@text='OR REGISTER']    ${LOGIN_WITH_FACEBOOK_BUTTON}
     Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
     Facebook Sign Up    //android.widget.TextView[@text='SIGN UP VIA FACEBOOK']
+    Tap The Skip Tutorial    ${SKIP_TUTORIAL}
+    Sleep    3
+    Capture Page Screenshot

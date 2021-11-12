@@ -23,4 +23,4 @@ Positive Test Case
     [Documentation]     This is to be able to check a positive test case for email already taken
     [Tags]      positive    sanity
     Sign Up with User
-    Handle Register    bliimocheck5@mailinator.com
+    Handle Register    ctcprod@mailinator.com

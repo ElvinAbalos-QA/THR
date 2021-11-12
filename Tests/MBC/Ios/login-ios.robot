@@ -41,7 +41,5 @@ Login positive test case
     Log To Console    'Done'
     ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${VERIFICATION_MODAL_IOS}
     Run Keyword If       '${PASSED}' == 'True'      Handle Verification
-#    Wait Until Page Contains Element        ${SKIP_TUTORIAL}
-#    Tap The Element     ${SKIP_TUTORIAL}
     Game Tutorial   ${FINISH_TUTORIAL_BUTTON_IOS}      # FINISH TUTORIAL BUTTON
     Click The Logout Button     ${LOGOUT_TAB_IOS}

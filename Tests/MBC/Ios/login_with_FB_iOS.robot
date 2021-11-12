@@ -20,7 +20,8 @@ Login with Facebook test case - IOS
 #    Can't handle modals in ios
 #    Handle Modals       //XCUIElementTypeAlert[@name='You are currently logged in on another device']       //XCUIElementTypeButton[@name='USE HERE']
     Sleep    3
-    Capture Page Screenshot
-#    Facebook Sign Up    //android.widget.TextView[@text='SIGN UP VIA FACEBOOK']
+    Facebook Sign Up    //XCUIElementTypeStaticText[@name='SIGN UP VIA FACEBOOK']
+    Tap The Skip Tutorial   ${SKIP_TUTORIAL_IOS}
     Sleep    5
+    Capture Page Screenshot
     Log To Console    'Facebook done'
