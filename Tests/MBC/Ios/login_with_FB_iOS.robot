@@ -21,6 +21,8 @@ Login with Facebook test case - IOS
 #    Handle Modals       //XCUIElementTypeAlert[@name='You are currently logged in on another device']       //XCUIElementTypeButton[@name='USE HERE']
     Sleep    3
     Facebook Sign Up    //XCUIElementTypeStaticText[@name='SIGN UP VIA FACEBOOK']
+    Sleep   10
+    Capture Page Screenshot
     Tap The Skip Tutorial   ${SKIP_TUTORIAL_IOS}
     Sleep    5
     Capture Page Screenshot

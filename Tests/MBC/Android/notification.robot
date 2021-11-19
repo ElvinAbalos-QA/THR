@@ -23,6 +23,7 @@ Notification test case
     Sleep    5
     Swipe    5    173    176    178         # to view the sidenav
     Swipe    205    1122    207    553      # swipe to view notification
+    Sleep    5
     Tap The Element    //android.widget.TextView[@text='Notification']
     Tap The Element    ${TOGGLE}
     Handle Modals       //android.widget.TextView[@text='Notification turn off.']       //android.widget.Button[@text='OK']

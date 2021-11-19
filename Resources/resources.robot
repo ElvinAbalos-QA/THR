@@ -18,6 +18,8 @@ ${LOGIN_FAILED_INVALID_CREDENTIALS}      //android.widget.TextView[@text='Log in
 #*** APPLICATION Variables ***
 ${MBC-APPLICATION-ID}              com.mbcapp
 ${MBC-APPLICATION-ACTIVITY}        ${MBC-APPLICATION-ID}.MainActivity
+${ADB_NAME}     192.168.8.104:6666
+#${ADB_NAME}     4SPRMFUGIRBQ4PKR
 
 #*** Login Page ***
 ${LOGIN_EMAIL_FIELD}            //android.widget.EditText[@text='Email']
@@ -39,7 +41,9 @@ ${MODAL_LOGGED_IN_ANOTHER_DEVICE_IOS}       xpath=(//XCUIElementTypeOther[@name=
 ${USE_HERE_BUTTON_IOS}      xpath=(//XCUIElementTypeButton[@name="USE HERE"])
 
 #*** NOTIFICATIONS ***
+${NOTIFICATION_IOS}     //XCUIElementTypeOther[@name="Notification"]
 ${TOGGLE}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.Switch
+${TOGGLE_IOS}       //XCUIElementTypeOther[@name="Notifications"]/XCUIElementTypeOther/XCUIElementTypeButton
 
 #*** RADIO STATIONS ***
 @{RADIO_STATIONS}=               //android.widget.TextView[@text='LOVE RADIO']     //android.widget.TextView[@text='YES! THE BEST']     //android.widget.TextView[@text='EASY ROCK']    //android.widget.TextView[@text='RADYO NATIN']     //android.widget.TextView[@text='DZRH']      //android.widget.TextView[@text='AKSYON RADYO']
@@ -55,11 +59,11 @@ ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are
 
 #*** Game Tutorial ***
 ${SKIP_TUTORIAL}        //android.widget.TextView[@text='Skip Tutorial']
-${SKIP_TUTORIAL_IOS}        //XCUIElementTypeOther[@name="Skip Tutorial"]
+${SKIP_TUTORIAL_IOS}        xpath=(//XCUIElementTypeOther[@name="Skip Tutorial "])[4]
 ${FINISH_TUTORIAL_BUTTON_IOS}       xpath=(//XCUIElementTypeOther[@name=" Don't show this again"])[4]/XCUIElementTypeOther[3]
-${GAME_TITLE}       Test Prod 17
+${GAME_TITLE}       Test game 7
 ${GAME_NAME}        //android.widget.TextView[@text='${GAME_TITLE}']
-${ROULETTE_SCHED}       1111002021034500pm  # month-day-year + 00 and the time
+${ROULETTE_SCHED}       111800202012000pm  # month-day-year + 00 and the time
 ${CITY}     Binmaley
 
 #*** Registration - EMAIL ***
@@ -81,6 +85,7 @@ ${PROFILE_ICON}                 //android.view.ViewGroup[@index=2]//android.widg
 #*** Sidenav ***
 ${HAMBURGER_ICON}               //android.view.ViewGroup//android.widget.ImageView
 ${MY_PAPREMYO}                  //android.widget.TextView[@text='My Papremyo']
+${MY_PAPREMYO_IOS}              //XCUIElementTypeOther[@name="My Papremyo"]
 ${TERMS_OF_USE}                 //android.widget.TextView[@text='Terms of Use']
 ${TERMS_OF_USE_IOS}             xpath=(//XCUIElementTypeOther[@name="Terms of Use"])
 ${PRIVACY_POLICY}               //android.widget.TextView[@text='Privacy Policy']
@@ -113,7 +118,7 @@ Run Keyword Until Success
     Wait Until Keyword Succeeds    5s      1s  ${KW}    @{KWARGS}
 
 Open MBC Application
-    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=Galaxy J5 Prime    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=192.168.8.104:5555     automationName=Uiautomator2      # app=/Users/qa_tester/Downloads/MBC PaPremyo 1.0.32(44).apk
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=Galaxy J5 Prime    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=${ADB_NAME}     automationName=Uiautomator2      # app=/Users/qa_tester/Downloads/MBC PaPremyo 1.0.32(44).apk
 
 Open MBC Application IOS
     Open Application    http://localhost:4723/wd/hub    platformName=iOS	platformVersion=15.0.2	    deviceName=Test iPhone    automationName=XCUITest      udid=3d9405ebce32f773d38e43236ce17f49523e12c2    bundleId=com.mbc.mbcpapremyo    #app=/Users/qa_tester/Desktop/mbcapp2/mbcapp.ipa
@@ -136,6 +141,7 @@ Handle View and Join Game
     Sleep    5
 
 Handle Hide Keyboard
+    Sleep    3
     Wait Until Page Contains Element    xpath=(//XCUIElementTypeOther[@name="LOG IN  Vertical scroll bar, 1 page Horizontal scroll bar, 1 page LOG IN Forgot your password? QUICK ACCESS WITH  BACK TO MAIN SCREEN"])[2]/XCUIElementTypeOther[1]/XCUIElementTypeImage
     Click Element    xpath=(//XCUIElementTypeOther[@name="LOG IN  Vertical scroll bar, 1 page Horizontal scroll bar, 1 page LOG IN Forgot your password? QUICK ACCESS WITH  BACK TO MAIN SCREEN"])[2]/XCUIElementTypeOther[1]/XCUIElementTypeImage
 

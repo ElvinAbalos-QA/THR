@@ -54,9 +54,10 @@ Admin create a game
     # Winner prompt
     Input Field    \#roulette_winner_prompt     Panalo ka!
     # Create Button
-#    Click    text=Create Roulette
-#    Click    text=Let player join
+    Click    text=Create Roulette
+    Click    text=Let player join
     Take Screenshot
+    Log To Console    ${URL}[2]
     Log To Console    'Successfully created the game :)'
 
 #Game test cases

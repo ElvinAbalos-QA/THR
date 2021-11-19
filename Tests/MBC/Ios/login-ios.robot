@@ -43,3 +43,5 @@ Login positive test case
     Run Keyword If       '${PASSED}' == 'True'      Handle Verification
     Game Tutorial   ${FINISH_TUTORIAL_BUTTON_IOS}      # FINISH TUTORIAL BUTTON
     Click The Logout Button     ${LOGOUT_TAB_IOS}
+    Sleep    3
+    Log To Console    'Logout successfully'

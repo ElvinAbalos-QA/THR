@@ -7,7 +7,7 @@ Test Teardown    Quit Application
 Suite Teardown    Close Application
 
 *** Test Cases ***
-My Papremyo test case IOS
+Notification test case IOS
     [Tags]    sanity       positive
     Handle Location and Notification IOS
     Go To Login Screen      ${LOGIN_BUTTON_IOS}
@@ -22,11 +22,18 @@ My Papremyo test case IOS
     Tap The Element     ${SKIP_TUTORIAL_IOS}
     Sleep    3
     Swipe    5    173    176    178         # to view the sidenav
-    Swipe    205    1122    207    553      # swipe to view the Papremyo
+    Swipe    205    1122    207    553      # swipe to view notification
     Sleep    3
-    Tap The Element    ${MY_PAPREMYO_IOS}
+    Tap The Element    ${NOTIFICATION_IOS}
+    Page Should Contain Text    Notifications
+    Tap The Element    ${TOGGLE_IOS}
+    Page Should Contain Text    Alert
+    Handle Modals       //XCUIElementTypeStaticText[@name="Notification turn off."]       //XCUIElementTypeButton[@name="OK"]
+    Tap The Element    ${TOGGLE_IOS}
+    Page Should Contain Text    Alert
+    Handle Modals       //XCUIElementTypeStaticText[@name="Notification turn on."]       //XCUIElementTypeButton[@name="OK"]
+    Swipe    5    173    176    178         # to view the sidenav
     Sleep    3
-    Page Should Contain Text    MY PAPREMYO
-    Sleep    3
-    Click The Logout Button     ${LOGOUT_TAB_IOS}
+    Page Should Contain Element     ${LOGOUT_TAB_IOS}
+    Tap The Element     ${LOGOUT_TAB_IOS}
     Page Should Contain Element     ${LOGIN_BUTTON_IOS}
