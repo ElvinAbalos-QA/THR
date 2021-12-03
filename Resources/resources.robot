@@ -11,14 +11,17 @@ Library     AppiumLibrary
 # *** Login Failed ***
 # ANDROID
 ${LOGIN_FAILED}                 //android.widget.TextView[@text='ERROR']
+${LOGIN_FAILED_IOS}     (//XCUIElementTypeOther[@name="ERROR"])
 ${OK_BUTTON}                    //android.widget.TextView[@text='OK']
+${OK_BUTTON_IOS}     (//XCUIElementTypeOther[@name="OK"])
 ${LOGIN_FAILED_EMPTY}      //android.widget.TextView[@text='Fields should not be empty. Please note that your myeasytrip app username and password is different from myeastrip web. Please try again.']
 ${LOGIN_FAILED_INVALID_CREDENTIALS}      //android.widget.TextView[@text='Log in failed! Invalid email or password.']
+${LOGIN_FAILED_INVALID_CREDENTIALS_IOS}     (//XCUIElementTypeOther[@name="ERROR Log in failed! Invalid email or password."])[1]
 
 #*** APPLICATION Variables ***
 ${MBC-APPLICATION-ID}              com.mbcapp
 ${MBC-APPLICATION-ACTIVITY}        ${MBC-APPLICATION-ID}.MainActivity
-${ADB_NAME}     192.168.8.104:6666
+${ADB_NAME}     192.168.8.104:1111
 #${ADB_NAME}     4SPRMFUGIRBQ4PKR
 
 #*** Login Page ***
@@ -61,9 +64,9 @@ ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       //android.widget.TextView[@text='You are
 ${SKIP_TUTORIAL}        //android.widget.TextView[@text='Skip Tutorial']
 ${SKIP_TUTORIAL_IOS}        xpath=(//XCUIElementTypeOther[@name="Skip Tutorial "])[4]
 ${FINISH_TUTORIAL_BUTTON_IOS}       xpath=(//XCUIElementTypeOther[@name=" Don't show this again"])[4]/XCUIElementTypeOther[3]
-${GAME_TITLE}       Test game 7
+${GAME_TITLE}       Testing game
 ${GAME_NAME}        //android.widget.TextView[@text='${GAME_TITLE}']
-${ROULETTE_SCHED}       111800202012000pm  # month-day-year + 00 and the time
+${ROULETTE_SCHED}       1126002020114000pm  # month-day-year + 00 and the time
 ${CITY}     Binmaley
 
 #*** Registration - EMAIL ***
@@ -118,7 +121,8 @@ Run Keyword Until Success
     Wait Until Keyword Succeeds    5s      1s  ${KW}    @{KWARGS}
 
 Open MBC Application
-    Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=Galaxy J5 Prime    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=${ADB_NAME}     automationName=Uiautomator2      # app=/Users/qa_tester/Downloads/MBC PaPremyo 1.0.32(44).apk
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    appPackage=${MBC-APPLICATION-ID}      appActivity=${MBC-APPLICATION-ACTIVITY}      udid=${ADB_NAME}     automationName=Uiautomator2
+#    Open Application    http://localhost:4723/wd/hub    platformName=Android     automationName=Uiautomator2      app=/Users/qa_tester/Downloads/MBC PaPremyo 1.0.32(60).apk
 
 Open MBC Application IOS
     Open Application    http://localhost:4723/wd/hub    platformName=iOS	platformVersion=15.0.2	    deviceName=Test iPhone    automationName=XCUITest      udid=3d9405ebce32f773d38e43236ce17f49523e12c2    bundleId=com.mbc.mbcpapremyo    #app=/Users/qa_tester/Desktop/mbcapp2/mbcapp.ipa
@@ -168,6 +172,7 @@ Game Tutorial
         Swipe    628    646    59    649
         log to console    ${i}
     END
+    Sleep    5
     Wait Until Page Contains Element        ${BUTTON}
     Tap The Element     ${BUTTON}
     Sleep   5
@@ -287,6 +292,7 @@ Forgot Password
     Wait Until Page Contains Element       ${FORGOT PASSWORD FIELD}
     Input Text                             ${FORGOT PASSWORD FIELD}               ${USER_DETAILS}[email]
     Run Keyword Until Success              Click Element                          //android.widget.TextView[@text='CONFIRM']
+    Sleep    5
     Wait Until Page Contains Element       //android.widget.TextView[@text='SUCCESS']
     Run Keyword Until Success              Click Element                          //android.widget.TextView[@text='OK']
 
@@ -319,28 +325,26 @@ Facebook Sign Up
     Log To Console    'Sign up with Facebook'
 
 Gmail Sign Up
-    Sleep    10
-    Wait Until Page Contains Element        //android.widget.TextView[@text='OR REGISTER']
     Tap The Element    ${LOGIN_WITH_GMAIL_BUTTON}
-    FOR     ${i}    IN RANGE        4
-        Sleep    5
-        Swipe    383    851    375    492
-        Swipe    383    851    375    492
-        Tap The Element    //android.widget.TextView[@text='bliimombc2@gmail.com']      #ctcbliimo1@gmail.com
-        ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${SKIP_TUTORIAL}
-        Run Keyword If       '${PASSED}' == 'True'      Tap The Skip Tutorial   ${SKIP_TUTORIAL}
-        Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
-        Log To Console    ${i}
-        Capture Page Screenshot
-    END
+#    FOR     ${i}    IN RANGE        4
+#        Sleep    5
+#        Swipe    383    851    375    492
+#        Swipe    383    851    375    492
+#        Tap The Element    //android.widget.TextView[@text='bliimombc2@gmail.com']      #ctcbliimo1@gmail.com
+#        ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${SKIP_TUTORIAL}
+#        Run Keyword If       '${PASSED}' == 'True'      Tap The Skip Tutorial   ${SKIP_TUTORIAL}
+#        Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
+#        Log To Console    ${i}
+#        Capture Page Screenshot
+#    END
 #    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${SKIP_TUTORIAL}
 #    Run Keyword If       '${PASSED}' == 'True'      Tap The Skip Tutorial   ${SKIP_TUTORIAL}
 #    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        //android.widget.TextView[@text='SIGN UP VIA GOOGLE']
 #    Run Keyword If       '${PASSED}' == 'True'      Handle Sign Up Via Social Media's   User102
 #    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${SKIP_TUTORIAL}
 #    Run Keyword If       '${PASSED}' == 'True'      Tap The Skip Tutorial   ${SKIP_TUTORIAL}
-    Sleep    10
-    Log To Console    'Sign Up with Google'
+    Sleep    3
+    Comment    Sign Up with Google
 
 Tap The Skip Tutorial
     [Arguments]    ${SKIP_TUTORIAL}
@@ -369,9 +373,9 @@ Handle Location and Notification Android
 
 Submit Login Button
     [Arguments]    ${BUTTON}
-    Sleep    3
-    Run Keyword Until Success       appiumlibrary.Wait Until Page Contains Element     ${BUTTON}
-    Run Keyword Until Success       appiumlibrary.Click Element     ${BUTTON}
+    Sleep    5
+    Page Should Contain Element     ${BUTTON}
+    Tap The Element     ${BUTTON}
 
 Submit Login Button IOS
     Run Keyword Until Success       appiumlibrary.Wait Until Page Contains Element     ${LOGIN_BUTTON_IOS}
@@ -394,7 +398,7 @@ Click The Logout Button
     Sleep    5
     Wait Until Page Contains Element              ${BUTTON}
     Click Element                                 ${BUTTON}
-#    Wait Until Page Contains Element        //android.widget.TextView[@text='Radyo, Palaro at Papremyo!']
+    Page Should Contain Element     //android.widget.TextView[@text='Radyo, Palaro at Papremyo!']
 
 # ====================================================================================
 

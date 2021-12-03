@@ -28,5 +28,6 @@ My Papremyo test case IOS
     Sleep    3
     Page Should Contain Text    MY PAPREMYO
     Sleep    3
-    Click The Logout Button     ${LOGOUT_TAB_IOS}
+    Page Should Contain Element     ${LOGOUT_TAB_IOS}
+    Tap The Element     ${LOGOUT_TAB_IOS}
     Page Should Contain Element     ${LOGIN_BUTTON_IOS}

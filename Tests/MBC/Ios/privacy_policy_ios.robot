@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     A test case for a user is able to view notification list screen
+Documentation     A test case for a user is able to view privacy policy screen
 Resource          ../../../Resources/resources.robot
 Suite Setup     Open MBC Application IOS
 Test Setup      Launch Application
@@ -7,7 +7,7 @@ Test Teardown    Quit Application
 Suite Teardown    Close Application
 
 *** Test Cases ***
-Notification test case IOS
+Privacy Policy test case
     [Tags]    sanity       positive
     Handle Location and Notification IOS
     Go To Login Screen      ${LOGIN_BUTTON_IOS}
@@ -20,20 +20,12 @@ Notification test case IOS
     Run Keyword If       '${PASSED}' == 'True'      Handle Verification
     Wait Until Page Contains Element        ${SKIP_TUTORIAL_IOS}
     Tap The Element     ${SKIP_TUTORIAL_IOS}
-    Sleep    3
+    Sleep    5
     Swipe    5    173    176    178         # to view the sidenav
-    Swipe    205    1122    207    553      # swipe to view notification
-    Sleep    3
-    Tap The Element    ${NOTIFICATION_IOS}
-    Page Should Contain Text    Notifications
-    Tap The Element    ${TOGGLE_IOS}
-    Page Should Contain Text    Alert
-    Handle Modals       //XCUIElementTypeStaticText[@name="Notification turn off."]       //XCUIElementTypeButton[@name="OK"]
-    Tap The Element    ${TOGGLE_IOS}
-    Page Should Contain Text    Alert
-    Handle Modals       //XCUIElementTypeStaticText[@name="Notification turn on."]       //XCUIElementTypeButton[@name="OK"]
-    Swipe    5    173    176    178         # to view the sidenav
-    Sleep    3
+    Swipe    205    1122    207    553      # swipe to privacy policy
+    Sleep    5
+    Tap The Element     ${PRIVACY_POLICY_IOS}
+    Tap The Element     xpath=(//XCUIElementTypeOther[@name="OK"])[2]   # OK - button
     Page Should Contain Element     ${LOGOUT_TAB_IOS}
     Tap The Element     ${LOGOUT_TAB_IOS}
     Page Should Contain Element     ${LOGIN_BUTTON_IOS}

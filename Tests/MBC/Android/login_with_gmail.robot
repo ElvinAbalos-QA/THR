@@ -9,4 +9,8 @@ Suite Teardown    Close Application
 *** Test Cases ***
 Login with Gmail test case
     [Tags]    sanity
-    Gmail Sign Up
+    Sleep    8
+    ${PASSED}=      Run Keyword And Return Status           Page Should Contain Element    //android.widget.TextView[@text='OR REGISTER']
+    Run Keyword If       '${PASSED}' == 'True'      Gmail Sign Up
+    Comment    Login Gmail account successfully
+
