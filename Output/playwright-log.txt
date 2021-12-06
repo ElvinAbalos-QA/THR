@@ -1,1 +1,49 @@
-{"level":30,"time":"2021-12-03T08:19:48.786Z","pid":21948,"hostname":"QA-TESTERs-MBP","msg":"Listening on 61143"}
+{"level":30,"time":"2021-12-06T01:02:21.543Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Listening on 49789"}
+{"level":30,"time":"2021-12-06T01:04:28.416Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"currentBrowser: undefined"}
+{"level":30,"time":"2021-12-06T01:04:34.098Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Changed active context"}
+{"level":30,"time":"2021-12-06T01:04:34.717Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Video path: undefined"}
+{"level":30,"time":"2021-12-06T01:04:34.717Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Changed active page"}
+{"level":30,"time":"2021-12-06T01:04:38.319Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #admin_user_email"}
+{"level":30,"time":"2021-12-06T01:04:38.372Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #admin_user_email"}
+{"level":30,"time":"2021-12-06T01:04:38.401Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #admin_user_password"}
+{"level":30,"time":"2021-12-06T01:04:38.417Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #admin_user_password"}
+{"level":30,"time":"2021-12-06T01:04:38.464Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #admin_user_submit_action > input:nth-child(1)"}
+{"level":30,"time":"2021-12-06T01:04:39.293Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #games > a:nth-child(1)"}
+{"level":30,"time":"2021-12-06T01:04:39.410Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulettes > a:nth-child(1)"}
+{"level":30,"time":"2021-12-06T01:04:40.367Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: text=New Roulette"}
+{"level":30,"time":"2021-12-06T01:04:42.795Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_radio_station_input > span:nth-child(3) > span:nth-child(1) > span:nth-child(1)"}
+{"level":30,"time":"2021-12-06T01:04:43.189Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #select2-roulette_radio_station_id-results > li:nth-child(5)"}
+{"level":30,"time":"2021-12-06T01:04:43.281Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_location_restriction"}
+{"level":30,"time":"2021-12-06T01:04:43.417Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: .select2-selection--multiple"}
+{"level":30,"time":"2021-12-06T01:04:43.759Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: .select2-search__field"}
+{"level":30,"time":"2021-12-06T01:04:43.791Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: .select2-search__field"}
+{"level":30,"time":"2021-12-06T01:04:43.882Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #select2-roulette_city_ids-results"}
+{"level":30,"time":"2021-12-06T01:04:43.946Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_location_restriction_type"}
+{"level":30,"time":"2021-12-06T01:04:43.988Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_text_description"}
+{"level":30,"time":"2021-12-06T01:04:44.016Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_text_description"}
+{"level":30,"time":"2021-12-06T01:04:44.051Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: xpath=/html/body/div/div[4]/div/div/form/div/div/div[1]/li[3]/span/span[1]/span/span[2]"}
+{"level":30,"time":"2021-12-06T01:04:44.129Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #select2-roulette_dj_id-results > li:nth-child(5)"}
+{"level":30,"time":"2021-12-06T01:04:44.197Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: xpath=/html/body/div/div[4]/div/div/form/div/div/div[1]/li[4]/span/span[1]/span/span[2]"}
+{"level":30,"time":"2021-12-06T01:04:44.269Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #select2-roulette_sponsor_id-results > li:nth-child(6)"}
+{"level":30,"time":"2021-12-06T01:04:44.345Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_name"}
+{"level":30,"time":"2021-12-06T01:04:44.366Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_name"}
+{"level":30,"time":"2021-12-06T01:04:44.400Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_number_of_winner"}
+{"level":30,"time":"2021-12-06T01:04:44.420Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_number_of_winner"}
+{"level":30,"time":"2021-12-06T01:04:44.465Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_price"}
+{"level":30,"time":"2021-12-06T01:04:44.493Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_price"}
+{"level":30,"time":"2021-12-06T01:04:44.534Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: xpath=//*[@id=\"roulette_schedule\"]"}
+{"level":30,"time":"2021-12-06T01:04:44.580Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: xpath=//*[@id=\"roulette_schedule\"]"}
+{"level":30,"time":"2021-12-06T01:04:44.651Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_redemption_details"}
+{"level":30,"time":"2021-12-06T01:04:44.677Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_redemption_details"}
+{"level":30,"time":"2021-12-06T01:04:44.706Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_dti_permit"}
+{"level":30,"time":"2021-12-06T01:04:44.724Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_dti_permit"}
+{"level":30,"time":"2021-12-06T01:04:44.766Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_winner_prompt"}
+{"level":30,"time":"2021-12-06T01:04:44.788Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: #roulette_winner_prompt"}
+{"level":30,"time":"2021-12-06T01:04:44.829Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: text=Create Roulette"}
+{"level":30,"time":"2021-12-06T01:04:45.505Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Page|Frame|Element resolved elementSelector: text=Let player join"}
+{"level":30,"time":"2021-12-06T01:04:46.343Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Changed active context"}
+{"level":30,"time":"2021-12-06T01:04:46.344Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Changing current active page"}
+{"level":30,"time":"2021-12-06T01:04:46.345Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Changed active page"}
+{"level":30,"time":"2021-12-06T01:04:46.361Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Changed active context"}
+{"level":30,"time":"2021-12-06T01:04:46.362Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Changing current active page"}
+{"level":30,"time":"2021-12-06T01:04:46.362Z","pid":1280,"hostname":"QA-TESTERs-MBP","msg":"Changed active page"}

@@ -30,7 +30,7 @@ Login negative wrong email and valid password test case
 Login positive test case
     [Tags]    sanity       positive
     Handle Location and Notification Android
-    Gmail Sign Up      ${LOGIN_BUTTON}
+    Go To Login Screen      ${LOGIN_BUTTON}
     Sign With User      ${USER_DETAILS}[email]     ${LOGIN_EMAIL_FIELD}       ${USER_DETAILS}[password]       ${LOGIN_PASSWORD_FIELD}
     Submit Login Button     ${LOGIN_BUTTON}
     Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
