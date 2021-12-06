@@ -11,6 +11,7 @@ Login with Gmail test case
     [Tags]    sanity
     Sleep    8
     ${PASSED}=      Run Keyword And Return Status           Page Should Contain Element    //android.widget.TextView[@text='OR REGISTER']
-    Run Keyword If       '${PASSED}' == 'True'      Gmail Sign Up
+    Run Keyword If       ${PASSED} == True      Gmail Sign Up
     Comment    Login Gmail account successfully
+    Click The Logout Button     ${LOGOUT_TAB}
 

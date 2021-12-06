@@ -99,7 +99,8 @@ ${RELOADING_PARTNERS}           //android.widget.TextView[@text='Reloading Partn
 
 #*** Logout ***
 ${NOTIF_TAB}                   //android.widget.TextView[@text='Notification']
-${LOGOUT_TAB}                  xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView[2]/android.view.ViewGroup
+#${LOGOUT_TAB}                  xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView[2]/android.view.ViewGroup
+${LOGOUT_TAB}                  //android.widget.TextView[@text='Logout']
 ${LOGOUT_TAB_IOS}              //XCUIElementTypeOther[@name="Logout"]
 
 #*** Forgot Password ***
@@ -324,26 +325,24 @@ Facebook Sign Up
     Sleep    10
     Log To Console    'Sign up with Facebook'
 
+Select Gmail account
+    Sleep    5
+    Swipe    383    851    375    492
+    Swipe    383    851    375    492
+    Tap The Element    //android.widget.TextView[@text='bliimombc2@gmail.com']      #ctcbliimo1@gmail.com
+    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${SKIP_TUTORIAL}
+    Run Keyword If       ${PASSED} == True      Tap The Skip Tutorial   ${SKIP_TUTORIAL}
+    Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
+    Capture Page Screenshot
+
 Gmail Sign Up
     Tap The Element    ${LOGIN_WITH_GMAIL_BUTTON}
-#    FOR     ${i}    IN RANGE        4
-#        Sleep    5
-#        Swipe    383    851    375    492
-#        Swipe    383    851    375    492
-#        Tap The Element    //android.widget.TextView[@text='bliimombc2@gmail.com']      #ctcbliimo1@gmail.com
-#        ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${SKIP_TUTORIAL}
-#        Run Keyword If       '${PASSED}' == 'True'      Tap The Skip Tutorial   ${SKIP_TUTORIAL}
-#        Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
-#        Log To Console    ${i}
-#        Capture Page Screenshot
-#    END
-#    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${SKIP_TUTORIAL}
-#    Run Keyword If       '${PASSED}' == 'True'      Tap The Skip Tutorial   ${SKIP_TUTORIAL}
-#    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        //android.widget.TextView[@text='SIGN UP VIA GOOGLE']
-#    Run Keyword If       '${PASSED}' == 'True'      Handle Sign Up Via Social Media's   User102
-#    ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${SKIP_TUTORIAL}
-#    Run Keyword If       '${PASSED}' == 'True'      Tap The Skip Tutorial   ${SKIP_TUTORIAL}
-    Sleep    3
+    Sleep    5
+    ${PASSED}=      Run Keyword And Return Status   Page Should Contain Element    //android.widget.TextView[@text='Choose an account']
+    Run Keyword If       ${PASSED} == True      Select Gmail Account
+    ${PASSED}=      Run Keyword And Return Status   Page Should Contain Element    //android.widget.TextView[@text='Choose an account']
+    Run Keyword If       ${PASSED} == True      Select Gmail Account
+    Sleep    5
     Comment    Sign Up with Google
 
 Tap The Skip Tutorial
@@ -396,8 +395,9 @@ Click The Logout Button
     Swipe    5    173    176    178         # to view the sidenav
     Swipe    205    1122    207    553      # swipe to view the logout
     Sleep    5
-    Wait Until Page Contains Element              ${BUTTON}
-    Click Element                                 ${BUTTON}
+    Page Should Contain Element              ${BUTTON}
+    Click Element                            ${BUTTON}
+    Sleep    3
     Page Should Contain Element     //android.widget.TextView[@text='Radyo, Palaro at Papremyo!']
 
 # ====================================================================================
