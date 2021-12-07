@@ -206,12 +206,10 @@ Handle Register
     Input Element       //android.widget.EditText[@text='USERNAME']       ROOT
     Input Element       //android.widget.EditText[@text='PASSWORD']       Password@123
     Input Element       //android.widget.EditText[@text='CONFIRM PASSWORD']       Password@123
-    Sleep    3
+    Sleep    5
     Swipe    680    1093    687    820
     Tap The Element     //android.widget.TextView[@text='SUBMIT']
     Handle Modals       //android.widget.TextView[@text='Email has already been taken']       //android.widget.TextView[@text='OK']
-    Sleep    5
-    Log To Console    'Successfully :)'
 
 Edit TextField
     [Arguments]    ${FIELD}     ${NAME}
@@ -242,13 +240,16 @@ Handle Share Icon
     Sleep    5
 
 Handle Year
+    Sleep    3
     Swipe    535    439    528    772   # 2000
     Swipe    537    482    535    684
 
 Handle Day
+    Sleep    3
     Swipe    383    487    385    646   # 27
 
 Handle Month
+    Sleep    3
     Swipe    164    516    164    687   # July
 
 Handle Birthday
@@ -264,6 +265,7 @@ Select Region
 
 Select Province
     Tap The Element    //android.widget.TextView[@text='Select Province']
+    Sleep    3
     FOR     ${i}    IN RANGE        3
         Swipe    342    915    357    494
         log to console    ${i}
@@ -272,11 +274,14 @@ Select Province
 
 Select City
     Tap The Element    //android.widget.TextView[@text='Select City']
-    FOR     ${i}    IN RANGE        4
+    Sleep    3
+    FOR     ${i}    IN RANGE        3
         Swipe    335    867    332    622
         log to console    ${i}
     END
     Tap The Element    //android.widget.TextView[@text='Binmaley']
+    Sleep    3
+    Swipe    665    974    668    622
 
 Input Element
     [Arguments]     ${locator}      ${value}
