@@ -20,12 +20,12 @@ Radio Station test case
     Sleep    5
     Swipe    5    173    176    178         # to view the sidenav
 
-    FOR    ${robot}    IN   @{RADIO_STATIONS}   # loop radio stations
+    FOR    ${STATION}    IN   @{RADIO_STATIONS}   # loop radio stations
         Sleep    5
-        Log    ${robot}
-        View Radio Station    ${robot}
-        Handle Radio Station    ${MUTE_ICON}
-        Handle Radio Station    ${PLAY_ICON}
+        Log To Console    ${STATION}
+        View Radio Station      ${STATION}
+        Handle Radio Station Icon    ${MUTE_ICON}
+        Handle Radio Station Icon    ${PLAY_ICON}
         Handle Share Icon
         Swipe    5    173    176    178         # to view the sidenav
     END

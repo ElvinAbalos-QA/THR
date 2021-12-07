@@ -49,7 +49,7 @@ ${TOGGLE}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.Linea
 ${TOGGLE_IOS}       //XCUIElementTypeOther[@name="Notifications"]/XCUIElementTypeOther/XCUIElementTypeButton
 
 #*** RADIO STATIONS ***
-@{RADIO_STATIONS}=               //android.widget.TextView[@text='LOVE RADIO']     //android.widget.TextView[@text='YES! THE BEST']     //android.widget.TextView[@text='EASY ROCK']    //android.widget.TextView[@text='RADYO NATIN']     //android.widget.TextView[@text='DZRH']      //android.widget.TextView[@text='AKSYON RADYO']
+@{RADIO_STATIONS}=      //android.widget.TextView[@text='LOVE RADIO']     //android.widget.TextView[@text='YES! THE BEST']     //android.widget.TextView[@text='EASY ROCK']    //android.widget.TextView[@text='RADYO NATIN']     //android.widget.TextView[@text='DZRH']      //android.widget.TextView[@text='AKSYON RADYO']
 ${MUTE_ICON}        xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView
 ${PLAY_ICON}        xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.TextView
 ${SHARE_ICON}       xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup/android.widget.ImageView
@@ -218,24 +218,25 @@ Edit TextField
     AppiumLibrary.Input Text      ${FIELD}     ${NAME}
 
 View Radio Station
-    [Arguments]    ${RADIO_STATION}
+    [Arguments]    ${STATION}
     Sleep    5
-    Wait Until Page Contains Element    ${RADIO_STATION}
-    Tap The Element    ${RADIO_STATION}
+    Wait Until Page Contains Element    ${STATION}
+    Tap The Element    ${STATION}
     Sleep    5
 
-Handle Radio Station
-    # Mute and Unmute Function
+Handle Radio Station Icon
+    Comment    This is the handle for mute and play icon
     [Arguments]    ${ICON}
     FOR     ${i}    IN RANGE        2
+        Sleep    3
         Wait Until Page Contains Element    ${ICON}
         Click Element    ${ICON}
         Sleep    10
-        Log To Console      ${i}
     END
 
 Handle Share Icon
     Tap The Element    ${SHARE_ICON}
+    Sleep    5
     Tap The Element    //android.widget.TextView[@text='Copy to clipboard']
     Sleep    5
 
