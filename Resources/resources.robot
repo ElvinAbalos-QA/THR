@@ -12,9 +12,10 @@ Run Keyword Until Success
     [Arguments]    ${KW}    @{KWARGS}
     Wait Until Keyword Succeeds    5s      1s  ${KW}    @{KWARGS}
 
-# ***  Browser Library  ***
 Open THR
     Browser.Open Browser    ${URL}[0]      ${BROWSER}
+#    Browser.New Page    ${URL}[0]
+#    Set Viewport Size       height=2560     width=1920
     Get Title       ==       ${TITLE}
 
 Input Field
