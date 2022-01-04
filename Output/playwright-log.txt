@@ -1,1 +1,32 @@
-{"level":30,"time":"2021-12-07T05:28:44.381Z","pid":4896,"hostname":"QA-TESTERs-MBP","msg":"Listening on 54975"}
+{"level":30,"time":"2022-01-03T05:47:05.107Z","pid":4852,"hostname":"QA-TESTERs-MBP","msg":"Listening on 51868"}
+{"level":30,"time":"2022-01-03T05:47:06.030Z","pid":4852,"hostname":"QA-TESTERs-MBP","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2022-01-03T05:47:06.030Z","pid":4852,"hostname":"QA-TESTERs-MBP","msg":"Trace file: "}
+{"level":30,"time":"2022-01-03T05:47:06.048Z","pid":4852,"hostname":"QA-TESTERs-MBP","msg":"Changed active context"}
+{"level":30,"time":"2022-01-03T05:47:06.064Z","pid":4852,"hostname":"QA-TESTERs-MBP","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2022-01-03T05:47:07.316Z","pid":4852,"hostname":"QA-TESTERs-MBP","msg":"Video path: undefined"}
+{"level":30,"time":"2022-01-03T05:47:07.316Z","pid":4852,"hostname":"QA-TESTERs-MBP","msg":"Changed active page"}
+================= Original suppressed error =================
+page.goto: Timeout 10000ms exceeded.
+=========================== logs ===========================
+navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
+============================================================
+    at /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:27262:49
+    at step (/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:26668:23)
+    at Object.next (/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:26649:53)
+    at fulfilled (/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:26640:58) {
+  name: 'TimeoutError'
+}
+=============================================================
+================= Original suppressed error =================
+Error: Tried to take screenshot, but no page was open.
+    at exists (/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:26578:15)
+    at /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:23569:52
+    at step (/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:23515:23)
+    at Object.next (/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:23496:53)
+    at /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:23490:71
+    at new Promise (<anonymous>)
+    at __webpack_modules__../node/playwright-wrapper/browser-control.ts.__awaiter (/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:23486:12)
+    at takeScreenshot (/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:23542:12)
+    at PlaywrightServer.<anonymous> (/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:24840:50)
+    at step (/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/Browser/wrapper/index.js:24782:23)
+=============================================================
