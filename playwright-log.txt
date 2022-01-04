@@ -1,0 +1,9 @@
+{"level":30,"time":"2022-01-04T01:53:31.353Z","pid":11569,"hostname":"QA-TESTERs-MBP","msg":"Listening on 61933"}
+{"level":30,"time":"2022-01-04T01:53:31.729Z","pid":11569,"hostname":"QA-TESTERs-MBP","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2022-01-04T01:53:31.729Z","pid":11569,"hostname":"QA-TESTERs-MBP","msg":"Trace file: "}
+{"level":30,"time":"2022-01-04T01:53:31.749Z","pid":11569,"hostname":"QA-TESTERs-MBP","msg":"Changed active context"}
+{"level":30,"time":"2022-01-04T01:53:31.761Z","pid":11569,"hostname":"QA-TESTERs-MBP","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2022-01-04T01:53:32.213Z","pid":11569,"hostname":"QA-TESTERs-MBP","msg":"Video path: undefined"}
+{"level":30,"time":"2022-01-04T01:53:32.213Z","pid":11569,"hostname":"QA-TESTERs-MBP","msg":"Changed active page"}
+{"level":30,"time":"2022-01-04T01:53:33.358Z","pid":11569,"hostname":"QA-TESTERs-MBP","msg":"Strict mode is: true"}
+{"level":30,"time":"2022-01-04T01:53:33.414Z","pid":11569,"hostname":"QA-TESTERs-MBP","msg":"Retrieved text for element h1 containing Playwright enables reliable end-to-end testing for modern web apps."}
