@@ -13,9 +13,9 @@ Run Keyword Until Success
     Wait Until Keyword Succeeds    5s      1s  ${KW}    @{KWARGS}
 
 Open THR
-    Browser.Open Browser    ${URL}[0]      ${BROWSER}
-#    Browser.New Page    ${URL}[0]
-#    Set Viewport Size       height=2560     width=1920
+#     Browser.Open Browser    ${URL}[0]      ${BROWSER}
+    Browser.New Page    ${URL}[0]
+    Set Viewport Size       height=2560     width=1600
     Get Title       ==       ${TITLE}
 
 Input Field
@@ -23,7 +23,13 @@ Input Field
     Wait For Elements State    ${field}
     Fill Text    ${field}    ${value}
 
-Select Element From List
-    [Arguments]    ${arrow}     ${list}
-    Click    ${arrow}
-    Click    ${list}
+Login Successfully
+    Click       ${LOGIN_BUTTON}
+    Wait For Elements State     //div[contains(text(),'Signed in successfully.')]
+
+Logout Admin
+    [Arguments]    ${LOGOUT_BUTTON}
+    Click       ${LOGOUT_BUTTON}
+    Wait For Elements State     ${EMAIL_FIELD}
+
+

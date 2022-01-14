@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.1 (Python 3.9.7 on darwin)" generated="20220112 16:14:02.135" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.1 (Python 3.9.7 on darwin)" generated="20220114 11:10:45.637" rpa="false" schemaversion="2">
 <suite id="s1" name="Test Scripts" source="/Users/qa_tester/Desktop/THR/Test_Scripts">
 <suite id="s1-s1" name="Forgot Password" source="/Users/qa_tester/Desktop/THR/Test_Scripts/Forgot_Password">
 <suite id="s1-s1-s1" name="Forgot Password" source="/Users/qa_tester/Desktop/THR/Test_Scripts/Forgot_Password/forgot_password.robot">
 <kw name="Open THR" library="resources" type="SETUP">
-<kw name="Open Browser" library="Browser">
+<kw name="New Page" library="Browser">
 <arg>${URL}[0]</arg>
-<arg>${BROWSER}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
-<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
-Use `New Page` directly instead of `Open Browser` for production and automated execution.
-See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
-<msg timestamp="20220112 16:14:03.357" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20220112 16:14:03.358" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "/Users/qa_tester/Desktop/THR/Output/browser/traces/f125f391-229f-4558-b472-5c98342f1241"}</msg>
-<msg timestamp="20220112 16:14:04.334" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"/Users/qa_tester/Desktop/THR/Output/browser/traces/f125f391-229f-4558-b472-5c98342f1241"}</msg>
-<msg timestamp="20220112 16:14:04.336" level="INFO">{"acceptDownloads": false, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false}</msg>
-<msg timestamp="20220112 16:14:04.365" level="INFO">Successfully created context. </msg>
-<msg timestamp="20220112 16:14:04.365" level="INFO">{'acceptDownloads': False, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False}</msg>
-<msg timestamp="20220112 16:14:15.097" level="INFO">Successfully initialized new page object and opened url: http://thr-phase-2-staging.bliimo.com/admin/login</msg>
-<status status="PASS" starttime="20220112 16:14:03.356" endtime="20220112 16:14:15.098"/>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20220114 11:10:55.292" level="INFO">Successfully initialized new page object and opened url: http://thr-phase-2-staging.bliimo.com/admin/login</msg>
+<msg timestamp="20220114 11:10:55.292" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
+<status status="PASS" starttime="20220114 11:10:46.841" endtime="20220114 11:10:55.292"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>height=2560</arg>
+<arg>width=1600</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220114 11:10:55.321" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220114 11:10:55.293" endtime="20220114 11:10:55.321"/>
 </kw>
 <kw name="Get Title" library="Browser">
 <arg>==</arg>
@@ -28,9 +31,9 @@ See `Browser, Context and Page` for more information about Browser and related c
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the title of the current page.</doc>
-<status status="PASS" starttime="20220112 16:14:15.099" endtime="20220112 16:14:15.117"/>
+<status status="PASS" starttime="20220114 11:10:55.321" endtime="20220114 11:10:55.329"/>
 </kw>
-<status status="PASS" starttime="20220112 16:14:03.356" endtime="20220112 16:14:15.118"/>
+<status status="PASS" starttime="20220114 11:10:46.840" endtime="20220114 11:10:55.330"/>
 </kw>
 <test id="s1-s1-s1-t1" name="Forgot Password Functionality">
 <kw name="Click" library="Browser">
@@ -38,18 +41,18 @@ See `Browser, Context and Page` for more information about Browser and related c
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220112 16:14:15.146" endtime="20220112 16:14:15.749"/>
+<status status="PASS" starttime="20220114 11:10:55.339" endtime="20220114 11:10:56.012"/>
 </kw>
 <kw name="Input Field" library="resources">
-<arg>\#admin_user_email</arg>
+<arg>${EMAIL_FIELD}</arg>
 <arg>${USER_CREDENTIALS}[email]</arg>
 <kw name="Wait For Elements State" library="Browser">
 <arg>${field}</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220112 16:14:15.825" level="INFO">Wait for Element with selector: #admin_user_email</msg>
-<status status="PASS" starttime="20220112 16:14:15.750" endtime="20220112 16:14:15.825"/>
+<msg timestamp="20220114 11:10:56.142" level="INFO">Wait for Element with selector: #admin_user_email</msg>
+<status status="PASS" starttime="20220114 11:10:56.013" endtime="20220114 11:10:56.142"/>
 </kw>
 <kw name="Fill Text" library="Browser">
 <arg>${field}</arg>
@@ -57,33 +60,33 @@ See `Browser, Context and Page` for more information about Browser and related c
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220112 16:14:15.826" level="INFO">Fills the text 'admin@thr.com' in the given field.</msg>
-<status status="PASS" starttime="20220112 16:14:15.825" endtime="20220112 16:14:15.859"/>
+<msg timestamp="20220114 11:10:56.143" level="INFO">Fills the text 'admin@thr.com' in the given field.</msg>
+<status status="PASS" starttime="20220114 11:10:56.143" endtime="20220114 11:10:56.173"/>
 </kw>
-<status status="PASS" starttime="20220112 16:14:15.749" endtime="20220112 16:14:15.859"/>
+<status status="PASS" starttime="20220114 11:10:56.012" endtime="20220114 11:10:56.173"/>
 </kw>
 <kw name="Click" library="Browser">
 <arg>\#admin_user_submit_action &gt; input[type=submit]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220112 16:14:15.859" endtime="20220112 16:14:16.793"/>
+<status status="PASS" starttime="20220114 11:10:56.173" endtime="20220114 11:10:57.379"/>
 </kw>
 <kw name="Wait For Elements State" library="Browser">
 <arg>//a[contains(text(),'Successfully Forgot Password')]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220112 16:14:27.064" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20220112 16:14:27.073" level="FAIL">TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+<msg timestamp="20220114 11:11:07.803" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220114 11:11:07.810" level="FAIL">TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
 =========================== logs ===========================
 waiting for selector "//a[contains(text(),'Successfully Forgot Password')]" to be visible
 ============================================================</msg>
-<status status="FAIL" starttime="20220112 16:14:16.794" endtime="20220112 16:14:27.073"/>
+<status status="FAIL" starttime="20220114 11:10:57.380" endtime="20220114 11:11:07.810"/>
 </kw>
 <tag>positive</tag>
 <tag>sanity</tag>
-<status status="FAIL" starttime="20220112 16:14:15.118" endtime="20220112 16:14:27.073">TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+<status status="FAIL" starttime="20220114 11:10:55.330" endtime="20220114 11:11:07.811">TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
 =========================== logs ===========================
 waiting for selector "//a[contains(text(),'Successfully Forgot Password')]" to be visible
 ============================================================</status>
@@ -92,35 +95,33 @@ waiting for selector "//a[contains(text(),'Successfully Forgot Password')]" to b
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<msg timestamp="20220112 16:14:27.359" level="INFO">Closed browser</msg>
-<status status="PASS" starttime="20220112 16:14:27.079" endtime="20220112 16:14:27.360"/>
+<msg timestamp="20220114 11:11:07.894" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220114 11:11:07.817" endtime="20220114 11:11:07.894"/>
 </kw>
 <doc>A test case for a THR admin can use the forgot password functionality</doc>
-<status status="FAIL" starttime="20220112 16:14:02.178" endtime="20220112 16:14:27.360"/>
+<status status="FAIL" starttime="20220114 11:10:45.681" endtime="20220114 11:11:07.894"/>
 </suite>
 <suite id="s1-s1-s2" name="Forgot Password Email Not Found" source="/Users/qa_tester/Desktop/THR/Test_Scripts/Forgot_Password/forgot_password_email_not_found.robot">
 <kw name="Open THR" library="resources" type="SETUP">
-<kw name="Open Browser" library="Browser">
+<kw name="New Page" library="Browser">
 <arg>${URL}[0]</arg>
-<arg>${BROWSER}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
-<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
-Use `New Page` directly instead of `Open Browser` for production and automated execution.
-See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
-<msg timestamp="20220112 16:14:27.376" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20220112 16:14:27.377" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "/Users/qa_tester/Desktop/THR/Output/browser/traces/1daf20dd-21b9-4cbe-8a66-9ed03390eeca"}</msg>
-<msg timestamp="20220112 16:14:28.197" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"/Users/qa_tester/Desktop/THR/Output/browser/traces/1daf20dd-21b9-4cbe-8a66-9ed03390eeca"}</msg>
-<msg timestamp="20220112 16:14:28.198" level="INFO">{"acceptDownloads": false, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false}</msg>
-<msg timestamp="20220112 16:14:28.234" level="INFO">Successfully created context. </msg>
-<msg timestamp="20220112 16:14:28.234" level="INFO">{'acceptDownloads': False, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False}</msg>
-<msg timestamp="20220112 16:14:39.551" level="WARN">Keyword 'Take Screenshot' could not be run on failure:
-Error: Tried to take screenshot, but no page was open.</msg>
-<msg timestamp="20220112 16:14:39.554" level="FAIL">TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</msg>
-<status status="FAIL" starttime="20220112 16:14:27.376" endtime="20220112 16:14:39.555"/>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20220114 11:11:16.702" level="INFO">Successfully initialized new page object and opened url: http://thr-phase-2-staging.bliimo.com/admin/login</msg>
+<msg timestamp="20220114 11:11:16.702" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
+<status status="PASS" starttime="20220114 11:11:07.908" endtime="20220114 11:11:16.703"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>height=2560</arg>
+<arg>width=1600</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220114 11:11:16.742" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220114 11:11:16.703" endtime="20220114 11:11:16.742"/>
 </kw>
 <kw name="Get Title" library="Browser">
 <arg>==</arg>
@@ -129,55 +130,89 @@ navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the title of the current page.</doc>
-<status status="NOT RUN" starttime="20220112 16:14:39.555" endtime="20220112 16:14:39.555"/>
+<status status="PASS" starttime="20220114 11:11:16.742" endtime="20220114 11:11:16.749"/>
 </kw>
-<status status="FAIL" starttime="20220112 16:14:27.375" endtime="20220112 16:14:39.556"/>
+<status status="PASS" starttime="20220114 11:11:07.908" endtime="20220114 11:11:16.749"/>
 </kw>
 <test id="s1-s1-s2-t1" name="Forgot Password Functionality - Email Not Found">
+<kw name="Click" library="Browser">
+<arg>//a[contains(text(),'Forgot your password?')]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220114 11:11:16.758" endtime="20220114 11:11:17.211"/>
+</kw>
+<kw name="Input Field" library="resources">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${USER_CREDENTIALS}[wrong_email]</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${field}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:17.322" level="INFO">Wait for Element with selector: #admin_user_email</msg>
+<status status="PASS" starttime="20220114 11:11:17.212" endtime="20220114 11:11:17.323"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${field}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220114 11:11:17.324" level="INFO">Fills the text 'admin@gmail.com' in the given field.</msg>
+<status status="PASS" starttime="20220114 11:11:17.323" endtime="20220114 11:11:17.353"/>
+</kw>
+<status status="PASS" starttime="20220114 11:11:17.211" endtime="20220114 11:11:17.354"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>\#admin_user_submit_action &gt; input[type=submit]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220114 11:11:17.354" endtime="20220114 11:11:17.723"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//p[contains(text(),'not found')]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:17.823" level="INFO">Wait for Element with selector: //p[contains(text(),'not found')]</msg>
+<status status="PASS" starttime="20220114 11:11:17.723" endtime="20220114 11:11:17.823"/>
+</kw>
 <tag>negative</tag>
-<status status="FAIL" starttime="20220112 16:14:39.557" endtime="20220112 16:14:39.560">Parent suite setup failed:
-TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</status>
+<status status="PASS" starttime="20220114 11:11:16.750" endtime="20220114 11:11:17.823"/>
 </test>
 <kw name="Close Browser" library="Browser" type="TEARDOWN">
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<msg timestamp="20220112 16:14:39.785" level="INFO">Closed browser</msg>
-<status status="PASS" starttime="20220112 16:14:39.563" endtime="20220112 16:14:39.786"/>
+<msg timestamp="20220114 11:11:17.893" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220114 11:11:17.828" endtime="20220114 11:11:17.894"/>
 </kw>
 <doc>A test case for a THR admin can use the forgot password functionality</doc>
-<status status="FAIL" starttime="20220112 16:14:27.365" endtime="20220112 16:14:39.786">Suite setup failed:
-TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</status>
+<status status="PASS" starttime="20220114 11:11:07.897" endtime="20220114 11:11:17.894"/>
 </suite>
 <suite id="s1-s1-s3" name="Forgot Password Empty Field" source="/Users/qa_tester/Desktop/THR/Test_Scripts/Forgot_Password/forgot_password_empty_field.robot">
 <kw name="Open THR" library="resources" type="SETUP">
-<kw name="Open Browser" library="Browser">
+<kw name="New Page" library="Browser">
 <arg>${URL}[0]</arg>
-<arg>${BROWSER}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
-<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
-Use `New Page` directly instead of `Open Browser` for production and automated execution.
-See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
-<msg timestamp="20220112 16:14:39.804" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20220112 16:14:39.805" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "/Users/qa_tester/Desktop/THR/Output/browser/traces/bd14fa6e-b61d-452c-85b3-3d6948ac1eb4"}</msg>
-<msg timestamp="20220112 16:14:40.372" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"/Users/qa_tester/Desktop/THR/Output/browser/traces/bd14fa6e-b61d-452c-85b3-3d6948ac1eb4"}</msg>
-<msg timestamp="20220112 16:14:40.373" level="INFO">{"acceptDownloads": false, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false}</msg>
-<msg timestamp="20220112 16:14:40.413" level="INFO">Successfully created context. </msg>
-<msg timestamp="20220112 16:14:40.413" level="INFO">{'acceptDownloads': False, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False}</msg>
-<msg timestamp="20220112 16:14:51.502" level="WARN">Keyword 'Take Screenshot' could not be run on failure:
-Error: Tried to take screenshot, but no page was open.</msg>
-<msg timestamp="20220112 16:14:51.503" level="FAIL">TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</msg>
-<status status="FAIL" starttime="20220112 16:14:39.804" endtime="20220112 16:14:51.503"/>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20220114 11:11:26.637" level="INFO">Successfully initialized new page object and opened url: http://thr-phase-2-staging.bliimo.com/admin/login</msg>
+<msg timestamp="20220114 11:11:26.637" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
+<status status="PASS" starttime="20220114 11:11:17.916" endtime="20220114 11:11:26.638"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>height=2560</arg>
+<arg>width=1600</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220114 11:11:26.695" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220114 11:11:26.638" endtime="20220114 11:11:26.696"/>
 </kw>
 <kw name="Get Title" library="Browser">
 <arg>==</arg>
@@ -186,58 +221,70 @@ navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the title of the current page.</doc>
-<status status="NOT RUN" starttime="20220112 16:14:51.503" endtime="20220112 16:14:51.504"/>
+<status status="PASS" starttime="20220114 11:11:26.696" endtime="20220114 11:11:26.755"/>
 </kw>
-<status status="FAIL" starttime="20220112 16:14:39.804" endtime="20220112 16:14:51.504"/>
+<status status="PASS" starttime="20220114 11:11:17.916" endtime="20220114 11:11:26.756"/>
 </kw>
 <test id="s1-s1-s3-t1" name="Forgot Password Functionality - Empty Email field">
+<kw name="Click" library="Browser">
+<arg>//a[contains(text(),'Forgot your password?')]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220114 11:11:26.766" endtime="20220114 11:11:27.268"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>\#admin_user_submit_action &gt; input[type=submit]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220114 11:11:27.269" endtime="20220114 11:11:27.741"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//p[contains(text(),"can't be blank")]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:27.826" level="INFO">Wait for Element with selector: //p[contains(text(),"can't be blank")]</msg>
+<status status="PASS" starttime="20220114 11:11:27.742" endtime="20220114 11:11:27.826"/>
+</kw>
 <tag>negative</tag>
-<status status="FAIL" starttime="20220112 16:14:51.504" endtime="20220112 16:14:51.507">Parent suite setup failed:
-TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</status>
+<status status="PASS" starttime="20220114 11:11:26.756" endtime="20220114 11:11:27.827"/>
 </test>
 <kw name="Close Browser" library="Browser" type="TEARDOWN">
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<msg timestamp="20220112 16:14:51.745" level="INFO">Closed browser</msg>
-<status status="PASS" starttime="20220112 16:14:51.510" endtime="20220112 16:14:51.745"/>
+<msg timestamp="20220114 11:11:27.894" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220114 11:11:27.831" endtime="20220114 11:11:27.894"/>
 </kw>
 <doc>A test case for a THR admin can use the forgot password functionality</doc>
-<status status="FAIL" starttime="20220112 16:14:39.792" endtime="20220112 16:14:51.745">Suite setup failed:
-TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</status>
+<status status="PASS" starttime="20220114 11:11:17.897" endtime="20220114 11:11:27.895"/>
 </suite>
-<status status="FAIL" starttime="20220112 16:14:02.176" endtime="20220112 16:14:51.753"/>
+<status status="FAIL" starttime="20220114 11:10:45.678" endtime="20220114 11:11:27.898"/>
 </suite>
 <suite id="s1-s2" name="Login" source="/Users/qa_tester/Desktop/THR/Test_Scripts/Login">
 <suite id="s1-s2-s1" name="Login" source="/Users/qa_tester/Desktop/THR/Test_Scripts/Login/login.robot">
 <kw name="Open THR" library="resources" type="SETUP">
-<kw name="Open Browser" library="Browser">
+<kw name="New Page" library="Browser">
 <arg>${URL}[0]</arg>
-<arg>${BROWSER}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
-<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
-Use `New Page` directly instead of `Open Browser` for production and automated execution.
-See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
-<msg timestamp="20220112 16:14:51.772" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20220112 16:14:51.773" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "/Users/qa_tester/Desktop/THR/Output/browser/traces/249238e9-f261-4c66-8f72-fd7bed918712"}</msg>
-<msg timestamp="20220112 16:14:52.385" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"/Users/qa_tester/Desktop/THR/Output/browser/traces/249238e9-f261-4c66-8f72-fd7bed918712"}</msg>
-<msg timestamp="20220112 16:14:52.386" level="INFO">{"acceptDownloads": false, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false}</msg>
-<msg timestamp="20220112 16:14:52.425" level="INFO">Successfully created context. </msg>
-<msg timestamp="20220112 16:14:52.425" level="INFO">{'acceptDownloads': False, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False}</msg>
-<msg timestamp="20220112 16:15:03.438" level="WARN">Keyword 'Take Screenshot' could not be run on failure:
-Error: Tried to take screenshot, but no page was open.</msg>
-<msg timestamp="20220112 16:15:03.439" level="FAIL">TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</msg>
-<status status="FAIL" starttime="20220112 16:14:51.771" endtime="20220112 16:15:03.439"/>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20220114 11:11:35.288" level="INFO">Successfully initialized new page object and opened url: http://thr-phase-2-staging.bliimo.com/admin/login</msg>
+<msg timestamp="20220114 11:11:35.288" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
+<status status="PASS" starttime="20220114 11:11:27.920" endtime="20220114 11:11:35.288"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>height=2560</arg>
+<arg>width=1600</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220114 11:11:35.315" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220114 11:11:35.288" endtime="20220114 11:11:35.316"/>
 </kw>
 <kw name="Get Title" library="Browser">
 <arg>==</arg>
@@ -246,55 +293,104 @@ navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the title of the current page.</doc>
-<status status="NOT RUN" starttime="20220112 16:15:03.440" endtime="20220112 16:15:03.440"/>
+<status status="PASS" starttime="20220114 11:11:35.316" endtime="20220114 11:11:35.386"/>
 </kw>
-<status status="FAIL" starttime="20220112 16:14:51.770" endtime="20220112 16:15:03.440"/>
+<status status="PASS" starttime="20220114 11:11:27.918" endtime="20220114 11:11:35.387"/>
 </kw>
 <test id="s1-s2-s1-t1" name="Login valid email and valid password">
+<kw name="Input Field" library="resources">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${USER_CREDENTIALS}[email]</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${field}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:35.443" level="INFO">Wait for Element with selector: #admin_user_email</msg>
+<status status="PASS" starttime="20220114 11:11:35.400" endtime="20220114 11:11:35.443"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${field}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220114 11:11:35.444" level="INFO">Fills the text 'admin@thr.com' in the given field.</msg>
+<status status="PASS" starttime="20220114 11:11:35.443" endtime="20220114 11:11:35.467"/>
+</kw>
+<status status="PASS" starttime="20220114 11:11:35.399" endtime="20220114 11:11:35.467"/>
+</kw>
+<kw name="Input Field" library="resources">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${USER_CREDENTIALS}[password]</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${field}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:35.485" level="INFO">Wait for Element with selector: #admin_user_password</msg>
+<status status="PASS" starttime="20220114 11:11:35.470" endtime="20220114 11:11:35.486"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${field}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220114 11:11:35.486" level="INFO">Fills the text 'Password@123' in the given field.</msg>
+<status status="PASS" starttime="20220114 11:11:35.486" endtime="20220114 11:11:35.540"/>
+</kw>
+<status status="PASS" starttime="20220114 11:11:35.469" endtime="20220114 11:11:35.541"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${LOGIN_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220114 11:11:35.541" endtime="20220114 11:11:36.536"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//div[contains(text(),'Signed in successfully.')]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:36.698" level="INFO">Wait for Element with selector: //div[contains(text(),'Signed in successfully.')]</msg>
+<status status="PASS" starttime="20220114 11:11:36.536" endtime="20220114 11:11:36.698"/>
+</kw>
 <tag>positive</tag>
-<status status="FAIL" starttime="20220112 16:15:03.440" endtime="20220112 16:15:03.443">Parent suite setup failed:
-TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</status>
+<status status="PASS" starttime="20220114 11:11:35.387" endtime="20220114 11:11:36.699"/>
 </test>
 <kw name="Close Browser" library="Browser" type="TEARDOWN">
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<msg timestamp="20220112 16:15:03.675" level="INFO">Closed browser</msg>
-<status status="PASS" starttime="20220112 16:15:03.447" endtime="20220112 16:15:03.676"/>
+<msg timestamp="20220114 11:11:36.767" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220114 11:11:36.703" endtime="20220114 11:11:36.767"/>
 </kw>
 <doc>A test case for a THR admin is able to logged in</doc>
-<status status="FAIL" starttime="20220112 16:14:51.759" endtime="20220112 16:15:03.676">Suite setup failed:
-TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</status>
+<status status="PASS" starttime="20220114 11:11:27.906" endtime="20220114 11:11:36.767"/>
 </suite>
 <suite id="s1-s2-s2" name="Login Negative" source="/Users/qa_tester/Desktop/THR/Test_Scripts/Login/login_negative.robot">
 <kw name="Open THR" library="resources" type="SETUP">
-<kw name="Open Browser" library="Browser">
+<kw name="New Page" library="Browser">
 <arg>${URL}[0]</arg>
-<arg>${BROWSER}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
-<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
-Use `New Page` directly instead of `Open Browser` for production and automated execution.
-See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
-<msg timestamp="20220112 16:15:03.697" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20220112 16:15:03.699" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "/Users/qa_tester/Desktop/THR/Output/browser/traces/3c4c7f17-57e0-445f-8a8a-7db79efa868a"}</msg>
-<msg timestamp="20220112 16:15:04.417" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"/Users/qa_tester/Desktop/THR/Output/browser/traces/3c4c7f17-57e0-445f-8a8a-7db79efa868a"}</msg>
-<msg timestamp="20220112 16:15:04.418" level="INFO">{"acceptDownloads": false, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false}</msg>
-<msg timestamp="20220112 16:15:04.459" level="INFO">Successfully created context. </msg>
-<msg timestamp="20220112 16:15:04.459" level="INFO">{'acceptDownloads': False, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False}</msg>
-<msg timestamp="20220112 16:15:15.553" level="WARN">Keyword 'Take Screenshot' could not be run on failure:
-Error: Tried to take screenshot, but no page was open.</msg>
-<msg timestamp="20220112 16:15:15.554" level="FAIL">TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</msg>
-<status status="FAIL" starttime="20220112 16:15:03.696" endtime="20220112 16:15:15.554"/>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20220114 11:11:44.900" level="INFO">Successfully initialized new page object and opened url: http://thr-phase-2-staging.bliimo.com/admin/login</msg>
+<msg timestamp="20220114 11:11:44.901" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
+<status status="PASS" starttime="20220114 11:11:36.780" endtime="20220114 11:11:44.901"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>height=2560</arg>
+<arg>width=1600</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220114 11:11:44.938" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220114 11:11:44.901" endtime="20220114 11:11:44.938"/>
 </kw>
 <kw name="Get Title" library="Browser">
 <arg>==</arg>
@@ -303,69 +399,241 @@ navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the title of the current page.</doc>
-<status status="NOT RUN" starttime="20220112 16:15:15.554" endtime="20220112 16:15:15.554"/>
+<status status="PASS" starttime="20220114 11:11:44.938" endtime="20220114 11:11:45.008"/>
 </kw>
-<status status="FAIL" starttime="20220112 16:15:03.696" endtime="20220112 16:15:15.555"/>
+<status status="PASS" starttime="20220114 11:11:36.780" endtime="20220114 11:11:45.008"/>
 </kw>
 <test id="s1-s2-s2-t1" name="Login wrong email and wrong password">
+<kw name="Input Field" library="resources">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${USER_CREDENTIALS}[wrong_email]</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${field}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:45.086" level="INFO">Wait for Element with selector: #admin_user_email</msg>
+<status status="PASS" starttime="20220114 11:11:45.027" endtime="20220114 11:11:45.086"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${field}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220114 11:11:45.087" level="INFO">Fills the text 'admin@gmail.com' in the given field.</msg>
+<status status="PASS" starttime="20220114 11:11:45.087" endtime="20220114 11:11:45.112"/>
+</kw>
+<status status="PASS" starttime="20220114 11:11:45.026" endtime="20220114 11:11:45.112"/>
+</kw>
+<kw name="Input Field" library="resources">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${USER_CREDENTIALS}[wrong_password]</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${field}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:45.128" level="INFO">Wait for Element with selector: #admin_user_password</msg>
+<status status="PASS" starttime="20220114 11:11:45.113" endtime="20220114 11:11:45.128"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${field}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220114 11:11:45.129" level="INFO">Fills the text '123' in the given field.</msg>
+<status status="PASS" starttime="20220114 11:11:45.128" endtime="20220114 11:11:45.185"/>
+</kw>
+<status status="PASS" starttime="20220114 11:11:45.112" endtime="20220114 11:11:45.186"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${LOGIN_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220114 11:11:45.186" endtime="20220114 11:11:45.973"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<arg>==</arg>
+<arg>${URL}[0]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" starttime="20220114 11:11:45.974" endtime="20220114 11:11:45.978"/>
+</kw>
 <tag>positive</tag>
-<status status="FAIL" starttime="20220112 16:15:15.555" endtime="20220112 16:15:15.558">Parent suite setup failed:
-TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</status>
+<status status="PASS" starttime="20220114 11:11:45.008" endtime="20220114 11:11:45.979"/>
 </test>
 <kw name="Close Browser" library="Browser" type="TEARDOWN">
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<msg timestamp="20220112 16:15:15.789" level="INFO">Closed browser</msg>
-<status status="PASS" starttime="20220112 16:15:15.566" endtime="20220112 16:15:15.789"/>
+<msg timestamp="20220114 11:11:46.160" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220114 11:11:46.100" endtime="20220114 11:11:46.160"/>
 </kw>
 <doc>A test case for a THR admin can check validations for login</doc>
-<status status="FAIL" starttime="20220112 16:15:03.680" endtime="20220112 16:15:15.789">Suite setup failed:
-TimeoutError: page.goto: Timeout 10000ms exceeded.
-=========================== logs ===========================
-navigating to "http://thr-phase-2-staging.bliimo.com/admin/login", waiting until "load"
-============================================================</status>
+<status status="PASS" starttime="20220114 11:11:36.773" endtime="20220114 11:11:46.160"/>
 </suite>
-<status status="FAIL" starttime="20220112 16:14:51.755" endtime="20220112 16:15:15.794"/>
+<status status="PASS" starttime="20220114 11:11:27.901" endtime="20220114 11:11:46.163"/>
 </suite>
-<status status="FAIL" starttime="20220112 16:14:02.138" endtime="20220112 16:15:15.799"/>
+<suite id="s1-s3" name="Logout" source="/Users/qa_tester/Desktop/THR/Test_Scripts/Logout">
+<suite id="s1-s3-s1" name="Logout" source="/Users/qa_tester/Desktop/THR/Test_Scripts/Logout/logout.robot">
+<kw name="Open THR" library="resources" type="SETUP">
+<kw name="New Page" library="Browser">
+<arg>${URL}[0]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20220114 11:11:54.668" level="INFO">Successfully initialized new page object and opened url: http://thr-phase-2-staging.bliimo.com/admin/login</msg>
+<msg timestamp="20220114 11:11:54.669" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
+<status status="PASS" starttime="20220114 11:11:46.173" endtime="20220114 11:11:54.670"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>height=2560</arg>
+<arg>width=1600</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220114 11:11:54.701" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220114 11:11:54.670" endtime="20220114 11:11:54.701"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<arg>==</arg>
+<arg>${TITLE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" starttime="20220114 11:11:54.702" endtime="20220114 11:11:54.708"/>
+</kw>
+<status status="PASS" starttime="20220114 11:11:46.173" endtime="20220114 11:11:54.709"/>
+</kw>
+<test id="s1-s3-s1-t1" name="Logout admin">
+<kw name="Input Field" library="resources">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${USER_CREDENTIALS}[email]</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${field}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:54.772" level="INFO">Wait for Element with selector: #admin_user_email</msg>
+<status status="PASS" starttime="20220114 11:11:54.714" endtime="20220114 11:11:54.772"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${field}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220114 11:11:54.773" level="INFO">Fills the text 'admin@thr.com' in the given field.</msg>
+<status status="PASS" starttime="20220114 11:11:54.772" endtime="20220114 11:11:54.797"/>
+</kw>
+<status status="PASS" starttime="20220114 11:11:54.713" endtime="20220114 11:11:54.798"/>
+</kw>
+<kw name="Input Field" library="resources">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${USER_CREDENTIALS}[password]</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${field}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:54.885" level="INFO">Wait for Element with selector: #admin_user_password</msg>
+<status status="PASS" starttime="20220114 11:11:54.801" endtime="20220114 11:11:54.885"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${field}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220114 11:11:54.886" level="INFO">Fills the text 'Password@123' in the given field.</msg>
+<status status="PASS" starttime="20220114 11:11:54.886" endtime="20220114 11:11:54.941"/>
+</kw>
+<status status="PASS" starttime="20220114 11:11:54.799" endtime="20220114 11:11:54.941"/>
+</kw>
+<kw name="Login Successfully" library="resources">
+<kw name="Click" library="Browser">
+<arg>${LOGIN_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220114 11:11:54.942" endtime="20220114 11:11:55.951"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//div[contains(text(),'Signed in successfully.')]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:56.128" level="INFO">Wait for Element with selector: //div[contains(text(),'Signed in successfully.')]</msg>
+<status status="PASS" starttime="20220114 11:11:55.952" endtime="20220114 11:11:56.128"/>
+</kw>
+<status status="PASS" starttime="20220114 11:11:54.941" endtime="20220114 11:11:56.128"/>
+</kw>
+<kw name="Logout Admin" library="resources">
+<arg>${LOGOUT_BUTTON}</arg>
+<kw name="Click" library="Browser">
+<arg>${LOGOUT_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220114 11:11:56.129" endtime="20220114 11:11:57.006"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${EMAIL_FIELD}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220114 11:11:57.187" level="INFO">Wait for Element with selector: #admin_user_email</msg>
+<status status="PASS" starttime="20220114 11:11:57.007" endtime="20220114 11:11:57.187"/>
+</kw>
+<status status="PASS" starttime="20220114 11:11:56.129" endtime="20220114 11:11:57.187"/>
+</kw>
+<tag>positive</tag>
+<status status="PASS" starttime="20220114 11:11:54.709" endtime="20220114 11:11:57.189"/>
+</test>
+<kw name="Close Browser" library="Browser" type="TEARDOWN">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220114 11:11:57.275" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220114 11:11:57.198" endtime="20220114 11:11:57.275"/>
+</kw>
+<doc>A test case for a THR admin can logout</doc>
+<status status="PASS" starttime="20220114 11:11:46.167" endtime="20220114 11:11:57.276"/>
+</suite>
+<status status="PASS" starttime="20220114 11:11:46.164" endtime="20220114 11:11:57.280"/>
+</suite>
+<status status="FAIL" starttime="20220114 11:10:45.640" endtime="20220114 11:11:57.281"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="5" skip="0">All Tests</stat>
+<stat pass="5" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="2" skip="0">negative</stat>
-<stat pass="0" fail="3" skip="0">positive</stat>
+<stat pass="2" fail="0" skip="0">negative</stat>
+<stat pass="3" fail="1" skip="0">positive</stat>
 <stat pass="0" fail="1" skip="0">sanity</stat>
 </tag>
 <suite>
-<stat pass="0" fail="5" skip="0" id="s1" name="Test Scripts">Test Scripts</stat>
-<stat pass="0" fail="3" skip="0" id="s1-s1" name="Forgot Password">Test Scripts.Forgot Password</stat>
+<stat pass="5" fail="1" skip="0" id="s1" name="Test Scripts">Test Scripts</stat>
+<stat pass="2" fail="1" skip="0" id="s1-s1" name="Forgot Password">Test Scripts.Forgot Password</stat>
 <stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Forgot Password">Test Scripts.Forgot Password.Forgot Password</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s2" name="Forgot Password Email Not Found">Test Scripts.Forgot Password.Forgot Password Email Not Found</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s3" name="Forgot Password Empty Field">Test Scripts.Forgot Password.Forgot Password Empty Field</stat>
-<stat pass="0" fail="2" skip="0" id="s1-s2" name="Login">Test Scripts.Login</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s2-s1" name="Login">Test Scripts.Login.Login</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s2-s2" name="Login Negative">Test Scripts.Login.Login Negative</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s2" name="Forgot Password Email Not Found">Test Scripts.Forgot Password.Forgot Password Email Not Found</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s3" name="Forgot Password Empty Field">Test Scripts.Forgot Password.Forgot Password Empty Field</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="Login">Test Scripts.Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2-s1" name="Login">Test Scripts.Login.Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2-s2" name="Login Negative">Test Scripts.Login.Login Negative</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="Logout">Test Scripts.Logout</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3-s1" name="Logout">Test Scripts.Logout.Logout</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220112 16:14:03.357" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20220112 16:14:27.376" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20220112 16:14:39.551" level="WARN">Keyword 'Take Screenshot' could not be run on failure:
-Error: Tried to take screenshot, but no page was open.</msg>
-<msg timestamp="20220112 16:14:39.804" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20220112 16:14:51.502" level="WARN">Keyword 'Take Screenshot' could not be run on failure:
-Error: Tried to take screenshot, but no page was open.</msg>
-<msg timestamp="20220112 16:14:51.772" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20220112 16:15:03.438" level="WARN">Keyword 'Take Screenshot' could not be run on failure:
-Error: Tried to take screenshot, but no page was open.</msg>
-<msg timestamp="20220112 16:15:03.697" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20220112 16:15:15.553" level="WARN">Keyword 'Take Screenshot' could not be run on failure:
-Error: Tried to take screenshot, but no page was open.</msg>
 </errors>
 </robot>

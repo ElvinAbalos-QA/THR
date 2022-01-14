@@ -8,7 +8,7 @@ Suite Teardown    Close Browser
 Forgot Password Functionality - Email Not Found
     [Tags]      negative
     Click     //a[contains(text(),'Forgot your password?')]
-    Input Field     \#admin_user_email  ${USER_CREDENTIALS}[wrong_email]
+    Input Field     ${EMAIL_FIELD}  ${USER_CREDENTIALS}[wrong_email]
     Click     \#admin_user_submit_action > input[type=submit]
     Wait For Elements State     //p[contains(text(),'not found')]
 

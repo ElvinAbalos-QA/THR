@@ -1,13 +1,13 @@
 *** Settings ***
-Documentation     A test case for a THR admin is able to logged in
+Documentation     A test case for a THR admin can logout
 Resource          ../../Resources/resources.robot
 Suite Setup     Open THR
 Suite Teardown    Close Browser
 
 *** Test Cases ***
-Login valid email and valid password
+Logout admin
     [Tags]      positive
     Input Field     ${EMAIL_FIELD}  ${USER_CREDENTIALS}[email]
     Input Field     ${PASSWORD_FIELD}   ${USER_CREDENTIALS}[password]
-    Click       ${LOGIN_BUTTON}
-    Wait For Elements State     //div[contains(text(),'Signed in successfully.')]
+    Login Successfully
+    Logout Admin    ${LOGOUT_BUTTON}
