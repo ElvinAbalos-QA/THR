@@ -7,7 +7,7 @@ Suite Teardown    Close Browser
 *** Test Cases ***
 Login wrong email and wrong password
     [Tags]      positive
-    Input Field     \#admin_user_email  ${USER_CREDENTIALS}[wrong_email]
-    Input Field     \#admin_user_password   ${USER_CREDENTIALS}[wrong_password]
+    Input Field     ${EMAIL_FIELD}  ${USER_CREDENTIALS}[wrong_email]
+    Input Field     ${PASSWORD_FIELD}   ${USER_CREDENTIALS}[wrong_password]
     Click       ${LOGIN_BUTTON}
     Get Url     ==  ${URL}[0]

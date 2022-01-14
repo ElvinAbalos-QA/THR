@@ -8,7 +8,7 @@ Suite Teardown    Close Browser
 Forgot Password Functionality
     [Tags]      positive    sanity
     Click     //a[contains(text(),'Forgot your password?')]
-    Input Field     \#admin_user_email  ${USER_CREDENTIALS}[email]
+    Input Field     ${EMAIL_FIELD}  ${USER_CREDENTIALS}[email]
     Click     \#admin_user_submit_action > input[type=submit]
     Wait For Elements State     //a[contains(text(),'Successfully Forgot Password')]
 
